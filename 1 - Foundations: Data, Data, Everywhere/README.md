@@ -19,7 +19,7 @@ Before you write an entry in your learning log, think about where and how you us
 
 Then, you will select one of the five questions from your list to explore further and write down the types of data you might collect in order to make a decision. That’s data analysis in action!
 
-Link to learning log template: [Think about data in daily life]](https:///github.com/ntaylor0000/gooogle_data_analytics/1%20-%20Foundations:%20Data,%20Data,%20Everywhere/Example-Learning-Log_-Think-about-data-in-daily-life.pdf) 
+Link to learning log template: [Think about data in daily life](https:///github.com/ntaylor0000/google_data_analytics/1%20-%20Foundations:%20Data,%20Data,%20Everywhere/Example-Learning-Log_-Think-about-data-in-daily-life.pdf) 
 </h6>
 **Reflection**
 <h6 align="left">
@@ -35,5 +35,5 @@ When you’ve finished your entry in the learning log template, make sure to sav
 <h6 align="left">
 Since this is your first learning log, an example has been provided using one of the questions above to help you.
 
-Link to learning log example: [Think about data in daily life](https:///github.com/ntaylor0000/gooogle_data_analytics/1%20-%20Foundations:%20Data,%20Data,%20Everywhere/Learning-Log-Template_-Think-about-data-in-daily-life.docx) 
+Link to learning log example: [Think about data in daily life](https:///github.com/ntaylor0000/google_data_analytics/1%20-%20Foundations:%20Data,%20Data,%20Everywhere/Learning-Log-Template_-Think-about-data-in-daily-life.docx) 
 </h6>
