@@ -1,4 +1,4 @@
-### Learning Log: Think about data in daily life
+## Learning Log: Think about data in daily life
 
 **Overview**
 
@@ -31,7 +31,7 @@ When you’ve finished your entry in the learning log template, make sure to sav
 **Example**
 
 
-### Case Study: New data perspectives
+## Case Study: New data perspectives
 
 As you have been learning, you can find data pretty much everywhere. Any time you observe and evaluate something in the world, you’re collecting and analyzing data. Your analysis helps you find easier ways of doing things, identify patterns to save you time, and discover surprising new perspectives that can completely change the way you experience things.
 
