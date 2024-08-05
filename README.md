@@ -34,7 +34,7 @@
 
 
 ## About this Professional Certificate:
-Prepare for a new career in the high-growth field of data analytics, no experience or degree required. Get professional training designed by Google and have the opportunity to connect with top employers. There are 483,000 open jobs in data analytics with a median entry-level salary of $92,000.¹
+Prepare for a new career in the high-growth field of data analytics, no experience or degree required. Get professional training designed by Google and have the opportunity to connect with top employers. There are 483,000 open jobs in data analytics with a median entry-level salary of $92,000.
 
 Data analytics is the collection, transformation, and organization of data in order to draw conclusions, make predictions, and drive informed decision making. 
 
@@ -51,7 +51,7 @@ Platforms and tools you will learn include: Presentations, Spreadsheets, SQL, Ta
 
 In addition to expert training and hands-on projects, you'll complete a case study that you can share with potential employers to showcase your new skill set. Learn concrete skills that top employers are hiring for right now.
 
-### There are 8 Courses in this Professional Certificate:
+### 8 Course Series:
 <details>
   <summary>Foundations: Data, Data, Everywhere</summary>
 
