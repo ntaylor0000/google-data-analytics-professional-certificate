@@ -6,7 +6,7 @@
 ### SKILLS YOU WILL GAIN:
 - Data Analysis
 - Creating Case Studies
-- Data Visualization (DataViz)
+- Data Visualization
 - Data Cleansing
 - Developing a Portfolio
 - Data Collection
