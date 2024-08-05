@@ -1,6 +1,7 @@
 ### Learning Log: Think about data in daily life
-<h6 align="left">
+
 **Overview**
+
 By now, you've started to discover how powerful data can be. Throughout this course, you’ll be asked to make entries in a learning log. Your log will be a personal space where you can keep track of your thinking and reflections about the experiences you will have collecting and analyzing data. Reflections may include what you liked, what you would change, and questions that were raised. By the time you complete the entry for this activity, you will have a stronger understanding of data analytics. 
 
 **Everyday data**
@@ -28,10 +29,10 @@ After you consider how you use data analysis in your own life, take a moment to 
 When you’ve finished your entry in the learning log template, make sure to save the document so your response is somewhere accessible. This will help you continue applying data analysis to your everyday life. You will also be able to track your progress and growth as a data analyst.
 
 **Example**
-</h6>
+
 
 ### Case Study: New data perspectives
-<h6 align="left">
+
 As you have been learning, you can find data pretty much everywhere. Any time you observe and evaluate something in the world, you’re collecting and analyzing data. Your analysis helps you find easier ways of doing things, identify patterns to save you time, and discover surprising new perspectives that can completely change the way you experience things.
 
 Here is a real-life example of how one group of data analysts used the six steps of the data analysis process to improve their workplace and its business processes. Their story involves something called people analytics — also known as human resources analytics or workforce analytics. People analytics is the practice of collecting and analyzing data on the people who make up a company’s workforce in order to gain insights to improve how the company operates.
@@ -119,4 +120,4 @@ One of the many things that makes data analytics so exciting is that the problem
 To learn more about some recent applications of data analytics in the business world, check out the article 
 “4 Examples of Business Analytics in Action”
  from Harvard Business School.  The article reveals how corporations use data insights to optimize their decision-making process. 
-</h6>
+
