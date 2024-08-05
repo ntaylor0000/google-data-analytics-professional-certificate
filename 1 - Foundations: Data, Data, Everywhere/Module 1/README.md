@@ -1,10 +1,10 @@
 ### Learning Log: Think about data in daily life
+<h6 align="left">
 **Overview**
-<h6 align="left">
 By now, you've started to discover how powerful data can be. Throughout this course, you’ll be asked to make entries in a learning log. Your log will be a personal space where you can keep track of your thinking and reflections about the experiences you will have collecting and analyzing data. Reflections may include what you liked, what you would change, and questions that were raised. By the time you complete the entry for this activity, you will have a stronger understanding of data analytics. 
-</h6>
+
 **Everyday data**
-<h6 align="left">
+
 Before you write an entry in your learning log, think about where and how you use data to make decisions. You will create a list of at least five questions that you might use data to answer. Here are a few examples to inspire you:
 
 - What’s the best time to go to the gym?
@@ -16,9 +16,9 @@ Before you write an entry in your learning log, think about where and how you us
 Then, you will select one of the five questions from your list to explore further and write down the types of data you might collect in order to make a decision. That’s data analysis in action!
 
 Link to learning log template: [Think about data in daily life](https://github.com/ntaylor0000/google_data_analytics/1%20-%20Foundations:%20Data,%20Data,%20Everywhere/Example-Learning-Log_-Think-about-data-in-daily-life.pdf) 
-</h6>
+
 **Reflection**
-<h6 align="left">
+
 After you consider how you use data analysis in your own life, take a moment to reflect on what you discovered. Reflections may include what you liked, what you would change, and questions that were raised. In your new learning log entry, you will write 2-3 sentences (40-60 words) in response to each question below:
 
 - What are some considerations or preferences you want to keep in mind when making a decision?
@@ -26,9 +26,9 @@ After you consider how you use data analysis in your own life, take a moment to 
 - Are there any other things you might want to track associated with this decision?
 
 When you’ve finished your entry in the learning log template, make sure to save the document so your response is somewhere accessible. This will help you continue applying data analysis to your everyday life. You will also be able to track your progress and growth as a data analyst.
-</h6>
+
 **Example**
-<h6 align="left">
+</h6>
 
 ### Case Study: New data perspectives
 <h6 align="left">
@@ -43,9 +43,9 @@ The six steps of the data analysis process that you have been learning in this p
 An organization was experiencing a high turnover rate among new hires. Many employees left the company before the end of their first year on the job. The analysts used the data analysis process to answer the following question: **how can the organization improve the retention rate for new employees?**
 
 Here is a break down of what this team did, step by step. 
-</h6>
+
 **Ask**
-<h6 align="left">
+
 First up, the analysts needed to define what the project would look like and what would qualify as a successful result. So, to determine these things, they **asked** effective questions and collaborated with leaders and managers who were interested in the outcome of their people analysis. These were the kinds of questions they asked:
 
 What do you think new employees need to learn to be successful in their first year on the job? 
@@ -57,9 +57,9 @@ Do you believe managers with higher retention rates offer new employees somethin
 What do you suspect is a leading cause of dissatisfaction among new employees?
 
 By what percentage would you like employee retention to increase in the next fiscal year?
-</h6>
+
 **Prepare**
-<h6 align="left">
+
 It all started with solid **preparation**. The group built a timeline of three months and decided how they wanted to relay their progress to interested parties. Also during this step, the analysts identified what data they needed to achieve the successful result they identified in the previous step - in this case, the analysts chose to gather the data from an online survey of new employees. These were the things they did to prepare:
 
 They developed specific questions to ask about employee satisfaction with different business processes, such as hiring and onboarding, and their overall compensation. 
@@ -67,9 +67,9 @@ They developed specific questions to ask about employee satisfaction with differ
 They established rules for who would have access to the data collected - in this case, anyone outside the group wouldn't have access to the raw data, but could view summarized or aggregated data. For example, an individual's compensation wouldn't be available, but salary ranges for groups of individuals would be viewable. 
 
 They finalized what specific information would be gathered, and how best to present the data visually. The analysts brainstormed possible project- and data-related issues and how to avoid them. 
-</h6>
+
 **Process**
-<h6 align="left">
+
 The group sent the survey out. Great analysts know how to respect both their data and the people who provide it. Since employees provided the data, it was important to make sure all employees gave their consent to participate. The data analysts also made sure employees understood how their data would be **collected, stored, managed, and protected**. Collecting and using data ethically is one of the responsibilities of data analysts. In order to maintain confidentiality and protect and store the data effectively, these were the steps they took:
 
 They restricted access to the data to a limited number of analysts. 
@@ -77,9 +77,9 @@ They restricted access to the data to a limited number of analysts.
 They cleaned the data to make sure it was complete, correct, and relevant. Certain data was aggregated and summarized without revealing individual responses. 
 
 They uploaded raw data to an internal data warehouse for an additional layer of security. 
-</h6>
+
 **Analyze**
-<h6 align="left">
+
 Then, the analysts did what they do best: analyze! From the completed surveys, the data analysts **discovered** that an employee’s experience with certain processes was a key indicator of overall job satisfaction. These were their findings:
 
 Employees who experienced a long and complicated hiring process were most likely to leave the company. 
@@ -87,9 +87,9 @@ Employees who experienced a long and complicated hiring process were most likely
 Employees who experienced an efficient and transparent evaluation and feedback process were most likely to remain with the company. 
 
 The group knew it was important to **document** exactly what they found in the analysis, no matter what the results. To do otherwise would diminish trust in the survey process and reduce their ability to collect truthful data from employees in the future. 
-</h6>
+
 **Share**
-<h6 align="left">
+
 Just as they made sure the data was carefully protected, the analysts were also careful **sharing the report**. This is how they shared their findings:
 
 They shared the report with managers who met or exceeded the minimum number of direct reports with submitted responses to the survey. 
@@ -99,9 +99,9 @@ They presented the results to the managers to make sure they had the full pictur
 They asked the managers to personally deliver the results to their teams. 
 
 This process gave managers an opportunity to **communicate the results** with the right context. As a result, they could have productive team conversations about next steps to improve employee engagement. 
-</h6>
+
 **Act**
-<h6 align="left">
+
 The last stage of the process for the team of analysts was to work with leaders within their company and decide how best to **implement changes and take actions** based on the findings. These were their recommendations: 
 
 Standardize the hiring and evaluation process for employees based on the most efficient and transparent practices. 
@@ -109,13 +109,13 @@ Standardize the hiring and evaluation process for employees based on the most ef
 Conduct the same survey annually and compare results with those from the previous year. 
 
 A year later, the same survey was distributed to employees. Analysts anticipated that a comparison between the two sets of results would indicate that the action plan worked. Turns out, the changes improved the retention rate for new employees and the actions taken by leaders were successful! 
-</h6>
+
 **Is people analytics right for you?**
-<h6 align="left">
+
 One of the many things that makes data analytics so exciting is that the problems are always different, the solutions need creativity, and the impact on others can be great — even life-changing or life-saving. As a data analyst, you can be part of these efforts. Maybe you’re even inspired to learn more about the field of people analytics. If so, consider learning more about this field and adding that research to your data analytics journal. You never know: One day soon, you could be helping a company create an amazing work environment for you and your colleagues!
-</h6>
+
 **Additional Resource**
-<h6 align="left">
+
 To learn more about some recent applications of data analytics in the business world, check out the article 
 “4 Examples of Business Analytics in Action”
  from Harvard Business School.  The article reveals how corporations use data insights to optimize their decision-making process. 
