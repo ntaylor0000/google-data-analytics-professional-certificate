@@ -9,7 +9,6 @@
 - *Module 1 challenge*
 
 
-<details>
 <summary>Foundations: Data, Data, Everywhere</summary>
 <h6 align="left">
 This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes, identify opportunities and trends, launch new products, and make thoughtful decisions. In this course, you’ll be introduced to the world of data analytics through hands-on curriculum developed by Google. The material shared covers plenty of key data analytics topics, and it’s designed to give you an overview of what’s to come in the Google Data Analytics Certificate. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analyst tasks using the best tools and resources.
@@ -24,4 +23,4 @@ By the end of this course, learners will:
 - Conduct an analytical thinking self-assessment. 
 - Explore job opportunities available to you upon program completion, and learn about best practices you can leverage during your job search.
 </h6>
-</details>
+
