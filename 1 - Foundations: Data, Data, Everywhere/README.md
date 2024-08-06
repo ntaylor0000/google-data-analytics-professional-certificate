@@ -21,6 +21,7 @@ By the end of this course, learners will:
 <h6 align="left">
   
 **Introducing data analytics**
+
 Data helps us make decisions in everyday life and in business. In this first part of the course, you’ll learn how data analysts use data analytics and the tools of their trade to inform those decisions. You’ll also discover more about this course and the overall program expectations.
   
 **Learning Objectives**
@@ -43,6 +44,7 @@ Data helps us make decisions in everyday life and in business. In this first par
 <h6 align="left">
   
 **All about analytical thinking**
+
 Data analysts balance many different roles in their work. In this part of the course, you’ll learn about some of these roles and the key skills used by analysts. You’ll also explore analytical thinking and how it relates to data-driven decision-making.
   
 **Learning Objectives**
@@ -65,6 +67,7 @@ Data analysts balance many different roles in their work. In this part of the co
 <h6 align="left">
   
 **The wonderful world of data**
+
 Data has its own life cycle, and the work of data analysts often intersects with that cycle. In this part of the course, you’ll learn how the data life cycle and data analysts' work both relate to your progress through this program. You’ll also be introduced to applications used in the data analysis process.
 
 **Learning Objectives**
@@ -86,6 +89,7 @@ Data has its own life cycle, and the work of data analysts often intersects with
 <h6 align="left">
   
 **Set up your toolbox**
+
 As you're learning, spreadsheets, query languages, and data visualization tools are all a big part of a data analyst’s job. In this part of the course, you’ll learn more about the basic concepts involved and explore some examples of how these tools work.
 
 **Learning Objectives**
@@ -105,6 +109,7 @@ As you're learning, spreadsheets, query languages, and data visualization tools 
 <h6 align="left">
   
 **Endless career possibilities**
+
 Businesses of all kinds value the work done by data analysts. In this part of the course, you’ll find out about these businesses and the specific jobs and tasks that analysts perform for them. You’ll also learn how your data analyst certificate will help you meet many of the requirements for a position with these businesses.
 
 **Learning Objectives**
