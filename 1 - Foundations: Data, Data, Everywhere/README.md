@@ -1,7 +1,7 @@
 > "Data! Data! Data!... I can't make bricks without clay!" 
 > -Sherlock Holmes via Sir Arthur Conan Doyle
 
-## Foundations: Data, Data, Everywhere
+# Foundations: Data, Data, Everywhere
 
   
 This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes, identify opportunities and trends, launch new products, and make thoughtful decisions. In this course, you’ll be introduced to the world of data analytics through hands-on curriculum developed by Google. The material shared covers plenty of key data analytics topics, and it’s designed to give you an overview of what’s to come in the Google Data Analytics Certificate. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analyst tasks using the best tools and resources.
@@ -17,7 +17,7 @@ By the end of this course, learners will:
 - Explore job opportunities available to you upon program completion, and learn about best practices you can leverage during your job search.
 
 
-### Module 1
+## Module 1
 **Introducing data analytics**
 Data helps us make decisions in everyday life and in business. In this first part of the course, you’ll learn how data analysts use data analytics and the tools of their trade to inform those decisions. You’ll also discover more about this course and the overall program expectations.
   
@@ -36,7 +36,7 @@ Data helps us make decisions in everyday life and in business. In this first par
 - Program expectations and propers use of the discussion forum
 - Module 1 challenge
 
-### Module 2
+## Module 2
 **All about analytical thinking**
 Data analysts balance many different roles in their work. In this part of the course, you’ll learn about some of these roles and the key skills used by analysts. You’ll also explore analytical thinking and how it relates to data-driven decision-making.
   
@@ -54,7 +54,7 @@ Data analysts balance many different roles in their work. In this part of the co
 - Thinking about outcomes
 - Module 2 challenge
 
-### Module 3
+## Module 3
 **The wonderful world of data**
 Data has its own life cycle, and the work of data analysts often intersects with that cycle. In this part of the course, you’ll learn how the data life cycle and data analysts' work both relate to your progress through this program. You’ll also be introduced to applications used in the data analysis process.
 
@@ -73,7 +73,7 @@ Data has its own life cycle, and the work of data analysts often intersects with
 - Module 3 challenge
 
 
-### Module 4
+## Module 4
 **Set up your toolbox**
 As you're learning, spreadsheets, query languages, and data visualization tools are all a big part of a data analyst’s job. In this part of the course, you’ll learn more about the basic concepts involved and explore some examples of how these tools work.
 
@@ -90,7 +90,7 @@ As you're learning, spreadsheets, query languages, and data visualization tools 
 - Module 4 challenge
 
 
-### Module 5
+## Module 5
 **Endless career possibilities**
 
 Businesses of all kinds value the work done by data analysts. In this part of the course, you’ll find out about these businesses and the specific jobs and tasks that analysts perform for them. You’ll also learn how your data analyst certificate will help you meet many of the requirements for a position with these businesses.
