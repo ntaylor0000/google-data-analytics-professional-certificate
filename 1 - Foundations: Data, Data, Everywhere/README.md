@@ -2,7 +2,7 @@
 > -Sherlock Holmes via Sir Arthur Conan Doyle
 
 ## Foundations: Data, Data, Everywhere
-<h6 align="left">
+
   
 This is the first course in the Google Data Analytics Certificate. Organizations of all kinds need data analysts to help them improve their processes, identify opportunities and trends, launch new products, and make thoughtful decisions. In this course, you’ll be introduced to the world of data analytics through hands-on curriculum developed by Google. The material shared covers plenty of key data analytics topics, and it’s designed to give you an overview of what’s to come in the Google Data Analytics Certificate. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analyst tasks using the best tools and resources.
 
@@ -15,10 +15,10 @@ By the end of this course, learners will:
 - Evaluate the role of analytics in the data ecosystem. 
 - Conduct an analytical thinking self-assessment. 
 - Explore job opportunities available to you upon program completion, and learn about best practices you can leverage during your job search.
-</h6>
+
 
 ### Module 1
-<h6 align="left">
+
   
 **Introducing data analytics**
 
@@ -38,7 +38,7 @@ Data helps us make decisions in everyday life and in business. In this first par
 - Understand the data ecosystem
 - Program expectations and propers use of the discussion forum
 - Module 1 challenge
-</h6>
+
 
 ### Module 2
 <h6 align="left">
