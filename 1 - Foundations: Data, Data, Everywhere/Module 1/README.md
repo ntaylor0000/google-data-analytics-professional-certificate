@@ -1,3 +1,8 @@
+Summary:
+- Optional - Familiar with data analytics? (Diagnostic Quiz: 100%)
+- Learning Log: Think about data in daily life
+- Learning Log: Consider how data anlysts approach tasks
+
 ## Learning Log: Think about data in daily life
 
 **Overview**
