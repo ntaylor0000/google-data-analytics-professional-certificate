@@ -31,7 +31,8 @@ Data helps us make decisions in everyday life and in business. In this first par
 - Get started
 - Transform data into insights
 - Understand the data ecosystem
-- Program expectations and propers use of the discussion forum
+- Embrace your data analyst skills
+- Analytical thinking for effective outcomes
 - Module 1 challenge
 
 ## Module 2
