@@ -6,7 +6,7 @@
 - Test your knowledge on the data ecosystem (Practice Quiz: 100%)
 - Test your knowledge on data analyst skills (Practice Quiz: 100%)
 - 
-
+<details>
 ## Learning Log: Think about data in daily life
 
 **Overview**
@@ -39,7 +39,8 @@ When you’ve finished your entry in the learning log template, make sure to sav
 
 **Example**
 
-
+</details>
+<details>
 ## Learning Log: Consider how data analysts approach tasks
 
 **Overview**
@@ -81,6 +82,7 @@ In your learning log template, write 2-3 sentences (40-60 words) reflecting on w
 Did the details of the case study help to change the way you think about data analysis? Why or why not?
 
 Did you find anything surprising about the way the data analysts approached their task?
+</details>
 
 What else would you like to learn about data analysis?
 
