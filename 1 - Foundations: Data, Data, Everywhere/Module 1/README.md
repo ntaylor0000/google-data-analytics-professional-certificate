@@ -5,7 +5,10 @@
 - Test your knowledge on proper use of the discussion forum (Practice Quiz: 100%)
 - Test your knowledge on the data ecosystem (Practice Quiz: 100%)
 - Test your knowledge on data analyst skills (Practice Quiz: 100%)
-- 
+
+
+## Learning Log Details:
+
 <details>
 <summary>Learning Log: Think about data in daily life</summary>
 <h6 align="left">
