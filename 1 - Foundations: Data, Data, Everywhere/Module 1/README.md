@@ -8,7 +8,8 @@
 - 
 <details>
 <summary>Learning Log: Think about data in daily life</summary>
-
+<h6 align="left">
+  
 **Overview**
 
 By now, you've started to discover how powerful data can be. Throughout this course, you’ll be asked to make entries in a learning log. Your log will be a personal space where you can keep track of your thinking and reflections about the experiences you will have collecting and analyzing data. Reflections may include what you liked, what you would change, and questions that were raised. By the time you complete the entry for this activity, you will have a stronger understanding of data analytics. 
@@ -38,11 +39,13 @@ After you consider how you use data analysis in your own life, take a moment to 
 When you’ve finished your entry in the learning log template, make sure to save the document so your response is somewhere accessible. This will help you continue applying data analysis to your everyday life. You will also be able to track your progress and growth as a data analyst.
 
 **Example**
-
+</h6>
 </details>
+
 <details>
 <summary>Learning Log: Consider how data analysts approach tasks</summary>
-
+<h6 align="left">
+  
 **Overview**
 
 Earlier you learned about how data analysts at one organization used data to improve employee retention. Now, you’ll complete an entry in your learning log to track your thinking and reflections about those data analysts' process and how they approached this problem. By the time you complete this activity, you will have a stronger understanding of how the six phases of the data analysis process can be used to break down tasks and tackle big questions. This will help you apply these steps to future analysis tasks and start tackling big questions yourself.
@@ -82,8 +85,9 @@ In your learning log template, write 2-3 sentences (40-60 words) reflecting on w
 Did the details of the case study help to change the way you think about data analysis? Why or why not?
 
 Did you find anything surprising about the way the data analysts approached their task?
-</details>
 
 What else would you like to learn about data analysis?
 
 When you’ve finished your entry in the learning log template, make sure to save the document so your response is somewhere accessible. This will help you continue applying data analysis to your everyday life. You will also be able to track your progress and growth as a data analyst. 
+</h6>
+</details>
