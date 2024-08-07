@@ -1,5 +1,6 @@
 **File Summary:**
-- Test your knowledge on analytical thinking and outcomes (Practice Quiz: 100%)
+- Test your knowledge on spreadsheets (Practice Quiz: 100%)
+- Test your knowledge on SQL and data visualization (Practice Quiz: 100%)
 - Module 3 challenge (Graded Quiz: 100%)
 
 ## Module 3
