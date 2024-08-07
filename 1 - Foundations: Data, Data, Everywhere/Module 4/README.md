@@ -1,6 +1,6 @@
 **File Summary:**
-- Test your knowledge on analytical thinking and outcomes (Practice Quiz: 100%)
-- Module 3 challenge (Graded Quiz: 100%)
+- Test your knowledge on making fair business decisions (Practice Quiz: 100%)
+- Module 4 challenge (Graded Quiz: 100%)
 
 ## Module 4
 **Endless career possibilities**
