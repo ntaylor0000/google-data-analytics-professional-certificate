@@ -1,5 +1,7 @@
 **File Summary:**
-- Test your knowledge on analytical thinking and outcomes (Practice Quiz: 100%)
+- Test your knowledge on the data life cycle (Practice Quiz: 100%)
+- Test your knowledge on the data analysis process (Practice Quiz: 100%)
+- Test your knowledge on the data analysis toolbox (Practice Quiz: 100%)
 - Module 2 challenge (Graded Quiz: 100%)
 
 ## Module 2
