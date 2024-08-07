@@ -7,7 +7,7 @@
 - Test your knowledge on data analyst skills (Practice Quiz: 100%)
 - 
 <details>
-## Learning Log: Think about data in daily life
+<summary>Learning Log: Think about data in daily life</summary>
 
 **Overview**
 
@@ -41,7 +41,7 @@ When you’ve finished your entry in the learning log template, make sure to sav
 
 </details>
 <details>
-## Learning Log: Consider how data analysts approach tasks
+<summary>Learning Log: Consider how data analysts approach tasks</summary>
 
 **Overview**
 
