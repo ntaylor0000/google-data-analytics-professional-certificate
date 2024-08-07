@@ -20,6 +20,7 @@ By the end of this course, learners will:
 
 ## Module 1
 **Introducing data analytics**
+
 Data helps us make decisions in everyday life and in business. In this first part of the course, you’ll learn how data analysts use data analytics and the tools of their trade to inform those decisions. You’ll also discover more about this course and the overall program expectations.
   
 **Learning Objectives**
@@ -40,6 +41,7 @@ Data helps us make decisions in everyday life and in business. In this first par
 
 ## Module 2
 **The wonderful world of data**
+
 Data has its own life cycle, and the work of data analysts often intersects with that cycle. In this part of the course, you’ll learn how the data life cycle and data analysts' work both relate to your progress through this program. You’ll also be introduced to applications used in the data analysis process.
 
 **Learning Objectives**
@@ -58,6 +60,7 @@ Data has its own life cycle, and the work of data analysts often intersects with
 
 ## Module 3
 **Set up your toolbox**
+
 As you're learning, spreadsheets, query languages, and data visualization tools are all a big part of a data analyst’s job. In this part of the course, you’ll learn more about the basic concepts involved and explore some examples of how these tools work.
 
 **Learning Objectives**
