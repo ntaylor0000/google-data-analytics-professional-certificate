@@ -5,6 +5,8 @@
 - Test your knowledge on proper use of the discussion forum (Practice Quiz: 100%)
 - Test your knowledge on the data ecosystem (Practice Quiz: 100%)
 - Test your knowledge on data analyst skills (Practice Quiz: 100%)
+- Test your knowledge on analytical thinking and outcomes (Practice Quiz: 100%)
+- Module 1 challenge
 
 
 ## Learning Log Details:
