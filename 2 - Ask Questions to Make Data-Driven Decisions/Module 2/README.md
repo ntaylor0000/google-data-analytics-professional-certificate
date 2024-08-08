@@ -2,7 +2,7 @@
 - Test your knowledge on the power of data (Practice Quiz: 100%)
 - Test your knowledge on following the evidence (Practice Quiz: 100%)
 - Test your knowledge on connecting the dots (Practice Quiz: 100%)
-- Module 1 challenge (Graded Quiz: 100%)
+- Module 2 challenge (Graded Quiz: 100%)
 
 ## Module 2
 **Make data-driven decisions**
