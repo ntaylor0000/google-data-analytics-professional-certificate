@@ -22,3 +22,4 @@ Data has its own life cycle, and the work of data analysts often intersects with
 - Outlining the data analysis proceess
 - The data analysis toolbox
 - Module 2 challenge
+ 
