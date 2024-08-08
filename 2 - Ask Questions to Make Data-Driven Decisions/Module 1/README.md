@@ -3,7 +3,6 @@
 - Module 1 challenge (Graded Quiz: 100%)
 
 ## Module 1
-
 **Ask effective questions**
 
 Data analysts are constantly asking questions in order to find solutions and identify business potential. In this part of the course, you’ll learn about effective questioning techniques that will help guide your analysis.
