@@ -17,8 +17,10 @@ By the end of this course, learners will:
 - Conduct an analytical thinking self-assessment. 
 - Explore job opportunities available to you upon program completion, and learn about best practices you can leverage during your job search.
 
-
-## Module 1
+<details>
+<summary>Module 1</summary>
+<h6 align="left">
+  
 **Introducing data analytics**
 
 Data helps us make decisions in everyday life and in business. In this first part of the course, you’ll learn how data analysts use data analytics and the tools of their trade to inform those decisions. You’ll also discover more about this course and the overall program expectations.
@@ -38,8 +40,12 @@ Data helps us make decisions in everyday life and in business. In this first par
 - Embrace your data analyst skills
 - Analytical thinking for effective outcomes
 - Module 1 challenge
-
-## Module 2
+  
+</h6>
+</details>
+<details>
+<summary>Module 2</summary>
+  
 **The wonderful world of data**
 
 Data has its own life cycle, and the work of data analysts often intersects with that cycle. In this part of the course, you’ll learn how the data life cycle and data analysts' work both relate to your progress through this program. You’ll also be introduced to applications used in the data analysis process.
@@ -58,7 +64,11 @@ Data has its own life cycle, and the work of data analysts often intersects with
 - The data analysis toolbox
 - Module 2 challenge
 
-## Module 3
+</h6>
+</details>
+<details>
+<summary>Module 3</summary>
+                   
 **Set up your toolbox**
 
 As you're learning, spreadsheets, query languages, and data visualization tools are all a big part of a data analyst’s job. In this part of the course, you’ll learn more about the basic concepts involved and explore some examples of how these tools work.
@@ -74,8 +84,11 @@ As you're learning, spreadsheets, query languages, and data visualization tools 
 - Getting started with SQL and data visualization
 - Module 3 challenge
 
+</h6>
+</details>
+<details>
+<summary>Module 4</summary>
 
-## Module 4
 **Endless career possibilities**
 
 Businesses of all kinds value the work done by data analysts. In this part of the course, you’ll find out about these businesses and the specific jobs and tasks that analysts perform for them. You’ll also learn how your data analyst certificate will help you meet many of the requirements for a position with these businesses.
@@ -97,3 +110,5 @@ Businesses of all kinds value the work done by data analysts. In this part of th
 - Module 4 challenge
 - Course wrap-up
 
+</h6>
+</details>
