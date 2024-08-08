@@ -1,7 +1,7 @@
 > "Data! Data! Data!... I can't make bricks without clay!" 
 > -Sherlock Holmes via Sir Arthur Conan Doyle
 
-# Foundations: Data, Data, Everywhere
+## Foundations: Data, Data, Everywhere
 
 - [1 - Foundations: Data, Data, Everywhere](https://www.coursera.org/learn/foundations-data?specialization=google-data-analytics)
 
