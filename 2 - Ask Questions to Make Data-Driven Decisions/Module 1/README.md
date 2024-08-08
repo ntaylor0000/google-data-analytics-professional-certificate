@@ -1,5 +1,5 @@
 **File Summary**
-- Test your knowledge on crafting effective questions (Practice Quiz: 100%)
+- Test your knowledge on taking action with data(Practice Quiz: 100%)
 - Test your knowledge on solving problems with data (Practice Quiz: 100%)
 - Module 1 challenge (Graded Quiz: 100%)
 
