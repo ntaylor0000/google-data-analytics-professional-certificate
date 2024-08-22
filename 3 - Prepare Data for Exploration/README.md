@@ -1,10 +1,5 @@
 
-
-
-
-
-
-# 2 - Ask Questions to Make Data-Driven Decisions
+# 3 - Prepare Data for Exploration
 
 - [3 - Prepare Data for Exploration](https://www.coursera.org/learn/data-preparation)
 
