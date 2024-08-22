@@ -1,6 +1,6 @@
 **File Summary**
-- Test your knowledge on collecting data(Practice Quiz: 100%)
-- Test your knowledge on data forms and structures(Practice Quiz: 100%)
+- Test your knowledge on collecting data (Practice Quiz: 100%)
+- Test your knowledge on data forms and structures (Practice Quiz: 100%)
 - Test your knowledge on data types, fields, and values (Practice Quiz: 100%)
 - Module 1 challenge (Graded Quiz: 100%)
 
