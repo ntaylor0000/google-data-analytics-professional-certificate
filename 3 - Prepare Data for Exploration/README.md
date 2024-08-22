@@ -6,40 +6,43 @@
 
 # 2 - Ask Questions to Make Data-Driven Decisions
 
-- [2 - Ask Questions to Make Data-Driven Decisions](https://www.coursera.org/learn/ask-questions-make-decisions?specialization=google-data-analytics)
+- [3 - Prepare Data for Exploration](https://www.coursera.org/learn/data-preparation)
 
-This is the second course in the Google Data Analytics Certificate. You’ll build on your understanding of the topics that were introduced in the first course of this certificate program. The material will help you learn how to ask effective questions, make data-driven decisions, and meet stakeholders’ needs. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analytics tasks.
+This is the third course in the Google Data Analytics Certificate. As you continue to build on your understanding of the topics from the first two courses, you’ll be introduced to new topics that will help you gain practical data analytics skills. You’ll learn how to use tools like spreadsheets and SQL to extract and make use of the right data for your objectives, and how to organize and protect your data. Current Google data analysts will continue to instruct and provide you with hands-on ways to accomplish common data analyst tasks with the best tools and resources.
 
 Learners who complete this certificate program will be equipped to apply for introductory-level jobs as data analysts. No previous experience is necessary.
 
 By the end of this course, learners will:
-- Learn about effective questioning techniques that can help guide analysis. 
-- Gain an understanding of data-driven decision-making and how data analysts present findings.
-- Explore a variety of real-world business scenarios as an example of questioning and decision-making.
-- Discover how and why spreadsheets are an important tool for data analysts.
-- Examine the key ideas associated with structured thinking and how they can help analysts better understand problems and develop solutions.
-- Learn strategies for managing the expectations of stakeholders while establishing clear communication with a data analytics team to achieve business objectives.
+- Find out how analysts decide what data to collect for analysis.
+- Learn about structured and unstructured data, data types, and data formats.
+- Discover how to identify different types of bias in data to help ensure data credibility. 
+- Explore how analysts use spreadsheets and SQL within databases and data sets.
+- Examine open data and the relationship between, and importance of, data ethics and data privacy.
+- Gain an understanding of how to access databases and extract, filter, and sort the data they contain.
+- Learn best practices for organizing data and keeping it secure.
 
 <details>
 <summary>Module 1</summary>
 <h6 align="left">
   
-**Ask effective questions**
+**Data types and structures**
 
-Data analysts are constantly asking questions in order to find solutions and identify business potential. In this part of the course, you’ll learn about effective questioning techniques that will help guide your analysis.
-  
+A massive amount of data is generated every single day. In this part of the course, you will discover how this data is generated and how analysts decide which data to use for analysis. You’ll also learn about structured and unstructured data, data types, and data formats as you start thinking about how to prepare your data for analysis.
+
 **Learning Objectives**
-- Explain the characteristics of effective questions with reference to the SMART framework
-- Discuss the common types of problems addressed by a data analyst
-- Explain how each step of the problem-solving roadmap contributes to common analysis scenarios
-- Explain the data analysis process, making specific reference to the ask, prepare, process, analyze, share, and act phases
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Explain how Kaggle can benefit a data analyst.
+- Explain how data is generated as a part of our daily activities with reference to the types of data generated.
+- Explain factors that should be considered when making decisions about data collection.
+- Explain the difference between structured and unstructured data.
+- Discuss the difference between data and data types.
+- Explain the relationship between data types, fields, and values.
+- Discuss wide and long data formats with references to organization and purpose.
 
 **Lessons**
-- Problem-solving and effective questioning
-- Take action with data
-- Solve problems with data
-- Craft effective questions
+- Data exploration
+- Collect data
+- Differentiate data formats and structures
+- Explore data types, fields, and values
 - Module 1 challenge
   
 </h6>
@@ -47,22 +50,26 @@ Data analysts are constantly asking questions in order to find solutions and ide
 <details>
 <summary>Module 2</summary>
   
-**Make data-driven decisions**
+**Data responsibility**
 
-In analytics, data drives decision-making, and this is your opportunity to explore data of all kinds and its impact on all sorts of business decisions. You’ll also learn how to effectively share your data through reports and dashboards.
+Before you work with data, you must confirm that it is unbiased and credible. After all, if you start your analysis with unreliable data, you won’t be able to trust your results. In this part of the course, you will learn to identify bias in data and to ensure your data is credible. You’ll also explore open data and the importance of data ethics and data privacy.
 
 **Learning Objectives**
-- Discuss the use of data in the decision-making process
-- Compare and contrast data-driven decision making with data-inspired decision making
-- Explain the difference between quantitative and qualitative data including reference to their use and specific examples
-- Discuss the importance and benefits of dashboards and reports to the data analyst with reference to Tableau and spreadsheets
-- Differentiate between data and metrics, giving specific examples
-- Demonstrate an understanding of what is involved in using a mathematical approach to analyze a problem
+- Explain what is involved in reviewing data to identify bias.
+- Discuss the difference between biased and unbiased data.
+- Identify different types of bias including confirmation, interpretation, and observer bias.
+- Discuss characteristics of credible sources of data including reference to untidy data.
+- Explain the concept of open data with reference to the ongoing debate in data analytics.
+- Define data ethics and data privacy.
+- Explain the relationship between data ethics and data privacy.
+- Demonstrate an understanding of the benefits of anonymizing data.
+- Demonstrate an awareness of the accessibility issues associated with open data.
 
 **Lessons**
-- Understand the power of data
-- Follow the evidence
-- Connect the data dots
+- Unbiased and objective data
+- Achieve data credibility
+- Data ethics and privacy
+- Understand open data
 - Module 2 challenge
 
 </h6>
@@ -70,22 +77,25 @@ In analytics, data drives decision-making, and this is your opportunity to explo
 <details>
 <summary>Module 3</summary>
                    
-**Spreadhseet Magic**
+**Database essentials**
 
-Spreadsheets are a key data analytics tool. Here you’ll learn both why and how data analysts use spreadsheets in their work. You’ll also investigate how structured thinking helps analysts understand problems and come up with solutions.
+When you analyze large datasets, you’ll access much of the data from a database. In this part of the course, you will learn about databases, including how to access them and extract, filter, and sort the data they contain. You’ll also explore metadata to discover its many facets and how analysts use it to better understand their data.
 
 **Learning Objectives**
-- Discuss the data analyst’s use of spreadsheets with reference to roles and responsibilities
-- Demonstrate the use of spreadsheets to complete basic tasks of the data analyst including entering and organizing data
-- Demonstrate an understanding of the use of formulas in spreadsheets including a definition and specific examples
-- Compare formulas and functions with reference to similarities and differences
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Describe databases with references to their functions and components.
+- Explain metadata as it relates to databases.
+- Discuss the importance of metadata and how it relates to the work of a data analyst.
+- Recall the issues and steps involved in accessing data from multiple sources.
+- Explain the use of filters and sorting functionality in spreadsheets.
+- Demonstrate how to use spreadsheet functionality to import and inspect a given set of data.
+- Demonstrate how to use SQL functions to extract data from a given database.
 
 **Lessons**
-- Work with spreadsheets
-- Formulas in spreadsheets
-- Functions in spreadsheets
-- Save time with structured thinking
+- Work with databases
+- Manage data with metadata
+- Access different data sources
+- Sort and filter data
+- Large datasets in SQL
 - Module 3 challenge
 
 </h6>
@@ -93,20 +103,38 @@ Spreadsheets are a key data analytics tool. Here you’ll learn both why and how
 <details>
 <summary>Module 4</summary>
 
-**Always remember the stakeholder**
+**Organize and protect data**
 
-Successful data analysts balance the needs and expectations of their team and the stakeholders they support. In this part of the course, you’ll learn strategies for managing stakeholder expectations while establishing clear communication with your team.
+Good organizational skills are a big part of most types of work, especially data analytics. In this part of the course, you will learn best practices for organizing data and keeping it secure. You’ll also understand how analysts use file naming conventions to help them keep their work organized.
 
 **Learning Objectives**
-- Discuss communication best practices for the data analyst including reference to office communication, conflict resolution, facilitating meetings, and status reports
-- Discuss the importance of focus on stakeholder expectations
-- Identify common limitations with data, with specific reference to speed versus accuracy and responding to time-sensitive requests
+- Explain steps that can be taken to secure data.
+- Discuss the use of file-naming conventions by data analysts.
+- Describe best practices for organizing data.
 
 **Lessons**
-- Balance team and stakeholder needs
-- Clear communication is key
-- Amazing teamwork
+- Bring data to order
+- Secure data
 - Module 4 challenge
+
+</h6>
+</details>
+<details>
+<summary>Module 5</summary>
+
+**Engage in the data community**
+
+Having a strong online presence can be a big help for job seekers of all kinds. In this part of the course, you will explore how to manage your online presence. You’ll also discover the benefits of networking with other data analytics professionals.
+
+**Learning Objectives**
+- Apply best practices to develop a network..
+- Explain the importance of networking with other data analysts including reference to mentorship and communication.
+- Apply best practices to manage a professional online presence.
+- Describe approaches to build an online presence as a data analyst.
+
+**Lessons**
+- Create or enhance your online presence
+- Build a data analytics network
 - Course wrap-up
 
 </h6>
