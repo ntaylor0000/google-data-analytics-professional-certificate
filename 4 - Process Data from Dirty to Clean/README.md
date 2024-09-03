@@ -1,40 +1,42 @@
 
-# 2 - Ask Questions to Make Data-Driven Decisions
+# 4 - Process Data from Dirty to Clean
 
-- [2 - Ask Questions to Make Data-Driven Decisions](https://www.coursera.org/learn/ask-questions-make-decisions?specialization=google-data-analytics)
+- [4 - Process Data from Dirty to Clean](https://www.coursera.org/learn/process-data)
 
-This is the second course in the Google Data Analytics Certificate. You’ll build on your understanding of the topics that were introduced in the first course of this certificate program. The material will help you learn how to ask effective questions, make data-driven decisions, and meet stakeholders’ needs. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analytics tasks.
+This is the fourth course in the Google Data Analytics Certificate. In this course, you’ll continue to build your understanding of data analytics and the concepts and tools that data analysts use in their work. You’ll learn how to check and clean your data using spreadsheets and SQL, as well as how to verify and report your data cleaning results. Current Google data analysts will continue to instruct and provide you with hands-on ways to accomplish common data analyst tasks with the best tools and resources.
 
 Learners who complete this certificate program will be equipped to apply for introductory-level jobs as data analysts. No previous experience is necessary.
 
 By the end of this course, learners will:
-- Learn about effective questioning techniques that can help guide analysis. 
-- Gain an understanding of data-driven decision-making and how data analysts present findings.
-- Explore a variety of real-world business scenarios as an example of questioning and decision-making.
-- Discover how and why spreadsheets are an important tool for data analysts.
-- Examine the key ideas associated with structured thinking and how they can help analysts better understand problems and develop solutions.
-- Learn strategies for managing the expectations of stakeholders while establishing clear communication with a data analytics team to achieve business objectives.
+- Check for data integrity.
+- Apply data cleaning techniques using spreadsheets. 
+- Develop basic SQL queries for use on databases.
+- Use basic SQL functions to clean and transform data.
+- Verify the results of cleaning data.
+- Write an effective data cleaning report
 
 <details>
 <summary>Module 1</summary>
 <h6 align="left">
   
-**Ask effective questions**
+**The importance of integrity**
 
-Data analysts are constantly asking questions in order to find solutions and identify business potential. In this part of the course, you’ll learn about effective questioning techniques that will help guide your analysis.
-  
+Data integrity is critical to successful analysis. In this part of the course, you’ll explore methods and steps that analysts take to check their data for integrity. This includes knowing what to do when you don’t have enough data. You’ll also learn about random samples and understand how to avoid sampling bias. All of these methods will also help you ensure your analysis is successful.
+ 
 **Learning Objectives**
-- Explain the characteristics of effective questions with reference to the SMART framework
-- Discuss the common types of problems addressed by a data analyst
-- Explain how each step of the problem-solving roadmap contributes to common analysis scenarios
-- Explain the data analysis process, making specific reference to the ask, prepare, process, analyze, share, and act phases
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Describe statistical measures associated with data integrity including statistical power, hypothesis testing, and margin of error
+- Describe strategies that can be used to address insufficient data
+- Discuss the importance of sample size with reference to sample bias and random samples
+- Describe the relationship between data and related business objectives
+- Define data integrity with reference to types and risks
+- Discuss the importance of pre-cleaning activities
 
 **Lessons**
-- Problem-solving and effective questioning
-- Take action with data
-- Solve problems with data
-- Craft effective questions
+- Focus on integrity
+- Data integrity and analytics objectives
+- Overcome the challenges of insufficient data
+- Test your data
+- Consider the margin of error
 - Module 1 challenge
   
 </h6>
@@ -42,22 +44,21 @@ Data analysts are constantly asking questions in order to find solutions and ide
 <details>
 <summary>Module 2</summary>
   
-**Make data-driven decisions**
+**Clean data for more accurate insights**
 
-In analytics, data drives decision-making, and this is your opportunity to explore data of all kinds and its impact on all sorts of business decisions. You’ll also learn how to effectively share your data through reports and dashboards.
+Every data analyst wants to analyze clean data. In this part of the course, you’ll learn the difference between clean and dirty data. Then, you’ll practice cleaning data in spreadsheets and other tools.
 
 **Learning Objectives**
-- Discuss the use of data in the decision-making process
-- Compare and contrast data-driven decision making with data-inspired decision making
-- Explain the difference between quantitative and qualitative data including reference to their use and specific examples
-- Discuss the importance and benefits of dashboards and reports to the data analyst with reference to Tableau and spreadsheets
-- Differentiate between data and metrics, giving specific examples
-- Demonstrate an understanding of what is involved in using a mathematical approach to analyze a problem
+- Differentiate between clean and dirty data
+- Explain the characteristics of dirty data
+- Describe data cleaning techniques with reference to identifying errors, redundancy, compatibility and continuous monitoring
+- Identify common pitfalls when cleaning data
+- Demonstrate an understanding of the use of spreadsheets to clean data
 
 **Lessons**
-- Understand the power of data
-- Follow the evidence
-- Connect the data dots
+- Data cleaning is a must
+- First steps toward clean data
+- Continue cleaning data in spreadsheets
 - Module 2 challenge
 
 </h6>
@@ -65,22 +66,21 @@ In analytics, data drives decision-making, and this is your opportunity to explo
 <details>
 <summary>Module 3</summary>
                    
-**Spreadhseet Magic**
+**Data cleaning with SQL**
 
-Spreadsheets are a key data analytics tool. Here you’ll learn both why and how data analysts use spreadsheets in their work. You’ll also investigate how structured thinking helps analysts understand problems and come up with solutions.
+Knowing a variety of ways to clean data can make a data analyst’s job much easier. In this part of the course, you’ll use SQL to clean data from databases. In particular, you’ll explore how SQL queries and functions can be used to clean and transform your data before an analysis.
 
 **Learning Objectives**
-- Discuss the data analyst’s use of spreadsheets with reference to roles and responsibilities
-- Demonstrate the use of spreadsheets to complete basic tasks of the data analyst including entering and organizing data
-- Demonstrate an understanding of the use of formulas in spreadsheets including a definition and specific examples
-- Compare formulas and functions with reference to similarities and differences
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Describe how SQL can be used to clean large datasets
+- Compare spreadsheet data-cleaning functions to those associated with SQL in databases
+- Develop basic SQL queries for use with databases
+- Apply basic SQL functions for use in cleaning string variables in a database
+- Apply basic SQL functions for transforming data variables
 
 **Lessons**
-- Work with spreadsheets
-- Formulas in spreadsheets
-- Functions in spreadsheets
-- Save time with structured thinking
+- SQL for sparkling clean data
+- Learn basic SQL queries
+- Transforming data
 - Module 3 challenge
 
 </h6>
@@ -88,21 +88,20 @@ Spreadsheets are a key data analytics tool. Here you’ll learn both why and how
 <details>
 <summary>Module 4</summary>
 
-**Always remember the stakeholder**
+**Verify and report on cleaning results**
 
-Successful data analysts balance the needs and expectations of their team and the stakeholders they support. In this part of the course, you’ll learn strategies for managing stakeholder expectations while establishing clear communication with your team.
+When you clean data, you make changes to the original dataset. It’s important to verify the changes you make are accurate and to let your teammates know about the changes. In this part of the course, you’ll learn to verify that data is clean and report your data cleaning results. With verified clean data, you’re ready to begin analyzing!
 
 **Learning Objectives**
-- Discuss communication best practices for the data analyst including reference to office communication, conflict resolution, facilitating meetings, and status reports
-- Discuss the importance of focus on stakeholder expectations
-- Identify common limitations with data, with specific reference to speed versus accuracy and responding to time-sensitive requests
+- Describe the process involved in verifying the results of cleaning data
+- Describe what is involved in manually cleaning data
+- Discuss the elements and importance of data-cleaning reports
+- Describe the benefits of documenting data cleaning process
 
 **Lessons**
-- Balance team and stakeholder needs
-- Clear communication is key
-- Amazing teamwork
+- Manually cleaning data
+- Document the cleaning process
 - Module 4 challenge
-- Course wrap-up
 
 </h6>
 </details>
