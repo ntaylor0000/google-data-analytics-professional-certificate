@@ -1,4 +1,12 @@
+**File Summary**
+- Test your knowledge on working with databases (Practice Quiz: 100%)
+- Test your knowledge on metadata (Practice Quiz: 100%)
+- Test your knowledge on accessing data sources (Practice Quiz: 100%)
+- Test your knowledge on sorting and filtering (Practice Quiz: 100%)
+- Test your knowledge on using SQL with large datasets (Practice Quiz: 100%)
+- Module 3 challenge (Graded Quiz: 100%)
 
+## Module 3
 **Database essentials**
 
 When you analyze large datasets, you’ll access much of the data from a database. In this part of the course, you will learn about databases, including how to access them and extract, filter, and sort the data they contain. You’ll also explore metadata to discover its many facets and how analysts use it to better understand their data.
