@@ -1,5 +1,8 @@
+**File Summary**
+- Test your knowledge on (Practice Quiz: 100%)
+- Module 5 challenge (Graded Quiz: 100%)
 
-
+## Module 5
 **Engage in the data community**
 
 Having a strong online presence can be a big help for job seekers of all kinds. In this part of the course, you will explore how to manage your online presence. You’ll also discover the benefits of networking with other data analytics professionals.
