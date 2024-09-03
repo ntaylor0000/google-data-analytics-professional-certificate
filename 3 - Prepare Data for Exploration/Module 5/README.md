@@ -1,7 +1,3 @@
-**File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
-- Module 5 challenge (Graded Quiz: 100%)
-
 ## Module 5
 **Engage in the data community**
 
