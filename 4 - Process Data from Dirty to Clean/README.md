@@ -105,3 +105,45 @@ When you clean data, you make changes to the original dataset. It’s important 
 
 </h6>
 </details>
+<details>
+<summary>Module 5</summary>
+
+**Optional: Add data to your resume**
+
+Creating an effective resume will help you in your data analytics career. In this part of the course, you’ll learn all about the job application process. Your focus will be on building a resume that highlights your strengths and relevant experience.
+
+**Learning Objectives**
+- Identify key elements of a data analyst resume
+- Demonstrate an understanding how previous experience may be added to a resume
+- Discuss how a data analyst job description may be aligned to a particular area of interest
+
+**Lessons**
+- The data analyst hiring process
+- Key elements of a data professional's resume
+- Highlight your skills and experience
+- Explore areas of interest
+
+</h6>
+</details>
+<details>
+<summary>Module 6</summary>
+
+**Course wrap-up**
+
+Review the course glossary and prepare for the next course in the Google Data Analytics Certificate program.
+
+**Learning Objectives**
+- Describe statistical measures associated with data integrity including statistical power, hypothesis testing, and margin of error
+- Describe strategies that can be used to address insufficient data
+- Discuss the importance of sample size with reference to sample bias and random samples
+- Describe the relationship between data and related business objectives
+- Define data integrity with reference to types and risks
+- Describe data cleaning techniques with reference to identifying errors, redundancy, compatibility and continuous monitoring
+- Demonstrate an understanding of the use of spreadsheets to clean data
+- Describe how SQL can be used to clean large datasets
+- Describe the benefits of documenting data cleaning process
+- Discuss the elements and importance of data-cleaning reports
+- Describe the process involved in verifying the results of cleaning data
+
+</h6>
+</details>
