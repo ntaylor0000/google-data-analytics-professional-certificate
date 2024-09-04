@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on  (Practice Quiz: 100%)
+- Test your knowledge on data cleaning (Practice Quiz: 100%)
+- Test your knowledge on the first step toward clean data (Practice Quiz: 100%)
+- Test your knowledge on cleaning data in spreadsheets (Practice Quiz: 100%)
 - Module 2 challenge (Graded Quiz: 100%)
 
 ## Module 2
