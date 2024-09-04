@@ -1,5 +1,6 @@
 **File Summary**
-- Test your knowledge on  (Practice Quiz: 100%)
+- Test your knowledge on manual data cleaning (Practice Quiz: 100%)
+- Test your knowledge on documenting the cleaning process (Practice Quiz: 100%)
 - Module 4 challenge (Graded Quiz: 100%)
 
 ## Module 4
