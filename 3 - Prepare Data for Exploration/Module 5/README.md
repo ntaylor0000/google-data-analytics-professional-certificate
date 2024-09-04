@@ -1,3 +1,6 @@
+**File Summary**
+- N/A
+
 ## Module 5
 **Engage in the data community**
 
