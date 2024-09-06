@@ -1,107 +1,92 @@
-# 2 - Ask Questions to Make Data-Driven Decisions
+# 8 - Google Data Analytics Capstone: Complete a Case Study
 
-- [2 - Ask Questions to Make Data-Driven Decisions](https://www.coursera.org/learn/ask-questions-make-decisions?specialization=google-data-analytics)
+- [8 - Google Data Analytics Capstone: Complete a Case Study](https://www.coursera.org/learn/google-data-analytics-capstone)
 
-This is the second course in the Google Data Analytics Certificate. You’ll build on your understanding of the topics that were introduced in the first course of this certificate program. The material will help you learn how to ask effective questions, make data-driven decisions, and meet stakeholders’ needs. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analytics tasks.
+This course is the eighth and final course in the Google Data Analytics Certificate. You’ll have the opportunity to complete a case study, which will help prepare you for your data analytics job hunt. Case studies are commonly used by employers to assess analytical skills. For your case study, you’ll choose an analytics-based scenario. You’ll then ask questions, prepare, process, analyze, visualize and act on the data from the scenario. You’ll also learn about useful job hunting skills, common interview questions and responses, and materials to build a portfolio online. Current Google data analysts will continue to instruct and provide you with hands-on ways to accomplish common data analyst tasks with the best tools and resources.
 
 Learners who complete this certificate program will be equipped to apply for introductory-level jobs as data analysts. No previous experience is necessary.
 
 By the end of this course, learners will:
-- Learn about effective questioning techniques that can help guide analysis. 
-- Gain an understanding of data-driven decision-making and how data analysts present findings.
-- Explore a variety of real-world business scenarios as an example of questioning and decision-making.
-- Discover how and why spreadsheets are an important tool for data analysts.
-- Examine the key ideas associated with structured thinking and how they can help analysts better understand problems and develop solutions.
-- Learn strategies for managing the expectations of stakeholders while establishing clear communication with a data analytics team to achieve business objectives.
+- Learn the benefits and uses of case studies and portfolios in the job search.
+- Explore real world job interview scenarios and common interview questions.
+- Discover how case studies can be a part of the job interview process. 
+- Examine and consider different case study scenarios. 
+- Have the chance to complete your own case study for your portfolio.
 
 <details>
 <summary>Module 1</summary>
 <h6 align="left">
   
-**Ask effective questions**
+**Learn about capstone basics**
 
-Data analysts are constantly asking questions in order to find solutions and identify business potential. In this part of the course, you’ll learn about effective questioning techniques that will help guide your analysis.
-  
+A capstone is a crowning achievement. In this part of the course, you’ll be introduced to capstone projects, case studies, and portfolios, and will learn how they help employers better understand your skills and capabilities. You’ll also have an opportunity to explore the online portfolios of real data analysts.
+
 **Learning Objectives**
-- Explain the characteristics of effective questions with reference to the SMART framework
-- Discuss the common types of problems addressed by a data analyst
-- Explain how each step of the problem-solving roadmap contributes to common analysis scenarios
-- Explain the data analysis process, making specific reference to the ask, prepare, process, analyze, share, and act phases
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Identify the key features and attributes of a completed case study
+- Differentiate between a capstone, case study, and a portfolio
 
 **Lessons**
-- Problem-solving and effective questioning
-- Take action with data
-- Solve problems with data
-- Craft effective questions
-- Module 1 challenge
+- Introduction to the capstone
+- Sample cases for data professionals
   
 </h6>
 </details>
 <details>
 <summary>Module 2</summary>
   
-**Make data-driven decisions**
+**Optional: Build your portfolio**
 
-In analytics, data drives decision-making, and this is your opportunity to explore data of all kinds and its impact on all sorts of business decisions. You’ll also learn how to effectively share your data through reports and dashboards.
+In this part of the course, you’ll review two possible tracks to complete your case study. You can use a dataset from one of the business cases provided or search for a public dataset to develop a business case for an area of personal interest. In addition, you'll be introduced to several platforms for hosting your completed case study.
 
 **Learning Objectives**
-- Discuss the use of data in the decision-making process
-- Compare and contrast data-driven decision making with data-inspired decision making
-- Explain the difference between quantitative and qualitative data including reference to their use and specific examples
-- Discuss the importance and benefits of dashboards and reports to the data analyst with reference to Tableau and spreadsheets
-- Differentiate between data and metrics, giving specific examples
-- Demonstrate an understanding of what is involved in using a mathematical approach to analyze a problem
+- Apply the practices and procedures associated with the data analysis process to a given set of data.
+- Discuss the expectations involved in completing a data analysis case study.
+- Move their portfolio to Kaggle, post and make it public
+- Add R Code to a Kaggle Notebooks
+- Recall the different types of Kaggle Notebooks
 
 **Lessons**
-- Understand the power of data
-- Follow the evidence
-- Connect the data dots
-- Module 2 challenge
+- Get started
+- Case study track A: Work with existing questions and datasets
+- Case study track B: Choose your own questions and dataset
+- Share your case study and portfolio
 
 </h6>
 </details>
 <details>
 <summary>Module 3</summary>
                    
-**Spreadhseet Magic**
+**Optional: Use your portfolio**
 
-Spreadsheets are a key data analytics tool. Here you’ll learn both why and how data analysts use spreadsheets in their work. You’ll also investigate how structured thinking helps analysts understand problems and come up with solutions.
+Your portfolio is meant to be seen and explored. In this part of the course, you’ll learn how to discuss your portfolio and highlight specific skills in interview scenarios. You’ll also create and practice an elevator pitch for your case study. Finally, you’ll discover how to position yourself as a top applicant for data analyst jobs with useful and practical interview tips.
 
 **Learning Objectives**
-- Discuss the data analyst’s use of spreadsheets with reference to roles and responsibilities
-- Demonstrate the use of spreadsheets to complete basic tasks of the data analyst including entering and organizing data
-- Demonstrate an understanding of the use of formulas in spreadsheets including a definition and specific examples
-- Compare formulas and functions with reference to similarities and differences
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Discuss the benefits and uses of case studies and portfolios in the job search.
+- Discuss the use of case studies and portfolios when communicating with recruiters and potential employers.
 
 **Lessons**
-- Work with spreadsheets
-- Formulas in spreadsheets
-- Functions in spreadsheets
-- Save time with structured thinking
-- Module 3 challenge
+- Share your work with recruiters
+- In the interview
+- Before you accept
 
 </h6>
 </details>
 <details>
 <summary>Module 4</summary>
 
-**Always remember the stakeholder**
+**Put your certificate to work**
 
-Successful data analysts balance the needs and expectations of their team and the stakeholders they support. In this part of the course, you’ll learn strategies for managing stakeholder expectations while establishing clear communication with your team.
+Earning your Google Data Analytics Certificate is a badge of honor. It's also a real badge. In this part of the course, you'll learn how to claim your certificate badge and display it in your LinkedIn profile. You'll also be introduced to job search benefits that you can claim as a certificate holder, including access to the Big Interview platform and Byteboard interviews.
 
 **Learning Objectives**
-- Discuss communication best practices for the data analyst including reference to office communication, conflict resolution, facilitating meetings, and status reports
-- Discuss the importance of focus on stakeholder expectations
-- Identify common limitations with data, with specific reference to speed versus accuracy and responding to time-sensitive requests
+- Identify key software applications critical to the work of a data analyst including reference to spreadsheets, databases, query languages, and visualization tools (applications).
+- Follow the steps to register for the Big Interview platform
+- Describe how to sign up and take a Byteboard interview
+- Understand how to claim your Google Data Analytics Certificate badge
 
 **Lessons**
-- Balance team and stakeholder needs
-- Clear communication is key
-- Amazing teamwork
-- Module 4 challenge
-- Course wrap-up
+- Program wrap-up
+- AI for data analytics
 
 </h6>
 </details>
