@@ -1,39 +1,40 @@
-# 2 - Ask Questions to Make Data-Driven Decisions
+# 6 - Share Data Through the Art of Visualization
 
-- [2 - Ask Questions to Make Data-Driven Decisions](https://www.coursera.org/learn/ask-questions-make-decisions?specialization=google-data-analytics)
+- [6 - Share Data Through the Art of Visualization](https://www.coursera.org/learn/visualize-data/)
 
-This is the second course in the Google Data Analytics Certificate. You’ll build on your understanding of the topics that were introduced in the first course of this certificate program. The material will help you learn how to ask effective questions, make data-driven decisions, and meet stakeholders’ needs. Current Google data analysts will instruct and provide you with hands-on ways to accomplish common data analytics tasks.
+This is the sixth course in the Google Data Analytics Certificate. You’ll learn how to visualize and present your data findings as you complete the data analysis process. This course will show you how data visualizations, such as visual dashboards, can help bring your data to life. You’ll also explore Tableau, a data visualization platform that will help you create effective visualizations for your presentations. Current Google data analysts will continue to instruct and provide you with hands-on ways to accomplish common data analyst tasks with the best tools and resources.
 
 Learners who complete this certificate program will be equipped to apply for introductory-level jobs as data analysts. No previous experience is necessary.
 
 By the end of this course, learners will:
-- Learn about effective questioning techniques that can help guide analysis. 
-- Gain an understanding of data-driven decision-making and how data analysts present findings.
-- Explore a variety of real-world business scenarios as an example of questioning and decision-making.
-- Discover how and why spreadsheets are an important tool for data analysts.
-- Examine the key ideas associated with structured thinking and how they can help analysts better understand problems and develop solutions.
-- Learn strategies for managing the expectations of stakeholders while establishing clear communication with a data analytics team to achieve business objectives.
+- Understand the importance of data visualization.
+- Learn how to form a compelling narrative through data stories.
+- Gain an understanding of how to use Tableau to create dashboards and dashboard filters.
+- Discover how to use Tableau to create effective visualizations. 
+- Explore the principles and practices involved with effective presentations.
+- Learn how to consider potential limitations associated with the data in your presentations.
+- Understand how to apply best practices to a Q&A with your audience.
 
 <details>
 <summary>Module 1</summary>
 <h6 align="left">
   
-**Ask effective questions**
+**Visualize data**
 
-Data analysts are constantly asking questions in order to find solutions and identify business potential. In this part of the course, you’ll learn about effective questioning techniques that will help guide your analysis.
-  
+In this module, you’ll delve into the various types of data visualizations and explore what makes an effective visualization. You'll also learn about accessibility, design thinking, and other factors that will help you use data visualizations to effectively communicate data insights.
+
 **Learning Objectives**
-- Explain the characteristics of effective questions with reference to the SMART framework
-- Discuss the common types of problems addressed by a data analyst
-- Explain how each step of the problem-solving roadmap contributes to common analysis scenarios
-- Explain the data analysis process, making specific reference to the ask, prepare, process, analyze, share, and act phases
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Explain the key concepts involved in design thinking as they relate to data visualization
+- Describe the use of data visualizations to talk about data and the results of data analysis
+- Discuss accessibility issues associated with data visualization
+- Explain the importance of data visualization to data analysts
+- Describe the key concepts involved in data visualization
 
 **Lessons**
-- Problem-solving and effective questioning
-- Take action with data
-- Solve problems with data
-- Craft effective questions
+- Communicate data insights
+- Understand data visualization
+- Design data visualization
+- Visualization considerations
 - Module 1 challenge
   
 </h6>
@@ -41,22 +42,22 @@ Data analysts are constantly asking questions in order to find solutions and ide
 <details>
 <summary>Module 2</summary>
   
-**Make data-driven decisions**
+**Create data visualizations with Tableau**
 
-In analytics, data drives decision-making, and this is your opportunity to explore data of all kinds and its impact on all sorts of business decisions. You’ll also learn how to effectively share your data through reports and dashboards.
+Tableau is a business intelligence and analytics platform that helps people visualize, understand, and make decisions with data. In this part of the course, you’ll become well-versed in Tableau’s dynamic capabilities and learn to inject creativity and clarity into your visualizations, ensuring that your findings are easy to understand.
 
 **Learning Objectives**
-- Discuss the use of data in the decision-making process
-- Compare and contrast data-driven decision making with data-inspired decision making
-- Explain the difference between quantitative and qualitative data including reference to their use and specific examples
-- Discuss the importance and benefits of dashboards and reports to the data analyst with reference to Tableau and spreadsheets
-- Differentiate between data and metrics, giving specific examples
-- Demonstrate an understanding of what is involved in using a mathematical approach to analyze a problem
+- Identify Tableau as a data visualization tool and understand its uses
+- Explain how data visualization can allow for creativity and clarity to appropriately present findings
+- Select appropriate visuals for various presentation situations
+- Identify different types of data visualizations and their uses
+- Use multiple data sources to create a visualization
+- Discuss accessibility issues associated with data visualization
 
 **Lessons**
-- Understand the power of data
-- Follow the evidence
-- Connect the data dots
+- Get started with Tableau
+- Design visualizations in Tableau
+- Optional: Work with multiple data sources
 - Module 2 challenge
 
 </h6>
@@ -64,22 +65,19 @@ In analytics, data drives decision-making, and this is your opportunity to explo
 <details>
 <summary>Module 3</summary>
                    
-**Spreadhseet Magic**
+**Craft data stories**
 
-Spreadsheets are a key data analytics tool. Here you’ll learn both why and how data analysts use spreadsheets in their work. You’ll also investigate how structured thinking helps analysts understand problems and come up with solutions.
+Connecting your objective with your data through insights is essential to data storytelling. In this part of the course, you’ll get acquainted with the principles of data-driven storytelling and learn to craft compelling narratives using Tableau's dashboard and filtering capabilities, giving life to your data insights.
 
 **Learning Objectives**
-- Discuss the data analyst’s use of spreadsheets with reference to roles and responsibilities
-- Demonstrate the use of spreadsheets to complete basic tasks of the data analyst including entering and organizing data
-- Demonstrate an understanding of the use of formulas in spreadsheets including a definition and specific examples
-- Compare formulas and functions with reference to similarities and differences
-- Describe the key ideas associated with structured thinking including the problem domain, scope of work, and context
+- Explain data-driven stories, including reference to their importance and their attributes
+- Demonstrate an understanding of how to use Tableau to create dashboards and dashboard filters
+- Explain how data stories can be used in different forms of on-the-job communication
 
 **Lessons**
-- Work with spreadsheets
-- Formulas in spreadsheets
-- Functions in spreadsheets
-- Save time with structured thinking
+- Data-driven storytelling
+- Tableau dashboards
+- Share data stories
 - Module 3 challenge
 
 </h6>
@@ -87,19 +85,23 @@ Spreadsheets are a key data analytics tool. Here you’ll learn both why and how
 <details>
 <summary>Module 4</summary>
 
-**Always remember the stakeholder**
+**Develop presentations and slideshows**
 
-Successful data analysts balance the needs and expectations of their team and the stakeholders they support. In this part of the course, you’ll learn strategies for managing stakeholder expectations while establishing clear communication with your team.
+In this part of the course, you’ll discover how to give an effective presentation about your data analysis. This final module teaches you to construct insightful presentations that resonate with your audience. You'll learn to anticipate and address potential questions and to articulate the limitations of your data, ensuring a robust and credible narrative for your stakeholders.
 
 **Learning Objectives**
-- Discuss communication best practices for the data analyst including reference to office communication, conflict resolution, facilitating meetings, and status reports
-- Discuss the importance of focus on stakeholder expectations
-- Identify common limitations with data, with specific reference to speed versus accuracy and responding to time-sensitive requests
+- Describe best practices for addressing the question-and-answer section of a presentation
+- Consider the caveats and limitations associated with the data in a presentation
+- Differentiate between strong and weak presentation content
+- Describe how junior data analysts are expected to use their presentation skills
+- Explain principles and practices associated with effective presentations
+- Identify appropriate responses to presentation objections
 
 **Lessons**
-- Balance team and stakeholder needs
-- Clear communication is key
-- Amazing teamwork
+- The art and science of presentations
+- Presentation skills and practices
+- Data caveats and limitations
+- Listen, respond, and include
 - Module 4 challenge
 - Course wrap-up
 
