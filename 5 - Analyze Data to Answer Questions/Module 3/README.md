@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on VLOOKUP (Practice Quiz: 100%)
+- Test your knowledge on using JOINS to aggregate data (Practice Quiz: 100%)
+- Test your knowledge on working with subqueries (Practice Quiz: 100%)
 - Module 3 challenge (Graded Quiz: 100%)
 
 ## Module 3
