@@ -1,5 +1,8 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on data calculations (Practice Quiz: 100%)
+- Test your knowledge on pivot tables (Practice Quiz: 100%)
+- Test your knowledge on SQL calculations (Practice Quiz: 100%)
+- Test your knowledge on using SQL with temporary tables (Practice Quiz: 100%)
 - Module 4 challenge (Graded Quiz: 100%)
 
 ## Module 4
