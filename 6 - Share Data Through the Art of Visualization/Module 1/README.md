@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on data visualizations (Practice Quiz: 100%)
+- Test your knowledge on designing data visualizations (Practice Quiz: 100%)
+- Test your knowledge on exploring data visualizations (Practice Quiz: 100%)
 - Module 1 challenge (Graded Quiz: 100%)
 
 ## Module 1
