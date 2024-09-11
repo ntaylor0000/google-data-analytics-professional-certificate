@@ -1,5 +1,5 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on creating visualizations in Tableau (Practice Quiz: 100%)
 - Module 2 challenge (Graded Quiz: 100%)
 
 ## Module 2
