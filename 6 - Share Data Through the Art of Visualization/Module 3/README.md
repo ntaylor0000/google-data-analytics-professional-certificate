@@ -1,7 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
-- Test your knowledge on (Practice Quiz: 100%)
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on data-driven stories (Practice Quiz: 100%)
+- Test your knowledge on Tableau dashboards (Practice Quiz: 100%)
+- Test your knowledge on sharing data stories (Practice Quiz: 100%)
 - Module 3 challenge (Graded Quiz: 100%)
 
 ## Module 3
