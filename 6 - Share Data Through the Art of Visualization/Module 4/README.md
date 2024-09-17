@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on presentation skills and practices (Practice Quiz: 100%)
+- Test your knowledge on caveats and limitations to data (Practice Quiz: 100%)
+- Test your knowledge on listening, responding, and including (Practice Quiz: 100%)
 - Module 4 challenge (Graded Quiz: 100%)
 
 ## Module 4
