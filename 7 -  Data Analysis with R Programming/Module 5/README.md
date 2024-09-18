@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge about documentation and reports (Practice Quiz: 100%)
+- Test your knowledge about creating R Markdown notebooks (Practice Quiz: 100%)
+- Test your knowledge on code chunks (Practice Quiz: 100%)
 - Module 5 challenge (Graded Quiz: 100%)
 
 ## Module 5
