@@ -1,5 +1,7 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on R data frames (Practice Quiz: 100%)
+- Test your knowledge on cleaning data (Practice Quiz: 100%)
+- Test your knowledge on R functions (Practice Quiz: 100%)
 - Module 3 challenge (Graded Quiz: 100%)
 
 ## Module 3
