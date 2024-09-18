@@ -1,5 +1,6 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on programming languages (Practice Quiz: 100%)
+- Test your knowledge on programming with RStudio (Practice Quiz: 100%)
 - Module 1 challenge (Graded Quiz: 100%)
 
 ## Module 1
