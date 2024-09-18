@@ -1,5 +1,8 @@
 **File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
+- Test your knowledge on programming concepts (Practice Quiz: 100%)
+- Test your knowledge on coding in R (Practice Quiz: 100%)
+- Test your knowledge on R packages (Practice Quiz: 100%)
+- Test your knowledge on the tidyverse (Practice Quiz: 100%) 
 - Module 2 challenge (Graded Quiz: 100%)
 
 ## Module 2
