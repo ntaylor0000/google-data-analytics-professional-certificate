@@ -1,7 +1,3 @@
-**File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
-- Module 3 challenge (Graded Quiz: 100%)
-
 ## Module 3
 
 **Optional: Use your portfolio**
