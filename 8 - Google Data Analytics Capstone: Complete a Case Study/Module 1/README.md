@@ -1,7 +1,3 @@
-**File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
-- Module 1 challenge (Graded Quiz: 100%)
-
 ## Module 1
 
 **Learn about capstone basics**
@@ -15,4 +11,3 @@ A capstone is a crowning achievement. In this part of the course, you’ll be in
 **Lessons**
 - Introduction to the capstone
 - Sample cases for data professionals
-  
