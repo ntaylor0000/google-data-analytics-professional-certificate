@@ -1,7 +1,3 @@
-**File Summary**
-- Test your knowledge on (Practice Quiz: 100%)
-- Module 4 challenge (Graded Quiz: 100%)
-
 ## Module 4
 
 **Put your certificate to work**
