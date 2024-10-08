@@ -103,20 +103,73 @@ Then, process your data for analysis using the following Case Study Roadmap as a
 
 **Follow these steps:**
 1. [Download the previous 12 months of trip data.](https://divvy-tripdata.s3.amazonaws.com/index.html)
-  Note: If you are planning on using Posit’s RStudio, use the [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090)
+   Note: If you are planning on using Posit’s RStudio, use the [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090)
  and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855) datasets. Choosing other data might lead to errors because the data exceeds the memory available in the free plan.
-2. Unzip the files.
-3. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions.
-4. Create subfolders for the .csv file and the .xls or Sheets file so that you have a copy of the original data. Move the downloaded files to the appropriate subfolder.
-5. Follow these instructions for either Excel (a) or Google Sheets (b):
+3. Unzip the files.
+4. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions.
+5. Create subfolders for the .csv file and the .xls or Sheets file so that you have a copy of the original data. Move the downloaded files to the appropriate subfolder.
+6. Follow these instructions for either Excel (a) or Google Sheets (b):
   a. Launch Excel, open each file, and choose to Save As an Excel Workbook file. Put it in the subfolder you created for .xls files.
   b. Open each .csv file in Google Sheets and save it to the appropriate subfolder.
-6. Open your spreadsheet and create a column called ride_length. Calculate the length of each ride by subtracting the column started_at from the column ended_at (for example, =D2-C2) and format as HH:MM:SS using Format > Cells > Time > 37:30:55.
-7. Create a column called day_of_week, and calculate the day of the week that each ride started using the WEEKDAY command (for example, =WEEKDAY(C2,1)) in each file. Format as General or as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
-8. Proceed to the analyze step.
+7. Open your spreadsheet and create a column called ride_length. Calculate the length of each ride by subtracting the column started_at from the column ended_at (for example, =D2-C2) and format as HH:MM:SS using Format > Cells > Time > 37:30:55.
+8. Create a column called day_of_week, and calculate the day of the week that each ride started using the WEEKDAY command (for example, =WEEKDAY(C2,1)) in each file. Format as General or as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
+9. Proceed to the analyze step.
 
+If you like, continue working with the data to better familiarize yourself, and perhaps even identify new approaches to answering the business questions.
 
+### Analyze
 
+Now that your data is stored appropriately and has been prepared for analysis, start putting it to work. Use the following Case Study Roadmap as a guide:
+
+|  Case Study Roadmap - Analyze  |
+|  :--------------------------  |
+|  Guiding questions  |
+|  &emsp;  ● How should you organize your data to perform analysis on it?  |
+|  &emsp;  ● Has your data been properly formatted?  |
+|  &emsp;  ● What surprises did you discover in the data?  |
+|  &emsp;  ● What trends or relationships did you find in the data?  |
+|  &emsp;  ● How will these insights help answer your business questions?  |
+|  Key tasks  |
+|  &emsp;  ● Aggregate your data so it’s useful and accessible.  |
+|  &emsp;  ● Organize and format your data.  |
+|  &emsp;  ● Perform calculations.  |
+|  &emsp;  ● Identify trends and relationships.  |
+|  Deliverable  |
+|  &emsp;  ● A summary of your analysis  |
+
+**Follow these steps for using spreadsheets**
+Open your spreadsheet application, then complete the following steps:
+  1. Where relevant, make columns consistent and combine them into a single worksheet.
+  2. Clean and transform your data to prepare for analysis.
+  3. Conduct descriptive analysis.
+  4. Run a few calculations in one file to get a better sense of the data layout. Options:
+    ● Calculate the mean of ride_length
+    ● Calculate the max ride_length
+    ● [Calculate the mode](https://support.google.com/docs/answer/3094029?hl=en) of day_of_week
+  5. Create a pivot table to quickly calculate and visualize the data. Options:
+    ● Calculate the average ride_length for members and casual riders. Try rows = member_casual; Values = Average of ride_length.
+    ● Calculate the average ride_length for users by day_of_week. Try columns = day_of_week; Rows = member_casual; Values = Average of ride_length.
+    ● Calculate the number of rides for users by day_of_week by adding Count of trip_id to Values.
+  6. Open another file and perform the same descriptive analysis steps. Explore different seasons to make some initial observations.
+  7. Once you have spent some time working with the individual spreadsheets, merge them into a full-year view. Do this with the tool you have chosen to use to perform your final analysis, either a spreadsheet, a database and SQL, or R Studio.
+  8. Export a summary file for further analysis.
+
+**Follow these steps for using SQL**
+Open your SQL tool of choice, then complete the following steps:
+  1. Import your data.
+  2. Explore your data, perhaps looking at the total number of rows, distinct values, maximum, minimum, or mean values.
+  3. Where relevant, use JOIN statements to combine your relevant data into one table.
+  4. Create summary statistics.
+  5. Investigate interesting trends and save that information to a table.
+
+**Follow these steps for using R** 
+Open your preferred version of R, click [this link](https://docs.google.com/document/d/1TzCqk59_J23D5zNCvwAPSgK-5osp-wVnifsc-VOpCaI/template/preview), and select “Use template.” Then, copy and paste the text from the template into an R script.
+  1. Import your data from [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090) and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855)
+.
+  2. Make columns consistent and merge them into a single dataframe.
+  3. Clean up and add data to prepare for analysis.
+  4. Conduct descriptive analysis.
+  5. Export a summary file for further analysis.
 
 
 
