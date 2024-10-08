@@ -1,4 +1,4 @@
-## Introduction and Scenario:
+## Introduction:
 
 This repository contains all the work completed for the project, which is based on the questions and scenario outlined in the [README.md](README.md). The project follows the Google Data Analytics process, structured around six key steps: Ask, Prepare, Process, Analyze, Share, and Act, as outlined in the course. All solutions, analysis, and deliverables are organized accordingly within this repository.
 
@@ -11,6 +11,7 @@ Note: Throughout the project, I use multiple tools to accomplish the same tasks.
   - Analyze: Organize and format the data, aggregate the data so that it’s useful, perform calculations and identify trends and relationships.
   - Share: Use design thinking principles and data-driven storytelling approach, present the findings with effective visualization. Ensure the analysis has answered the business task.
   - Act: Share the final conclusion and the recommendations.
+
 
 ## Step 1: ASK
 
