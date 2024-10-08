@@ -5,12 +5,12 @@ This repository contains all the work completed for the project, which is based 
 Note: Throughout the project, I use multiple tools to accomplish the same tasks. While this approach may be inefficient in a real-world scenario, it is intentionally designed to demonstrate the range of skills and tools I’ve acquired during the course.
 
 **Data Analysis Process**
-  - Ask: Identify the business task and determine the key stakeholders.
-  - Prepare: Collect the data, identify how it’s organized, determine the credibility of the data.
-  - Process: Select the tool for data cleaning, check for errors and document the cleaning process.
-  - Analyze: Organize and format the data, aggregate the data so that it’s useful, perform calculations and identify trends and relationships.
-  - Share: Use design thinking principles and data-driven storytelling approach, present the findings with effective visualization. Ensure the analysis has answered the business task.
-  - Act: Share the final conclusion and the recommendations.
+  - Ask: Identify the problem or question to solve.
+  - Prepare: Collect and organize the necessary data.
+  - Process: Clean and transform the data for analysis.
+  - Analyze: Explore the data to find insights and patterns.
+  - Share: Present your findings with clear visuals and recommendations.
+  - Act: Provide actionable steps based on the analysis.
 
 
 ## Step 1: ASK
