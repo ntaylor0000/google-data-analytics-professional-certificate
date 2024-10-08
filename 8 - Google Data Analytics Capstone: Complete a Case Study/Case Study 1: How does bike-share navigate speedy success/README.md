@@ -85,7 +85,7 @@ Now, prepare your data for analysis using the following Case Study Roadmap as a 
 
 Then, process your data for analysis using the following Case Study Roadmap as a guide:
 
-|  Case Study Roadmap - Prepare  |
+|  Case Study Roadmap - Process  |
 |  :--------------------------  |
 |  Guiding questions  |
 |  &emsp;  ● What tools are you choosing and why?  |
@@ -223,8 +223,6 @@ Now that you have finished creating your visualizations, act on your findings. P
   4. Write a brief paragraph describing the case study, your process, and your discoveries.
   5. Add the paragraph to introduce your case study in your portfolio.
 
+### Wrap-up
 
-
-
- [GitHub Pages](https://pages.github.com/)
-
+Congratulations on finishing the Cyclistic bike-share case study! If you like, complete another case study to continue growing your portfolio. Or, use the steps from the Ask, Prepare, Process, Analyze, Share, and Act Case Study Roadmap to create a new project that’s all your own. Best of luck on your job search!
