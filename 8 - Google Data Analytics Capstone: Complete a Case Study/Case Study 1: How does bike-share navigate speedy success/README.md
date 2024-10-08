@@ -1,6 +1,6 @@
 ## Case Study 1: How does a bike-share navigate speedy success?
 
-###**Introduction**
+### Introduction
 
 Welcome to the Cyclistic bike-share analysis case study! In this case study, you work for a fictional company, Cyclistic, along with some key team members. In order to answer the business questions, follow the steps of the data analysis process: Ask, Prepare, Process, Analyze, Share, and Act. Along the way, the Case Study Roadmap tables — including guiding questions and key tasks — will help you stay on the right path.
 
@@ -46,12 +46,12 @@ Use the following Case Study Roadmap as a guide. Note: Completing this case stud
 
 | Case Study Roadmap - Ask  |
 | ------------------------- |
-| **Guiding questions** 
-  - What is the problem you are trying to solve?
-  - How can your insights drive business decisions?  |
-| **Key tasks** 
-  - Identify the business task
-  - Consider key stakeholders |
-| **Deliverable**
-  - A clear statement of the business task |
+| **Guiding questions** |
+|  - What is the problem you are trying to solve?  |
+|  - How can your insights drive business decisions?  |
+| **Key tasks** |
+|  - Identify the business task |
+|  - Consider key stakeholders |
+| **Deliverable** |
+|  - A clear statement of the business task |
 
