@@ -46,12 +46,12 @@ Use the following Case Study Roadmap as a guide. Note: Completing this case stud
 
 | Case Study Roadmap - Ask  |
 | ------------------------- |
-| <p> **Guiding questions** <p>
-|    ● What is the problem you are trying to solve?  <p>
+| <p> **Guiding questions** \n
+|    ● What is the problem you are trying to solve?  \n
 |    ● How can your insights drive business decisions?  |
-| **Key tasks** <p>
-|    ● Identify the business task <p>
+| **Key tasks** \n
+|    ● Identify the business task \n
 |    ● Consider key stakeholders |
-| **Deliverable** <p>
+| **Deliverable** \n
 |    ● A clear statement of the business task |
 
