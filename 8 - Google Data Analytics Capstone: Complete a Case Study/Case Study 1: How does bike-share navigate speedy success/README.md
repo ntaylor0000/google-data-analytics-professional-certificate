@@ -44,22 +44,50 @@ You will produce a report with the following deliverables:
 
 Use the following Case Study Roadmap as a guide. Note: Completing this case study within a week is a reasonable goal.
 
-```
-Case Study Roadmap - Ask
-  Guiding questions
-    ● What is the problem you are trying to solve?
-    ● How can your insights drive business decisions?
-  Key tasks
-    ● Identify the business task
-    ● Consider key stakeholders
-  Deliverable
-    ● A clear statement of the business task
-```
+
+|  Case Study Roadmap - Ask  |
+|  :--------------------------  |
+|  **Guiding questions**  |
+|  &emsp;  ● What is the problem you are trying to solve?  |
+|  &emsp;  ● How can your insights drive business decisions?  |
+|  **Key tasks**  |
+|  &emsp;  ● Identify the business task  |
+|  &emsp;  ● Consider key stakeholders  |
+|  **Deliverable**  |
+|  &emsp;  ● A clear statement of the business task  |
+
+
 ### Prepare
 
 Use Cyclistic’s historical trip data to analyze and identify trends. [Download the previous 12 months of Cyclistic trip data here.](https://divvy-tripdata.s3.amazonaws.com/index.html) (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).) This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
 
 Now, prepare your data for analysis using the following Case Study Roadmap as a guide:
+
+|  Case Study Roadmap - Prepare  |
+|  :--------------------------  |
+|  Guiding questions  |
+|  &emsp;  ● Where is your data located?  |
+|  &emsp;  ● How is the data organized?  |
+|  &emsp;  ● Are there issues with bias or credibility in this data? [Does your data ROCCC?](https://www.coursera.org/learn/data-preparation/lecture/lHirM/what-is-bad-data)  |
+|  &emsp;  ● How are you addressing licensing, privacy, security, and accessibility?  |
+|  &emsp;  ● How did you verify the data’s integrity?  |
+|  &emsp;  ● How does it help you answer your question?  |
+|  &emsp;  ● Are there any problems with the data?  |
+|  Key tasks  |
+|  &emsp;  ● Download data and store it appropriately.  |
+|  &emsp;  ● Identify how it’s organized.  |
+|  &emsp;  ● Sort and filter the data.  |
+|  &emsp;  ● Determine the credibility of the data.  |
+|  Deliverable  |
+|  &emsp;  ● A description of all data sources used  |
+
+
+
+
+
+
+
+
 
 
 
