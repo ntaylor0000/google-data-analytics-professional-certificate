@@ -102,18 +102,17 @@ Then, process your data for analysis using the following Case Study Roadmap as a
 |  &emsp;  ● Documentation of any cleaning or manipulation of data  |
 
 **Follow these steps:**
-1. [Download the previous 12 months of trip data.](https://divvy-tripdata.s3.amazonaws.com/index.html)
-   Note: If you are planning on using Posit’s RStudio, use the [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090)
- and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855) datasets. Choosing other data might lead to errors because the data exceeds the memory available in the free plan.
-3. Unzip the files.
-4. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions.
-5. Create subfolders for the .csv file and the .xls or Sheets file so that you have a copy of the original data. Move the downloaded files to the appropriate subfolder.
-6. Follow these instructions for either Excel (a) or Google Sheets (b):
-  a. Launch Excel, open each file, and choose to Save As an Excel Workbook file. Put it in the subfolder you created for .xls files.
-  b. Open each .csv file in Google Sheets and save it to the appropriate subfolder.
-7. Open your spreadsheet and create a column called ride_length. Calculate the length of each ride by subtracting the column started_at from the column ended_at (for example, =D2-C2) and format as HH:MM:SS using Format > Cells > Time > 37:30:55.
-8. Create a column called day_of_week, and calculate the day of the week that each ride started using the WEEKDAY command (for example, =WEEKDAY(C2,1)) in each file. Format as General or as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
-9. Proceed to the analyze step.
+  1. [Download the previous 12 months of trip data.](https://divvy-tripdata.s3.amazonaws.com/index.html)
+     Note: If you are planning on using Posit’s RStudio, use the [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090) and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855) datasets. Choosing other data might lead to errors because the data exceeds the memory available in the free plan.
+  2. Unzip the files.
+  3. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions.
+  4. Create subfolders for the .csv file and the .xls or Sheets file so that you have a copy of the original data. Move the downloaded files to the appropriate subfolder.
+  5. Follow these instructions for either Excel (a) or Google Sheets (b):
+    a. Launch Excel, open each file, and choose to Save As an Excel Workbook file. Put it in the subfolder you created for .xls files.
+    b. Open each .csv file in Google Sheets and save it to the appropriate subfolder.
+  6. Open your spreadsheet and create a column called ride_length. Calculate the length of each ride by subtracting the column started_at from the column ended_at (for example, =D2-C2) and format as HH:MM:SS using Format > Cells > Time > 37:30:55.
+  7. Create a column called day_of_week, and calculate the day of the week that each ride started using the WEEKDAY command (for example, =WEEKDAY(C2,1)) in each file. Format as General or as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
+  8. Proceed to the analyze step.
 
 If you like, continue working with the data to better familiarize yourself, and perhaps even identify new approaches to answering the business questions.
 
@@ -171,13 +170,44 @@ Open your preferred version of R, click [this link](https://docs.google.com/docu
   4. Conduct descriptive analysis.
   5. Export a summary file for further analysis.
 
+### Share
+
+Now that you have performed your analysis and gained some insights into your data, create visualizations to share your findings. Moreno has reminded you that they should be sophisticated and polished in order to effectively communicate to the executive team. Use the following Case Study Roadmap as a guide:
+
+|  Case Study Roadmap - Share  |
+|  :--------------------------  |
+|  Guiding questions  |
+|  &emsp;  ● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?  |
+|  &emsp;  ● What story does your data tell?  |
+|  &emsp;  ● How do your findings relate to your original question?  |
+|  &emsp;  ● Who is your audience? What is the best way to communicate with them?  |
+|  &emsp;  ● Can data visualization help you share your findings?  |
+|  &emsp;  ● Is your presentation accessible to your audience?  |
+|  Key tasks  |
+|  &emsp;  ● Determine the best way to share your findings.  |
+|  &emsp;  ● Create effective data visualizations.  |
+|  &emsp;  ● Present your findings.  |
+|  &emsp;  ● Ensure your work is accessible.  |
+|  Deliverable  |
+|  &emsp;  ● Supporting visualizations and key findings  |
+
+**Follow these steps:**
+  1. Take out a piece of paper and a pen and sketch some ideas for how you will visualize the data.
+  2. Once you choose a visual form, open your tool of choice to create your visualization. Use a presentation software, such as PowerPoint or Google Slides, your spreadsheet program, Tableau, or R.
+  3. Create your data visualization, remembering that contrast should be used to draw your audience’s attention to the most important insights. Use artistic principles including size, color, and shape.
+  4. Ensure clear meaning through the proper use of common elements, such as headlines, subtitles, and labels.
+  5. Refine your data visualization by applying deep attention to detail.
+
+### Act
+
+Now that you have finished creating your visualizations, act on your findings. Prepare the deliverables Morena asked you to create, including the three top recommendations based on your analysis. Use the following Case Study Roadmap as a guide:
+
+
+
+
 
 
 
 
  [GitHub Pages](https://pages.github.com/)
- [GitHub Pages](https://pages.github.com/)
- [GitHub Pages](https://pages.github.com/)
- [GitHub Pages](https://pages.github.com/)
-
 
