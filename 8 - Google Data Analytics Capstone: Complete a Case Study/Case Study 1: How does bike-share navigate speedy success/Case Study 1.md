@@ -17,15 +17,19 @@ Note: Throughout the project, I use multiple tools to accomplish the same tasks.
 
 **Project Background:**
 
-Cyclistic is a bike-share company based in Chicago, offering a fleet of 5,824 bicycles across 692 stations, including special assistive bikes like reclining bikes and hand tricycles. Since its launch in 2016, Cyclistic has grown, attracting both casual riders (single-ride or full-day pass users) and annual members. While casual riders are familiar with the program, the company aims to increase the number of annual memberships, which are more profitable for the business. The marketing team, led by Lily Moreno, is exploring ways to convert casual riders into annual members by analyzing the differences in usage patterns and identifying key marketing strategies.
+Cyclistic is a bike-share program based in Chicago, offering over 5,800 bikes at 692 docking stations across the city. In addition to traditional bikes, Cyclistic provides reclining bikes, hand tricycles, and cargo bikes, making the program more accessible for people with disabilities and those who prefer a different riding experience. Most users choose the standard bikes, though about 8% use the assistive options. While many riders use Cyclistic for leisure, around 30% rely on it for their daily commute. Cyclistic offers flexible pricing with single-ride passes, full-day passes, and annual memberships. The company wants to shift its focus from casual riders to building up its base of annual members, as they are more profitable.
 
 **Business Problem:**
 
-The director of marketing, Lily Moreno, believes that the future success of Cyclistic depends on increasing the number of annual memberships. While Cyclistic has been successful in attracting casual riders through its flexible pricing plans, annual members are much more profitable. To achieve this, the team must understand how casual riders and annual members use Cyclistic bikes differently. This understanding will allow the marketing team to design targeted strategies to convert casual riders into annual members.
+Cyclistic has had success attracting casual riders, but it’s the annual members that really drive profit. The challenge is that while casual riders are already familiar with the service, they haven’t been as likely to commit to an annual membership. Lily Moreno, the director of marketing, believes converting casual riders into members is key to Cyclistic's future growth. The main question she’s asking is: **How do casual riders and annual members use Cyclistic bikes differently?** This insight is essential for crafting a marketing strategy that will convince casual riders to switch to annual memberships.
 
 **Goals:**
 
-The primary goal of the analysis is to identify key differences between casual riders and annual members. By understanding these differences, the team aims to develop a data-driven marketing strategy that encourages casual riders to convert to annual memberships. This involves analyzing Cyclistic’s historical bike trip data to uncover trends and insights that can inform an effective marketing campaign. The insights must be compelling enough to secure approval from the Cyclistic executive team for the proposed strategies.
+The first step is to answer the question: **"How do casual riders and annual members use Cyclistic bikes differently?"** Once that’s clear, the team can dive into two other important questions:
+1. Why would casual riders want to buy an annual membership?
+2. How can Cyclistic use digital media to convince casual riders to become members?
+   
+By answering these, the goal is to build a targeted marketing strategy that encourages more casual riders to sign up for annual memberships, helping Cyclistic increase both its revenue and its long-term growth.
 
 **Stakeholders:**
 
