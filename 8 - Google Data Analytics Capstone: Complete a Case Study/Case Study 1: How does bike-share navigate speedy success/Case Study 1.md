@@ -50,7 +50,7 @@ The trip data is sourced from Cyclistic’s bike-sharing system, which tracks al
 
 **Data Description**
 
-The dataset is split into twelve separate CSV files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
+The dataset is split into twelve separate (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
 - **ride_id:** Unique identifier for each ride.
 - **rideable_type:** Type of bike used for the ride.
 - **started_at & ended_at:** Timestamps indicating when the ride began and ended.
