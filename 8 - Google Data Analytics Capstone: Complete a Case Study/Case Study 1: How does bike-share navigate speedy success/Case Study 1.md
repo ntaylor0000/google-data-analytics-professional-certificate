@@ -48,7 +48,7 @@ For this analysis, we'll be using Cyclistic’s historical trip data, which cove
 
 The trip data is sourced from Cyclistic’s bike-sharing system, which tracks all rides taken activity within the service area. The dataset includes details such as ride start and end times, bike type, user type (casual rider or annual member), and the station locations. This data is stored in a series of (.csv) files, each representing one month of ride activity from October 2023 to September 2024. 
 
-**Data Description**
+**Data Description:**
 
 The dataset is split into twelve separate (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
 - **ride_id:** Unique identifier for each ride.
@@ -75,6 +75,9 @@ This dataset is critical for answering the business question of how annual membe
 There are no significant issues with the dataset in terms of privacy or security, as it has been anonymized. However, potential challenges include the limitations on linking individual riders to specific demographic information (like location or purchase history), which could add more context to the analysis. Additionally, there may be occasional missing or incorrect entries in the dataset that will need to be cleaned before proceeding with detailed analysis.
 
 ## Step 3: Process
+
+
+
 
 **Data Cleaning:**
 
