@@ -13,7 +13,7 @@ Note: Throughout the project, I use multiple tools to accomplish the same tasks.
   - Act: Provide actionable steps based on the analysis.
 
 
-## Step 1: ASK
+## Step 1: Ask
 
 **Project Background:**
 
