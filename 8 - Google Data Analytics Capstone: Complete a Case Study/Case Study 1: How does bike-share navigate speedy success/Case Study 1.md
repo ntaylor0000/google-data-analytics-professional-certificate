@@ -152,14 +152,18 @@ While Excel is a widely-used tool for data analysis, it is not well-suited for h
   -	Data Merging:
 
    	The 12 CSV files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
-   	
+
+![](Visualizations/power_query.png "power_query.png")
+
   - Data Transformation: 
   
     Formulas were applied to calculate key metrics:
 
       - Ride length: =I2 - F2 (Where F2 is the ride start time and I2 is the ride end time).
       - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
-      
+
+![](Visualizations/excel_transformation.png "excel_transformation.png")
+
   - Data Cleaning:
 
       The “Remove Duplicates” function was applied to identify and remove any duplicate records. No duplicates were detected within the subset of data that Excel could process.
