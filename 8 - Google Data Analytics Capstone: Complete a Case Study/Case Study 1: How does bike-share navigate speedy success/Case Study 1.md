@@ -128,7 +128,7 @@ To prepare the dataset for analysis, several transformations were applied:
    	
     -	**Tool-Specific Notes:**
     
-        - **Excel:** =C2-D2 (Where C2 is the ride start time and D2 is the ride end time).
+        - **Excel:** =D2-C2 (Where C2 is the ride start time and D2 is the ride end time).
         - **SQL:** TIMESTAMPDIFF(MINUTE, started_at, ended_at) (Calculates ride duration in minutes).
         - **R:** difftime(ended_at, started_at, units = "mins") (Calculates ride duration in minutes).
 
