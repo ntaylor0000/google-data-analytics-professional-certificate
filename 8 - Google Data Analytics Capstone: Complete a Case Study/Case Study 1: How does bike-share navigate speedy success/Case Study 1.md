@@ -51,14 +51,22 @@ The trip data is sourced from Cyclistic’s bike-sharing system, which tracks al
 **Data Description:**
 
 The dataset is split into twelve separate (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
-- **ride_id:** Unique identifier for each ride.
-- **rideable_type:** Type of bike used for the ride.
-- **started_at & ended_at:** Timestamps indicating when the ride began and ended.
-- **start_station_name & start_station_id:** Name and ID of the starting station.
-- **start_lat & start_lng:** Latitude and longitude of the starting location.
-- **end_station_name & end_station_id:** Name and ID of the ending station.
-- **end_lat & end_lng:** Latitude and longitude of the ending location.
-- **member_casual:**  Indicates whether the rider is a casual user or an annual member.
+
+| No. | Name | Description |
+|-----|------|-------------|
+| 01  | ride_id | Unique identifier for each ride. |
+| 02  | rideable_type | Type of bike used for the ride. |
+| 03  | started_at | Timestamp indicating when the ride began. |
+| 04  | ended_at | Timestamp indicating when the ride ended. |
+| 05  | start_station_name | Name of the starting station. |
+| 06  | start_station_id | ID of the starting station. |
+| 07  | end_station_name | Name of the ending station. |
+| 08  | end_station_id | ID of the ending station. |
+| 09  | start_lat | Latitude of the starting location. |
+| 10  | start_lng | Longitude of the starting location. |
+| 11  | end_lat | Latitude of the ending location. |
+| 12  | end_lng | Longitude of the ending location. |
+| 13  | member_casual | Indicates whether the rider is a casual user or an annual member. |
 
 This data provides a comprehensive look at user behavior and bike-sharing patterns, allowing us to answer key business questions regarding how different types of riders use Cyclistic’s bikes.
 
