@@ -115,7 +115,35 @@ The raw data consists of 12 files containing trip data collected from the Cyclis
 
 **Step 3: Data Transformation**
 
-To prepare the data for analysis, several transformations were applied to the dataset:
+To prepare the dataset for analysis, several transformations were applied:
+
+1.	**Creating a ‘Ride Length’ Column:**
+    -	**Description:**
+    
+        A new column was created to calculate the length of each ride by subtracting the started_at timestamp from the ended_at timestamp. This calculation yields the total duration of the ride in minutes.
+ 
+    -	**Formula:**
+    
+        ride_length = ended_at - started_at
+   	
+    -	**Tool-Specific Notes:**
+    
+        - **Excel:** =C2-D2 (Where C2 is the ride start time and D2 is the ride end time).
+        - **SQL:** TIMESTAMPDIFF(MINUTE, started_at, ended_at) (Calculates ride duration in minutes).
+        - **R:** difftime(ended_at, started_at, units = "mins") (Calculates ride duration in minutes).
+
+2.	**Creating a ‘Day of Week’ Column:**
+    -	**Description:**
+
+        A new column was created to capture the day of the week for each ride, enabling the analysis of patterns based on weekday versus weekend usage.
+
+  	- **Tool-Specific Notes:**
+
+        - **Excel:** =WEEKDAY(C2, 1) (Returns a number from 1 (Sunday) to 7 (Saturday)).
+        - **SQL:** DAYOFWEEK(started_at) (Returns the day of the week as a number).
+        - **R:** wday(started_at, label = TRUE) (Returns the day of the week as a label, e.g., “Mon”, “Tue”, etc.).
+
+
 
 
 
