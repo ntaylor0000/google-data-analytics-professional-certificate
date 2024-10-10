@@ -143,15 +143,30 @@ To prepare the dataset for analysis, several transformations were applied:
         - **SQL:** DAYOFWEEK(started_at) (Returns the day of the week as a number).
         - **R:** wday(started_at, label = TRUE) (Returns the day of the week as a label, e.g., “Mon”, “Tue”, etc.).
 
-
-
-
-
-
-
 ### Tool-Specific Approaches
 
 **Excel Approach**
+
+While Excel is a widely-used tool for data analysis, it is not well-suited for handling very large datasets due to its memory limitations. Excel can accommodate up to 1,048,575 rows per worksheet, which may restrict its use for large-scale analysis. For this project, the following steps were performed using Excel:
+
+  -	Data Merging:
+
+   	The 12 CSV files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
+   	
+  - Data Transformation: 
+  
+    Formulas were applied to calculate key metrics:
+
+      - Ride length: =I2 - F2 (Where F2 is the ride start time and I2 is the ride end time).
+      - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
+      
+  - Data Cleaning:
+
+      The “Remove Duplicates” function was applied to identify and remove any duplicate records. No duplicates were detected within the subset of data that Excel could process.
+
+> Note: Due to the large size of the dataset (5,854,585 rows), Excel was unable to fully handle the data. While Excel can be useful for small to medium-sized datasets, SQL and R are better suited for managing large datasets of this scale.
+
+
 
 
 
