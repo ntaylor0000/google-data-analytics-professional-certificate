@@ -76,19 +76,55 @@ There are no significant issues with the dataset in terms of privacy or security
 
 ## Step 3: Process
 
+**Process Overview:**
+
+In this phase, the Cyclistic bike-share data is processed and cleaned following the steps outlined in the Project Charter. The goal is to ensure the data is ready for analysis, involving tasks such as cleaning, merging, and transforming. The main steps in the data processing phase include:
+  1.	**Data Cleaning:** This involves resolving formatting issues, addressing null or missing values, removing duplicate records, and fixing any other inconsistencies that could affect data quality.
+  2.	**Merging and Transforming:** Combining the 12 separate data files into a single dataset and transforming it into a format that is easy to analyze.
+The Project Charter presents three different approaches for this processing and analysis: Excel, SQL, and R. While Excel is a useful tool, it’s less ideal for large datasets because of file size limitations. In real-world situations, SQL or R would be more appropriate for handling large-scale data. However, in this portfolio project, all three methods are demonstrated to showcase a range of technical skills.
+
+**Data Overview:**
+
+The raw data consists of 12 separate files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,667,186 rows and 13 columns of character and numeric data.
+
+### Review and Processing Steps:
+
+**Step 1: File Setup and Data Merging**
+
+  -	Unzip the files.
+  -	Store the twelve .csv files in a dedicated folder for managing raw data.
+  -	Review the 12 original files and merge them into a single, consolidated dataset.
+
+**Step 2: Data Cleaning**
+
+**The following checks were performed to ensure data quality:**
+
+  1.	**Column Name Consistency:** Ensured that column names across all 12 files adhered to consistent naming conventions. Any discrepancies were standardized to maintain uniformity.
+  2.	**Data Type Consistency:** Verified that the correct and consistent data types were applied across all relevant columns.
+  3.	**Duplicate Records:** Identified and removed duplicate entries where trips were repeated within the dataset.
+  4.	**Missing or Null Values:** Detected missing or null values in key columns (e.g., ride start time, ride end time) and removed rows with critical missing information.
+  5.	**Inconsistent Data:** Checked for data inconsistencies, such as instances where the ride start time was later than the ride end time. These anomalies were addressed through removal or correction where feasible.
+
+**Step 3: Data Transformation**
+
+To prepare the data for analysis, several transformations were applied to the dataset:
 
 
 
-**Data Cleaning:**
 
-**Data Transformation:**
 
-**Data Exploration:**
+### Tool-Specific Approaches
 
-**Tools Used:**
+**Excel Approach**
 
 
 
+**SQL Approach**
+
+
+
+
+**R Approach**
 
 
 
