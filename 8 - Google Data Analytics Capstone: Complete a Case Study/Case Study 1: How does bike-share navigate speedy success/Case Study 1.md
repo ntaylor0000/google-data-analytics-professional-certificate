@@ -93,7 +93,7 @@ The Project Charter outlines three approaches for data processing and analysis: 
 
 **Data Overview:**
 
-The raw data consists of 12 files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,667,186 rows and 13 columns of character and numeric data.
+The raw data consists of 12 files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,854,585 rows and 13 columns of character and numeric data.
 
 ### Review and Processing Steps:
 
