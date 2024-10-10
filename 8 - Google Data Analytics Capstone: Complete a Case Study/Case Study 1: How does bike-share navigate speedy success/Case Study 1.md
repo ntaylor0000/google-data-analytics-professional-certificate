@@ -1,8 +1,8 @@
 ## Introduction:
 
-This repository contains all the work completed for the project, which is based on the questions and scenario outlined in the [Project Charter.md](<Project Charter.md>). The project follows the Google Data Analytics process, structured around six key steps: Ask, Prepare, Process, Analyze, Share, and Act, as outlined in the course. All solutions, analysis, and deliverables are organized accordingly within this repository.
+This repository contains all the deliverables for the project, which is based on the scenario and questions outlined in the [Project Charter.md](<Project Charter.md>). The project follows the Google Data Analytics process, structured around six key steps: Ask, Prepare, Process, Analyze, Share, and Act, as outlined in the course. All solutions, analysis, and deliverables are organized accordingly within this repository.
 
-Note: Throughout the project, I use multiple tools to accomplish the same tasks. While this approach may be inefficient in a real-world scenario, it is intentionally designed to demonstrate the range of skills and tools I’ve acquired during the course.
+> Note: Multiple tools are used throughout the project to complete similar tasks. While this may not be the most efficient approach in a real-world scenario, it is designed to showcase the variety of skills and tools developed during the course.
 
 **Data Analysis Process**
   - Ask: Identify the problem or question to solve.
@@ -21,7 +21,7 @@ Cyclistic is a bike-share program based in Chicago, offering over 5,800 bikes at
 
 **Business Problem:**
 
-Cyclistic has had success attracting casual riders, but it’s the annual members that really drive profit. The challenge is that while casual riders are already familiar with the service, they haven’t been as likely to commit to an annual membership. Lily Moreno, the director of marketing, believes converting casual riders into members is key to Cyclistic's future growth. The main question she’s asking is: **How do casual riders and annual members use Cyclistic bikes differently?** This insight is essential for crafting a marketing strategy that will convince casual riders to switch to annual memberships.
+Cyclistic has successfully attracted casual riders, but it is the annual members who drive the company’s profitability. While casual riders are already familiar with the service, they have not been as likely to convert to annual memberships. Lily Moreno, the director of marketing, believes converting casual riders into members is key to Cyclistic's future growth. The main question being asked is: **How do casual riders and annual members use Cyclistic bikes differently?** This insight is essential for crafting a marketing strategy that will convince casual riders to switch to annual memberships.
 
 **Goals:**
 
@@ -29,7 +29,7 @@ The first step is to answer the question: **"How do casual riders and annual mem
 1. Why would casual riders want to buy an annual membership?
 2. How can Cyclistic use digital media to convince casual riders to become members?
    
-By answering these, the goal is to build a targeted marketing strategy that encourages more casual riders to sign up for annual memberships, helping Cyclistic increase both its revenue and its long-term growth.
+By answering these questions, the goal is to develop a targeted marketing strategy that encourages casual riders to transition to annual memberships, driving revenue growth and long-term success for Cyclistic.
 
 **Stakeholders:**
 
@@ -42,7 +42,7 @@ By answering these, the goal is to build a targeted marketing strategy that enco
 
 **Data Sources:**
 
-For this analysis, we'll be using Cyclistic’s historical trip data, which covers the last 12 months of bike rides. The data was provided by Motivate International Inc. and is publicly available and licensed for use in this case study. While Cyclistic is a fictional, the data is structured in a way that allows us to explore bike usage without any real-world privacy concerns. The data has been anonymized and does not include any personally identifiable information (PII).
+This analysis uses Cyclistic’s historical trip data, covering the past 12 months of bike rides. The data was provided by Motivate International Inc. and is publicly available and licensed for use in this case study. While Cyclistic is fictional, the data is structured to allow analysis of bike usage without any real-world privacy concerns. The data has been anonymized and does not include any personally identifiable information (PII).
 
 **Data Collection:**
 
@@ -50,7 +50,7 @@ The trip data is sourced from Cyclistic’s bike-sharing system, which tracks al
 
 **Data Description:**
 
-The dataset is split into twelve separate (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
+The dataset is split into twelve (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
 
 | No. | Name | Description |
 |-----|------|-------------|
@@ -72,7 +72,7 @@ This data provides a comprehensive look at user behavior and bike-sharing patter
 
 **Addressing Privacy and Accessibility:**
 
-The data is publicly available and fully compliant with privacy standards. It does not contain any personally identifiable information (such as credit card numbers or addresses), ensuring the data is safe to use for analysis. Additionally, the data is accessible in (.csv) format, making it easy to import and work with across different analysis tools like R, SQL, and Tableau.
+The data is publicly available and fully compliant with privacy standards. It does not contain any personally identifiable information (such as credit card numbers or addresses), ensuring the data is safe to use for analysis. The data is available in (.csv) format, which facilitates easy import and analysis using various tools such as R, SQL, and Tableau.
 
 **How the Data Helps Answer Our Questions:**
 
@@ -86,26 +86,26 @@ There are no significant issues with the dataset in terms of privacy or security
 
 **Process Overview:**
 
-In this phase, the Cyclistic bike-share data is processed and cleaned following the steps outlined in the Project Charter. The goal is to ensure the data is ready for analysis, involving tasks such as cleaning, merging, and transforming. The main steps in the data processing phase include:
+In this phase, Cyclistic bike-share data is processed and cleaned following the steps outlined in the Project Charter. The goal is to ensure the data is ready for analysis, involving tasks such as cleaning, merging, and transforming. The main steps in the data processing phase include:
   1.	**Data Cleaning:** This involves resolving formatting issues, addressing null or missing values, removing duplicate records, and fixing any other inconsistencies that could affect data quality.
   2.	**Merging and Transforming:** Combining the 12 separate data files into a single dataset and transforming it into a format that is easy to analyze.
-The Project Charter presents three different approaches for this processing and analysis: Excel, SQL, and R. While Excel is a useful tool, it’s less ideal for large datasets because of file size limitations. In real-world situations, SQL or R would be more appropriate for handling large-scale data. However, in this portfolio project, all three methods are demonstrated to showcase a range of technical skills.
+The Project Charter outlines three approaches for data processing and analysis: Excel, SQL, and R. While Excel is useful, it is less optimal for large datasets due to file size limitations. In real-world situations, SQL or R would be more appropriate for handling large-scale data. For this portfolio project, all three methods are demonstrated to showcase a variety of technical skills.
 
 **Data Overview:**
 
-The raw data consists of 12 separate files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,667,186 rows and 13 columns of character and numeric data.
+The raw data consists of 12 files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,667,186 rows and 13 columns of character and numeric data.
 
 ### Review and Processing Steps:
 
 **Step 1: File Setup and Data Merging**
 
   -	Unzip the files.
-  -	Store the twelve .csv files in a dedicated folder for managing raw data.
-  -	Review the 12 original files and merge them into a single, consolidated dataset.
+  -	Store the twelve .csv files in a dedicated folder to manage the raw data.
+  -	Review the 12 original files and merge them into a single consolidated dataset.
 
 **Step 2: Data Cleaning**
 
-**The following checks were performed to ensure data quality:**
+**The following quality checks were performed to ensure the integrity of the data:**
 
   1.	**Column Name Consistency:** Ensured that column names across all 12 files adhered to consistent naming conventions. Any discrepancies were standardized to maintain uniformity.
   2.	**Data Type Consistency:** Verified that the correct and consistent data types were applied across all relevant columns.
