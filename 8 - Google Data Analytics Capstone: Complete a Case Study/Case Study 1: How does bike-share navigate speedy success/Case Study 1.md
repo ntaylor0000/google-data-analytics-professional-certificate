@@ -349,7 +349,7 @@ library(tidyverse)
 
 # Set the directory where .csv files are stored
 
-csv_directory <- "C:/Users/dark_/Downloads/Google Data Analytics Certificiate/Case Study 1/raw_data/"
+csv_directory <- "/raw_data/"
 
 # List all .csv files in the directory
 
