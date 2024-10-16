@@ -151,7 +151,7 @@ While Excel is a widely-used tool for data analysis, it is not well-suited for h
 
 Step 1: File Setup and Data Merging:
 
-The 12 CSV files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
+The 12 .csv files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
 
 ![](Visualizations/power_query.png "power_query.png")
 
@@ -178,9 +178,9 @@ While SQL is a powerful and efficient tool for managing large datasets, it is we
 
 Step 1: File Setup and Data Merging:
 
-The 12 CSV files were imported into the public.bike_trips table using PostgreSQL's COPY command. 
-  - Create table to store dataset: A new table named bike_trips was created in PostgreSQL to hold the dataset. The table structure was defined with appropriate data types for each column, ensuring compatibility with the data in the CSV files.
-  - Importing the CSV files: PostgreSQL’s COPY command was used to import the CSV files directly into the bike_rides table. 
+The 12 .csv files were imported into the public.bike_trips table using PostgreSQL's COPY command. 
+  - Create table to store dataset: A new table named bike_trips was created in PostgreSQL to hold the dataset. The table structure was defined with appropriate data types for each column, ensuring compatibility with the data in the .csv files.
+  - Importing the .csv files: PostgreSQL’s COPY command was used to import the CSV files directly into the bike_rides table. 
 
 Step 2: Data Cleaning: 
 
@@ -306,6 +306,34 @@ SET day_of_week = EXTRACT(DOW FROM started_at) + 1;
 
 **R Approach**
 
+R is a powerful tool for statistical computing and data manipulation, particularly well-suited for handling large datasets like this one. The steps below outline the data processing workflow in R.
+
+Step 1: File Setup and Data Merging:
+
+The 12 .csv files were imported into R and merged into a single unified data frame using functions from the tidyverse package. 
+  - Install necessary packages: Installed dyplyr, lubridate, ggplot2, and tidyverse packages.
+  - Importing the .csv files: The readr::read_csv() function from the tidyverse package was used to read the CSV files into R.
+  - Merging the datasets: To combine the multiple data frames into one, the dplyr::bind_rows() function was used. This function efficiently appends multiple data frames into a single data frame, maintaining row consistency across files. 
+
+Step 2: Data Cleaning:
+
+To ensure the dataset was clean and reliable for analysis, several data cleaning steps were performed using dplyr and base R functions:
+  - Removing duplicates: Duplicate records were identified by checking for duplicate ride_id values. The dplyr::distinct() function was used to keep only unique rows, ensuring each ride had a single entry.
+  - Removing rows with NULL values: Rows with missing values in critical columns (such as started_at, ended_at, start_station_name, or end_station_name) were filtered out to prevent incomplete records from affecting the analysis. This was done using the dplyr::filter() function.
+  - Removing outliers: Outliers in ride duration were identified and filtered out. Rides with a duration of less than 1 minute or greater than 24 hours were considered outliers and excluded using conditions in the filter() function.
+
+Step 3: Data Transformation: 
+
+Several key transformations were performed to prepare the data for analysis:
+  - Creating a new column for ride duration: A new column, ride_length, was created to calculate the duration of each ride in minutes. The difftime() function was used to compute the difference between the ended_at and started_at timestamps.
+  - Extracting the day of the week: A new column, day_of_week, was created to extract the day of the week from the started_at timestamp. The day was represented as an integer, where 1 = Sunday and 7 = Saturday, using the weekdays() function and additional manipulation.
+
+R CODE:
+
+```
+
+
+```
 
 
 
