@@ -181,59 +181,35 @@ PREPARE DATA
 -- Create primary table to store cyclistic bike trip data. 
 
 CREATE TABLE IF NOT EXISTS public.bike_trips (
-	ride_id	VARCHAR(50),				-- Unique identifier for each ride. 
-	rideable_type VARCHAR(20),			-- Type of bike used for the ride. 
-	started_at TIMESTAMP,				-- Timestamp indicating when the ride began. 
-	ended_at TIMESTAMP,					-- Timestamp indicating when the ride ended. 
+	ride_id	VARCHAR(50),			-- Unique identifier for each ride. 
+	rideable_type VARCHAR(20),		-- Type of bike used for the ride. 
+	started_at TIMESTAMP,			-- Timestamp indicating when the ride began. 
+	ended_at TIMESTAMP,			-- Timestamp indicating when the ride ended. 
 	start_station_name VARCHAR(100),	-- Name of the starting station. 
 	start_station_id VARCHAR(50),		-- ID of the starting station. 
 	end_station_name VARCHAR(100),		-- Name of the ending station. 
-	end_station_id VARCHAR(50),			-- ID of the ending station. 
-	start_lat FLOAT,					-- Latitude of the starting location. 
-	start_lng FLOAT,					-- Longitude of the starting location. 
-	end_lat	FLOAT,						-- Latitude of the ending location. 
-	end_lng FLOAT,						-- Longitude of the ending location. 
-	member_casual VARCHAR(10)			-- Indicates whether the rider is a casual user or an annual member. 
+	end_station_id VARCHAR(50),		-- ID of the ending station. 
+	start_lat FLOAT,			-- Latitude of the starting location. 
+	start_lng FLOAT,			-- Longitude of the starting location. 
+	end_lat	FLOAT,				-- Latitude of the ending location. 
+	end_lng FLOAT,				-- Longitude of the ending location. 
+	member_casual VARCHAR(10)		-- Indicates whether the rider is a casual user or an annual member. 
 );
 
 -- Import data from the 12 .csv files into the `public.bike_trips` table.
 
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202310-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202311-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202312-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202401-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202402-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202403-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202404-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202405-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202406-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202407-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202408-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
-COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
-FROM '\202409-divvy-tripdata.csv' 
-DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202310-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202311-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202312-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202401-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202402-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202403-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202404-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202405-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202406-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202407-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202408-divvy-tripdata.csv' DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual) FROM '\202409-divvy-tripdata.csv' DELIMITER ',' CSV header;
 
 
 -- Calculate the total row count, count of unique ride_id's, and the number of duplicate records.
@@ -272,8 +248,8 @@ WHERE started_at IS NULL
 -- Delete 50,330 outliers.
 
 DELETE FROM public.bike_trips
-WHERE EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 < 1 		-- duration < 1 minute
-   OR EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 > 1440 		-- duration > 1440 minutes (24 hours)
+WHERE EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 < 1 	-- duration < 1 minute
+   OR EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 > 1440 	-- duration > 1440 minutes (24 hours)
 
 
 /*
