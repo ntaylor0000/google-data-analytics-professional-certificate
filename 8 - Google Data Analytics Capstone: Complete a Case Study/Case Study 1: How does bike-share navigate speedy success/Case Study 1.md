@@ -745,6 +745,10 @@ print(avg_ride_length_by_type)
 
 R CODE:
 ```
+#
+# Share Data
+#
+
 # Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
 # Prepare data for plotting
 
