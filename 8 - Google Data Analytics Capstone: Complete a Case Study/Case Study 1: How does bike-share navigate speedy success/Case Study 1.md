@@ -170,14 +170,252 @@ While Excel is a widely-used tool for data analysis, it is not well-suited for h
 
 > Note: Due to the large size of the dataset (5,854,585 rows), Excel was unable to fully handle the data. While Excel can be useful for small to medium-sized datasets, SQL and R are better suited for managing large datasets of this scale.
 
-
-
-
-
 **SQL Approach**
 
+```
+
+/*
+PREPARE DATA
+*/
+
+-- Create primary table to store cyclistic bike trip data. 
+
+CREATE TABLE IF NOT EXISTS public.bike_trips (
+	ride_id	VARCHAR(50),				-- Unique identifier for each ride. 
+	rideable_type VARCHAR(20),			-- Type of bike used for the ride. 
+	started_at TIMESTAMP,				-- Timestamp indicating when the ride began. 
+	ended_at TIMESTAMP,					-- Timestamp indicating when the ride ended. 
+	start_station_name VARCHAR(100),	-- Name of the starting station. 
+	start_station_id VARCHAR(50),		-- ID of the starting station. 
+	end_station_name VARCHAR(100),		-- Name of the ending station. 
+	end_station_id VARCHAR(50),			-- ID of the ending station. 
+	start_lat FLOAT,					-- Latitude of the starting location. 
+	start_lng FLOAT,					-- Longitude of the starting location. 
+	end_lat	FLOAT,						-- Latitude of the ending location. 
+	end_lng FLOAT,						-- Longitude of the ending location. 
+	member_casual VARCHAR(10)			-- Indicates whether the rider is a casual user or an annual member. 
+);
+
+-- Import data from the 12 .csv files into the `public.bike_trips` table.
+
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202310-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202311-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202312-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202401-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202402-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202403-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202404-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202405-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202406-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202407-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202408-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
+COPY public.bike_trips (ride_id,rideable_type,started_at,ended_at,start_station_name,start_station_id,end_station_name,end_station_id,start_lat,start_lng,end_lat,end_lng,member_casual)
+FROM '\202409-divvy-tripdata.csv' 
+DELIMITER ',' CSV header;
 
 
+-- Calculate the total row count, count of unique ride_id's, and the number of duplicate records.
+-- Output: 5,854,544 rows, 5,854,333 distinct rows, 211 duplicate rows.
+
+SELECT COUNT(*) AS count,
+	COUNT(DISTINCT ride_id) AS distinct_count,
+	COUNT(*) - COUNT(DISTINCT ride_id) AS duplicate_count
+FROM public.bike_trips;
+
+-- Identify and delete duplicate records based on ride_id. 
+-- Delete 211 duplicate rows.
+
+WITH ranked_bike_trips AS (
+    SELECT ctid, 
+           ROW_NUMBER() OVER (PARTITION BY ride_id) AS rn
+    FROM public.bike_trips
+)
+DELETE FROM public.bike_trips
+WHERE ctid IN (
+    SELECT ctid
+    FROM ranked_bike_trips
+    WHERE rn > 1
+);
+
+-- Identify and delete rows with NULL values in key columns. 
+-- Delete 1,626,238 null rows.
+
+DELETE FROM public.bike_trips
+WHERE started_at IS NULL
+   OR ended_at IS NULL
+   OR start_station_name IS NULL
+   OR end_station_name IS NULL;
+
+-- Identify and delete outliers based on duration and distance.
+-- Delete 50,330 outliers.
+
+DELETE FROM public.bike_trips
+WHERE EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 < 1 		-- duration < 1 minute
+   OR EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 > 1440 		-- duration > 1440 minutes (24 hours)
+
+
+/*
+Process Data
+*/
+
+-- Create new column ride_length to store the duration of each bike ride in minutes.
+
+ALTER TABLE public.bike_trips
+ADD ride_length INT;
+
+-- Update the ride_length column by calculating the difference between ended_at and started_at in minutes.
+
+UPDATE public.bike_trips
+SET ride_length = EXTRACT(EPOCH FROM (ended_at - started_at)) / 60;
+
+-- Create new column day_of_week to extract the day of the week from the started_at column.
+
+ALTER TABLE public.bike_trips
+ADD day_of_week INT;
+
+-- Update the day_of_week column by extracting the day of the week from started_at. (NOTE: 1 = Sunday and 7 = Saturday).
+
+UPDATE public.bike_trips
+SET day_of_week = EXTRACT(DOW FROM started_at) + 1;
+
+
+/*
+Analyze Data
+*/
+
+-- Calculate the mean, median, and mode of the ride_length column in minutes. 
+-- Output: Mean - 16.68, Median - 10, Mode - 5.
+
+SELECT 
+    AVG(ride_length) AS mean_ride_length,
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ride_length) AS median_ride_length,
+    MODE() WITHIN GROUP (ORDER BY ride_length) AS mode_ride_length
+FROM 
+    public.bike_trips;
+
+-- Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
+-- Output: Mode - 4 (Wednesday)
+
+SELECT 
+    MODE() WITHIN GROUP (ORDER BY day_of_week) AS mode_day_of_week
+FROM 
+    public.bike_trips;
+
+-- Calculate the average ride_length by member_casual. 
+-- Output: casual - 24.14, member - 12.56
+
+SELECT 
+    member_casual,
+    AVG(ride_length) AS avg_ride_length
+FROM 
+    public.bike_trips
+GROUP BY 
+    member_casual
+ORDER BY 
+    member_casual;
+
+-- Calculate the avearge ride_length by day_of_week and member_casual. 
+-- Output: Average ride length grouped by both day of the week and membership status. 
+
+SELECT 
+    day_of_week,
+    member_casual,
+    AVG(ride_length) AS avg_ride_length
+FROM 
+    public.bike_trips
+GROUP BY 
+    day_of_week, member_casual
+ORDER BY 
+    day_of_week, member_casual;
+
+-- Calculate the number of ride_id per day_of_week.
+-- Output: Total ride count for each day of the week.
+
+SELECT 
+    day_of_week,
+    COUNT(ride_id) AS ride_count
+FROM 
+    public.bike_trips
+GROUP BY 
+    day_of_week
+ORDER BY 
+    day_of_week;
+
+-- Calculate uthe number of ride_id and average ride_length by hour of the day.
+-- Output: Ride count and average ride length for each hour.
+
+SELECT 
+    EXTRACT(HOUR FROM started_at) AS hour_of_day, 
+    COUNT(ride_id) AS ride_count,
+    AVG(ride_length) AS avg_ride_length
+FROM 
+    public.bike_trips
+GROUP BY 
+    hour_of_day
+ORDER BY 
+    hour_of_day;
+
+-- Calculate the average ride_length by starting_station_name.
+-- Output: Average ride length for each station. 
+
+SELECT 
+    start_station_name,
+    AVG(ride_length) AS avg_ride_length
+FROM 
+    public.bike_trips
+GROUP BY 
+    start_station_name
+ORDER BY 
+    avg_ride_length DESC;
+
+-- Determine the most common start and end station pairs. 
+-- Output: The most frequently used station-to-station routes.
+
+SELECT 
+    start_station_name, 
+    end_station_name, 
+    COUNT(ride_id) AS ride_count
+FROM 
+    public.bike_trips
+GROUP BY 
+    start_station_name, end_station_name
+ORDER BY 
+    ride_count DESC;
+
+-- Calculate the average ride_length by rideable_type.
+-- Output: Average ride length for different bike types.
+
+SELECT 
+    rideable_type, 
+    AVG(ride_length) AS avg_ride_length
+FROM 
+    public.bike_trips
+GROUP BY 
+    rideable_type;
+
+```
 
 **R Approach**
 
