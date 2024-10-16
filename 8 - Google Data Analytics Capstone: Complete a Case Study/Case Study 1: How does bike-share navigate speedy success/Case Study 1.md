@@ -174,26 +174,27 @@ Formulas were applied to calculate key metrics:
 
 **SQL Approach**
 
-While SQL is a powerful and efficient tool for managing large datasets, it is well-suited for structured data analysis on databases. For this project, the following steps were performed using PostgreSQL:
+While SQL is a powerful and efficient tool for managing large datasets, it is well-suited for structured data analysis on databases. The following steps were performed using PostgreSQL to ensure the dataset was ready for in-depth analysis:
 
 Step 1: File Setup and Data Merging:
 
-The 12 CSV files were imported into the public.bike_trips table using PostgreSQL’s COPY command. This method efficiently loaded the data into a relational database, avoiding the issues with row limitations that Excel faced. 
+The 12 CSV files were imported into the public.bike_trips table using PostgreSQL's COPY command. 
+  - Create table to store dataset: A new table named bike_trips was created in PostgreSQL to hold the dataset. The table structure was defined with appropriate data types for each column, ensuring compatibility with the data in the CSV files.
+  - Importing the CSV files: PostgreSQL’s COPY command was used to import the CSV files directly into the bike_rides table. 
 
 Step 2: Data Cleaning: 
 
-To ensure data quality, several cleaning steps were performed:
+Data cleaning is crucial to ensure the dataset is accurate and suitable for analysis. Several steps were implemented to clean the data:
 
-  - Removing duplicates: Duplicate records were identified and removed from the dataset using a ROW_NUMBER() function that partitioned by ride_id. Any records with a duplicate ride_id were deleted, leaving only one unique record for each ride.
-  - Removing rows with NULL values: Rows with NULL values in key columns like started_at, ended_at, start_station_name, or end_station_name were deleted, as missing critical information could skew analysis.
-  - Removing outliers: Outliers based on ride duration were removed. For example, records where the ride duration was less than 1 minute or greater than 24 hours were deleted.
+  - Removing duplicates: Duplicate records were identified and removed based on the ride_id using PostgreSQL’s ROW_NUMBER() function. This ensured that each ride had only one unique entry.
+  - Removing rows with NULL values: Rows with NULL values in critical columns (e.g., started_at, ended_at, start_station_name, end_station_name) were removed to prevent incomplete or inaccurate data from skewing the analysis.
+  - Removing outliers: Outliers based on ride duration were identified and removed. Specifically, records where the ride duration was less than 1 minute or greater than 24 hours were filtered out.
 
 Step 3: Data Transformation:
 
-Several key transformations were performed on the dataset to make it more suitable for analysis:
-
-  - Creating a new column for ride duration: A new column, ride_length, was added to the table. The ride length was calculated as the difference between the ended_at and started_at timestamps, measured in minutes. This transformation enabled analysis of ride durations.
-  - Extracting the day of the week: A new column, day_of_week, was created to extract the day of the week from the started_at timestamp. The day of the week was represented as an integer where 1 = Sunday and 7 = Saturday, which facilitated analysis of patterns by day.
+To prepare the dataset for analysis, several transformations were applied to create new columns and extract relevant features:
+  - Creating a new column for ride duration: A new column, ride_length, was created to calculate the duration of each ride in minutes. The duration was calculated as the difference between the ended_at and started_at timestamps.
+  - Extracting the day of the week: A new column, day_of_week, was added to extract the day of the week from the started_at timestamp. The days of the week were represented as integers, where 1 = Sunday and 7 = Saturday.
 
 SQL QUERIES: 
 
