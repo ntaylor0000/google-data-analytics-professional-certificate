@@ -552,6 +552,102 @@ GROUP BY
 ```
 
 #
+#  PREPARE DATA
+#
+  
+
+## Install necessary packages and libraries
+
+install.packages("dplyr")
+install.packages("lubridate")
+install.packages("tidyverse")
+
+library(dplyr)
+library(lubridate)
+library(ggplot)
+library(readr)
+library(tidyverse)
+
+# Set the directory where .csv files are stored
+
+csv_directory <- "C:/Users/dark_/Downloads/Google Data Analytics Certificiate/Case Study 1/raw_data/"
+
+# List all .csv files in the directory
+
+csv_files <- list.files(path = csv_directory, pattern = "*.csv", full.names = TRUE)
+
+# Read and merge all .csv files into a single data frame using bind_rows
+
+bike_trips <- csv_files %>%
+  lapply(read_csv) %>%
+  bind_rows()
+
+
+# Calculate the total row count, count of unique ride_id's, and the number of duplicate records.
+# Output: 5,854,544 rows, 5,854,333 distinct rows, 211 duplicate rows.
+
+# Calculate total row count
+
+total_count <- nrow(bike_trips)
+
+# Calculate count of unique ride_id's
+
+unique_ride_ids <- n_distinct(bike_trips$ride_id)
+
+# Calculate the number of duplicate records
+
+duplicate_count <- total_count - unique_ride_ids
+
+# Print the results
+
+cat("Total Row Count:", total_count, "\n")
+cat("Unique Ride IDs:", unique_ride_ids, "\n")
+cat("Duplicate Records:", duplicate_count, "\n")
+
+
+# Identify and delete duplicate records based on ride_id. 
+# Delete 211 duplicate rows.
+
+bike_trips_cleaned <- bike_trips %>%
+  distinct(ride_id, .keep_all = TRUE)
+
+# Identify and delete rows with NULL values in key columns. 
+# Delete 1,626,238 null rows. 
+
+bike_trips_cleaned <- bike_trips_cleaned %>%
+  filter(!is.na(started_at), !is.na(ended_at), !is.na(start_station_name), !is.na(end_station_name))
+
+# Identify and delete outliers based on duration.
+# Delete 50,330 outliers.
+
+bike_trips_cleaned <- bike_trips_cleaned %>%
+  filter(difftime(ended_at, started_at, units = "mins") >= 1 &         # duration < 1 minute
+           difftime(ended_at, started_at, units = "mins") <= 1440)     # duration > 1440 minutes (24 hours)
+
+
+
+#
+# Process Data
+#
+
+
+# Create new column ride_length to store the duration of each bike ride in minutes.
+# Update the ride_length column by calculating the difference between ended_at and started_at in minutes.
+
+bike_trips_cleaned <- bike_trips_cleaned %>%
+  mutate(ride_length = as.numeric(difftime(ended_at, started_at, units = "mins")))
+
+# Create new column day_of_week to extract the day of the week from the started_at column.
+# Update the day_of_week column by extracting the day of the week from started_at. (NOTE: 1 = Sunday and 7 = Saturday).
+
+bike_trips_cleaned <- bike_trips_cleaned %>%
+  mutate(day_of_week = as.integer(format(started_at, "%w")) + 1)
+
+
+
+
+
+#
 # Analyze Data
 #
 
@@ -583,6 +679,7 @@ cat("Mean ride length: ", mean_ride_length, "\n")
 cat("Median ride length: ", median_ride_length, "\n")
 cat("Mode ride length: ", mode_ride_length, "\n")
 
+
 # Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
 # Output: Mode - 4 (Wednesday)
 
@@ -593,6 +690,37 @@ mode_day_of_week <- get_mode(bike_trips_cleaned$day_of_week)
 # Print the result
 
 cat("Mode of day_of_week: ", mode_day_of_week, "\n")
+
+
+# Visualization
+# Prepare data for plotting
+
+day_of_week_counts <- bike_trips_cleaned %>%
+  count(day_of_week) %>%
+  mutate(day_of_week = factor(day_of_week, levels = 1:7, labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")))
+
+# Create bar plot
+
+ggplot(day_of_week_counts, aes(x = day_of_week, y = n, fill = day_of_week == mode_day_of_week)) +
+  geom_bar(stat = "identity", show.legend = FALSE) + 
+  scale_fill_manual(values = c("grey", "blue")) +         # Highlight mode in blue, other days in grey
+  labs(
+    title = "Frequency of Bike Trips by Day of the Week",
+    x = "Day of the Week",
+    y = "Count of Trips"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),   # Adjust x-axis text for readability
+    plot.title = element_text(hjust = 0.5)               # Center title
+  ) +
+  
+  # Manually format y-axis to show numbers with commas
+  
+  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  annotate("text", x = mode_day_of_week, y = max(day_of_week_counts$n) * 0.9, 
+           label = paste("Mode:", mode_day_of_week), color = "blue", size = 5, fontface = "bold")
+
 
 # Calculate the average ride_length by member_casual. 
 # Output: casual - 24.14, member - 12.56
@@ -607,6 +735,24 @@ avg_ride_length_by_member_casual <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_member_casual)
 
+#Visualization
+# Create a bar plot 
+
+ggplot(avg_ride_length_by_member_casual, aes(x = member_casual, y = avg_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", show.legend = FALSE) + 
+  labs(
+    title = "Average Ride Length by Member Status",
+    x = "Member Status",
+    y = "Average Ride Length (minutes)"
+  ) +
+  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +       # Custom colors for casual and member
+  theme_minimal() +  # Clean and minimal theme
+  geom_text(aes(label = round(avg_ride_length, 2)), vjust = -0.5, size = 5) +  # Display values on top of bars
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5),    # Center the x-axis text
+    plot.title = element_text(hjust = 0.5)                 # Center the title
+  )
+
 # Calculate the average ride_length by day_of_week and member_casual. 
 # Output: Average ride length grouped by both day of the week and membership status. 
 
@@ -620,6 +766,25 @@ avg_ride_length_by_day_and_member <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_day_and_member)
 
+# Visualization
+# Create a bar plot
+
+ggplot(avg_ride_length_by_day_and_member, aes(x = as.factor(day_of_week), y = avg_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Average Ride Length by Day of the Week and Membership Status",
+    x = "Day of the Week",
+    y = "Average Ride Length (minutes)"
+  ) +
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) +  # Convert day of week to text
+  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +         
+  theme_minimal() +
+  geom_text(aes(label = round(avg_ride_length, 2)), position = position_dodge(width = 0.8), vjust = -0.5, hjust = 0.5, size = 3.5) +  # Display values on top of bars
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5),   # Center x-axis text
+    plot.title = element_text(hjust = 0.5)                # Center the title
+  )
+
 # Calculate the number of ride_id per day_of_week.
 # Output: Total ride count for each day of the week.
 
@@ -632,6 +797,25 @@ ride_count_by_day <- bike_trips_cleaned %>%
 # Print the result
 
 print(ride_count_by_day)
+
+# Visualization
+# Create the bar plot
+
+ggplot(ride_count_by_day, aes(x = as.factor(day_of_week), y = ride_count, fill = as.factor(day_of_week))) +
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) +
+  labs(
+    title = "Total Ride Count by Day of the Week",
+    x = "Day of the Week",
+    y = "Number of Rides"
+  ) +
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", 
+                              "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) + 
+  scale_fill_manual(values = c("1" = "blue", "2" = "red", "3" = "green", "4" = "purple", "5" = "orange", "6" = "yellow", "7" = "pink")) + 
+  theme_minimal() +
+  geom_text(aes(label = ride_count), 
+            position = position_dodge(width = 0.9), vjust = -0.3, size = 4) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) 
+
 
 # Calculate the number of ride_id and average ride_length by hour of the day.
 # Output: Ride count and average ride length for each hour.
@@ -650,6 +834,35 @@ ride_summary_by_hour <- bike_trips_cleaned %>%
 # Print the results
 
 print(ride_summary_by_hour)
+
+# Visualization
+# Create a bar plot
+ggplot(ride_summary_by_hour, aes(x = hour_of_day)) +
+  
+  # Bar plot for ride count
+  geom_bar(aes(y = ride_count), stat = "identity", fill = "skyblue", alpha = 0.6) +
+  
+  # Line plot for average ride length
+  geom_line(aes(y = avg_ride_length), color = "red", size = 1.2, group = 1) +  
+  geom_point(aes(y = avg_ride_length), color = "red", size = 2) +  
+  
+  # Add labels for the y-axes
+  scale_y_continuous(
+    name = "Ride Count",
+    labels = function(x) format(x, big.mark = ",", scientific = FALSE),                                                           # Left axis formatted with commas
+    sec.axis = sec_axis(~ ., name = "Avg Ride Length (min)", labels = function(x) format(x, big.mark = ",", scientific = FALSE))  # Right axis formatted with commas
+  ) +
+  
+  labs(
+    title = "Ride Count and Average Ride Length by Hour of the Day",
+    x = "Hour of the Day",
+    y = "Ride Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y.right = element_text(color = "red"), 
+    axis.text.y.right = element_text(color = "red") 
+  )
 
 # Calculate the average ride_length by starting_station_name.
 # Output: Average ride length for each station. 
@@ -698,6 +911,32 @@ avg_ride_length_by_type <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_type)
 
+# Visualization
+# Create a bar plot
+
+ggplot(avg_ride_length_by_type, aes(x = rideable_type, y = avg_ride_length)) +
+  
+  # Bar plot for average ride length by bike type
+  
+  geom_bar(stat = "identity", fill = "skyblue", color = "black", alpha = 0.7) +
+  
+  # Add labels on top of the bars
+  
+  geom_text(aes(label = round(avg_ride_length, 1)), vjust = -0.3, size = 3.5, color = "black") +
+  
+  # Set the axis labels and title
+  
+  labs(
+    title = "Average Ride Length by Bike Type",
+    x = "Bike Type",
+    y = "Average Ride Length (minutes)"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 1),
+    axis.title = element_text(size = 12),
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold")
+  )
 
 ```
 
