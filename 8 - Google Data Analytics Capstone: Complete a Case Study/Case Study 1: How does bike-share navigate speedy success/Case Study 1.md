@@ -276,6 +276,20 @@ ADD day_of_week INT;
 UPDATE public.bike_trips
 SET day_of_week = EXTRACT(DOW FROM started_at) + 1;
 
+```
+
+**R Approach**
+
+
+
+
+## Step 4: Analyze
+
+**Excel Approach**
+
+**SQL Approach**
+
+```
 
 /*
 Analyze Data
@@ -398,8 +412,6 @@ GROUP BY
 
 
 
-## Step 4: Analyze
-
 **Exploratory Data Analysis:**
 
 **Statistical Analysis and Models:**
@@ -407,6 +419,11 @@ GROUP BY
 **Visualizations:**
 
 **Interpretation:**
+
+
+
+
+
 
 ## Step 5: Share
 
@@ -417,6 +434,11 @@ GROUP BY
 **Visual Communication:**
 
 **Context:**
+
+
+
+
+
 
 ## Step 6: Act
 
