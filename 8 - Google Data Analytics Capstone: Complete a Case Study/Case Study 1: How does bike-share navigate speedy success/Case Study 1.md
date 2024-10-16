@@ -940,41 +940,53 @@ ggplot(avg_ride_length_by_type, aes(x = rideable_type, y = avg_ride_length)) +
 
 ```
 
-
-**Exploratory Data Analysis:**
-
-**Statistical Analysis and Models:**
-
-**Visualizations:**
-
-**Interpretation:**
-
-
-
-
-
-
 ## Step 5: Share
 
-**Summary of Findings:**
-
-**Recommendations:**
-
-**Visual Communication:**
-
-**Context:**
-
-
-
-
-
+Now that you have performed your analysis and gained some insights into your data, create
+visualizations to share your findings. Moreno has reminded you that they should be
+sophisticated and polished in order to effectively communicate to the executive team. Use the
+following Case Study Roadmap as a guide:
+Case Study Roadmap - Share
+Guiding questions
+● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes
+differently?
+● What story does your data tell?
+● How do your findings relate to your original question?
+● Who is your audience? What is the best way to communicate with them?
+● Can data visualization help you share your findings?
+● Is your presentation accessible to your audience?
+Key tasks
+● Determine the best way to share your findings.
+● Create effective data visualizations.
+● Present your findings.
+● Ensure your work is accessible.
+Deliverable ● Supporting visualizations and key findings
+Follow these steps:
+1. Take out a piece of paper and a pen and sketch some ideas for how you will visualize
+the data.
+2. Once you choose a visual form, open your tool of choice to create your visualization.
+Use a presentation software, such as PowerPoint or Google Slides, your spreadsheet
+program, Tableau, or R.
 
 ## Step 6: Act
 
-**Next Steps:**
-
-**Potential Challenges:**
-
-**Long-Term Impact:**
-
-**Further Analysis:**
+Now that you have finished creating your visualizations, act on your findings. Prepare the
+deliverables Morena asked you to create, including the three top recommendations based on
+your analysis. Use the following Case Study Roadmap as a guide:
+Case Study Roadmap - Act
+Guiding questions
+● What is your final conclusion based on your analysis?
+● How could your team and business apply your insights?
+● What next steps would you or your stakeholders take based on your findings?
+● Is there additional data you could use to expand on your findings?
+Key tasks
+● Create your portfolio.
+● Add your case study.
+● Practice presenting your case study to a friend or family member.
+Deliverable ● Your top three recommendations based on your analysis
+Follow these steps:
+1. If you do not have one already, create an online portfolio.
+2. Consider how you want to feature your case study in your portfolio.
+3. Upload or link your case study findings to your portfolio.
+4. Write a brief paragraph describing the case study, your process, and your discoveries.
+5. Add the paragraph to introduce your case study in your portfolio.
