@@ -465,7 +465,7 @@ GROUP BY
 ORDER BY 
     member_casual;
 
--- Calculate the avearge ride_length by day_of_week and member_casual. 
+-- Calculate the average ride_length by day_of_week and member_casual. 
 -- Output: Average ride length grouped by both day of the week and membership status. 
 
 SELECT 
@@ -492,7 +492,7 @@ GROUP BY
 ORDER BY 
     day_of_week;
 
--- Calculate uthe number of ride_id and average ride_length by hour of the day.
+-- Calculate the number of ride_id and average ride_length by hour of the day.
 -- Output: Ride count and average ride length for each hour.
 
 SELECT 
