@@ -424,11 +424,45 @@ bike_trips_cleaned <- bike_trips_cleaned %>%
 
 ## Step 4: Analyze
 
-**Excel Approach**
+**Data Analysis Summary:**
+
+The analysis of the bike trips data was conducted using a PostgreSQL database, focusing on various key metrics related to ride lengths and usage patterns. The steps undertaken in the analysis involved calculating aggregate statistics such as the mean, median, and mode of ride lengths, as well as other insightful aggregations related to membership types, days of the week, ride start times, stations, and bike types.
+
+Key Findings from Data Analysis:
+
+1. Mean, Median, and Mode of Ride Length:
+  - The average ride length was approximately 16.68 minutes.
+  - The median ride length, which represented the middle point of the dataset, was 10 minutes.
+  - The mode of ride length, which indicates the most frequent ride duration, was 5 minutes. This suggests that the majority of rides are relatively short in duration.
+2. Mode of Day of the Week:
+  - The most common day of the week for bike trips was identified through the mode of the day_of_week column.
+  - The result showed that Wednesday (day 4) had the most trips, meaning it was the most popular day for riding bikes in the dataset.
+3. Average Ride Length by Membership Type:
+  - The dataset was grouped by member_casual to calculate the average ride length based on membership type.
+  - The average ride length for casual riders was calculated at 24.14 minutes, while for members it was 12.56 minutes. This indicates that casual riders tend to ride significantly longer than members on average.
+4. Average Ride Length by Day of the Week and Membership Type:
+  - The average ride length was analyzed further by grouping the data by both day_of_week and member_casual.
+  - This helped identify patterns in ride lengths across different days and membership statuses. 
+5. Ride Count by Day of the Week:
+  - The total number of rides per day of the week was calculated.
+  - This information helps understand the daily distribution of bike trips, which can be useful for operational decisions, such as resource allocation and station management.
+6. Ride Count and Average Ride Length by Hour of the Day:
+  - A detailed breakdown was done by hour of the day to calculate both the total ride count and average ride length.
+  - This analysis revealed peak usage hours for bike rides and the associated average ride lengths, providing insights into ride demand patterns throughout the day.
+7. Average Ride Length by Starting Station:
+  - The average ride length was calculated by starting station name.
+  - This helps identify which stations have longer or shorter average rides, which could indicate station-specific factors such as location, destination proximity, or user preferences.
+8. Most Common Start and End Station Pairs:
+  - The most frequent station-to-station routes were identified by grouping the data by both start_station_name and end_station_name.
+  - This provided insight into the most popular travel routes and can be useful for understanding biking behavior and optimizing station placement.
+9. Average Ride Length by Bike Type:
+  - The analysis also included a breakdown of the average ride length by rideable_type, showing how different bike types were utilized.
+  - This helps to identify trends in the usage of various bike types, which could be useful for fleet management and operational improvements.
+
+**EXCEL APPROACH:**
 
 
-
-**SQL Approach**
+**SQL QUERIES:**
 
 ```
 /*
@@ -547,7 +581,7 @@ GROUP BY
 
 ```
 
-**R Approach**
+**R CODE:**
 
 ```
 #
