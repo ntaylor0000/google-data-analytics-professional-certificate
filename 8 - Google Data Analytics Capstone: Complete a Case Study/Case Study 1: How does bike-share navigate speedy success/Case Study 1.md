@@ -188,7 +188,7 @@ Data cleaning is crucial to ensure the dataset is accurate and suitable for anal
 
   - Removing duplicates: Duplicate records were identified and removed based on the ride_id using PostgreSQL’s ROW_NUMBER() function. This ensured that each ride had only one unique entry.
   - Removing rows with NULL values: Rows with NULL values in critical columns (e.g., started_at, ended_at, start_station_name, end_station_name) were removed to prevent incomplete or inaccurate data from skewing the analysis.
-  - Removing outliers: Outliers based on ride duration were identified and removed. Specifically, records where the ride duration was less than 1 minute or greater than 24 hours were filtered out.
+  - Removing outliers: Outliers based on ride_length were identified and removed. Specifically, records where the ride duration was less than 1 minute or greater than 24 hours were filtered out.
 
 Step 3: Data Transformation:
 
@@ -270,7 +270,7 @@ WHERE started_at IS NULL
    OR start_station_name IS NULL
    OR end_station_name IS NULL;
 
--- Identify and delete outliers based on duration and distance.
+-- Identify and delete outliers based on ride_length.
 -- Delete 50,330 outliers.
 
 DELETE FROM public.bike_trips
