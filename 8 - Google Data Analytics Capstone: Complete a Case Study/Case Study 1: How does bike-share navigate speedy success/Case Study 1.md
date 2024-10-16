@@ -741,6 +741,22 @@ print(avg_ride_length_by_type)
 
 ## Step 5: Share
 
+**Data Visualization and Findings Summary:**
+
+In this phase, the focus shifts to presenting the key findings from our analysis through polished, accessible, and insightful visualizations. The goal is to clearly communicate how annual members and casual riders use Cyclistic bikes differently and provide actionable insights for decision-making.
+
+Tableau will serve as the primary tool for sharing these insights, allowing us to build an interactive, visually appealing dashboard that effectively conveys the data. The dashboard will emphasize clarity, conciseness, and actionability to help the executive team understand user behavior patterns. This understanding is crucial for making more targeted decisions related to marketing, bike availability, and user engagement.
+Key visualizations will include:
+
+1.	A comparison of average ride length between annual members and casual riders.
+2.	A breakdown of ride usage by day of the week and time of day.
+3.	Insights into the most frequent start and end station pairs and bike types used.
+4.	A clear view of how ride behaviors differ between membership status and time-specific trends.
+   
+By utilizing Tableau’s interactive capabilities, the dashboard will not only highlight key trends but also allow stakeholders to drill down into the details, making the data accessible and actionable for the entire executive team.
+
+The goal is to ensure that the findings are both engaging and easy to digest, ensuring everyone in the room can grasp the implications of the data and use it to inform future strategy for Cyclistic. This dashboard will serve as a powerful tool for guiding decisions that align with the company’s goals of increasing ridership and optimizing the user experience.
+
 
 
 
@@ -752,6 +768,7 @@ R CODE:
 #
 # Share Data
 #
+
 
 # Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
 # Prepare data for plotting
@@ -898,37 +915,19 @@ ggplot(avg_ride_length_by_type, aes(x = rideable_type, y = avg_ride_length)) +
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold")
   )
 
-
 ```
+**R VISUALIZATIONS:**
 
+![mode_day_of_week]()
+![avg_ride_by_member]()
+![avg_ride_by_day_and_member]()
+![rides_per_day]()
+![rides_per_hour]()
+![avg_ride_by_bike]()
 
-Now that you have performed your analysis and gained some insights into your data, create
-visualizations to share your findings. Moreno has reminded you that they should be
-sophisticated and polished in order to effectively communicate to the executive team. Use the
-following Case Study Roadmap as a guide:
-Case Study Roadmap - Share
-Guiding questions
-● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes
-differently?
-● What story does your data tell?
-● How do your findings relate to your original question?
-● Who is your audience? What is the best way to communicate with them?
-● Can data visualization help you share your findings?
-● Is your presentation accessible to your audience?
-Key tasks
-● Determine the best way to share your findings.
-● Create effective data visualizations.
-● Present your findings.
-● Ensure your work is accessible.
-Deliverable ● Supporting visualizations and key findings
-Follow these steps:
-1. Take out a piece of paper and a pen and sketch some ideas for how you will visualize
-the data.
-2. Once you choose a visual form, open your tool of choice to create your visualization.
-Use a presentation software, such as PowerPoint or Google Slides, your spreadsheet
-program, Tableau, or R.
 
 ## Step 6: Act
+
 
 Now that you have finished creating your visualizations, act on your findings. Prepare the
 deliverables Morena asked you to create, including the three top recommendations based on
