@@ -149,28 +149,53 @@ To prepare the dataset for analysis, several transformations were applied:
 
 While Excel is a widely-used tool for data analysis, it is not well-suited for handling very large datasets due to its memory limitations. Excel can accommodate up to 1,048,575 rows per worksheet, which may restrict its use for large-scale analysis. For this project, the following steps were performed using Excel:
 
-  -	Data Merging:
+Step 1: File Setup and Data Merging:
 
-   	The 12 CSV files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
+The 12 CSV files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
 
 ![](Visualizations/power_query.png "power_query.png")
 
-  - Data Transformation: 
-  
-    Formulas were applied to calculate key metrics:
+Step 2: Data Cleaning:
 
-      - Ride length: =I2 - F2 (Where F2 is the ride start time and I2 is the ride end time).
-      - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
+The “Remove Duplicates” function was applied to identify and remove any duplicate records. No duplicates were detected within the subset of data that Excel could process.
+      
+Step 3: Data Transformation: 
+  
+Formulas were applied to calculate key metrics:
+
+  - Ride length: =I2 - F2 (Where F2 is the ride start time and I2 is the ride end time).
+  - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
 
 ![](Visualizations/excel_transformation.png "excel_transformation.png")
 
-  - Data Cleaning:
-
-      The “Remove Duplicates” function was applied to identify and remove any duplicate records. No duplicates were detected within the subset of data that Excel could process.
-
 > Note: Due to the large size of the dataset (5,854,585 rows), Excel was unable to fully handle the data. While Excel can be useful for small to medium-sized datasets, SQL and R are better suited for managing large datasets of this scale.
 
+> Note: If Excel is the only available tool for this analysis, it is possible to work with each of the 12 files individually and then aggregate the data into a single sheet for analysis. While this approach is feasible, it would be significantly more time-consuming and less efficient compared to using a database or scripting language like SQL or R. Nonetheless, it remains a viable option if other tools are unavailable.
+
 **SQL Approach**
+
+While SQL is a powerful and efficient tool for managing large datasets, it is well-suited for structured data analysis on databases. For this project, the following steps were performed using PostgreSQL:
+
+Step 1: File Setup and Data Merging:
+
+The 12 CSV files were imported into the public.bike_trips table using PostgreSQL’s COPY command. This method efficiently loaded the data into a relational database, avoiding the issues with row limitations that Excel faced. 
+
+Step 2: Data Cleaning: 
+
+To ensure data quality, several cleaning steps were performed:
+
+  - Removing duplicates: Duplicate records were identified and removed from the dataset using a ROW_NUMBER() function that partitioned by ride_id. Any records with a duplicate ride_id were deleted, leaving only one unique record for each ride.
+  - Removing rows with NULL values: Rows with NULL values in key columns like started_at, ended_at, start_station_name, or end_station_name were deleted, as missing critical information could skew analysis.
+  - Removing outliers: Outliers based on ride duration were removed. For example, records where the ride duration was less than 1 minute or greater than 24 hours were deleted.
+
+Step 3: Data Transformation:
+
+Several key transformations were performed on the dataset to make it more suitable for analysis:
+
+  - Creating a new column for ride duration: A new column, ride_length, was added to the table. The ride length was calculated as the difference between the ended_at and started_at timestamps, measured in minutes. This transformation enabled analysis of ride durations.
+  - Extracting the day of the week: A new column, day_of_week, was created to extract the day of the week from the started_at timestamp. The day of the week was represented as an integer where 1 = Sunday and 7 = Saturday, which facilitated analysis of patterns by day.
+
+SQL QUERIES: 
 
 ```
 
