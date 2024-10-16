@@ -629,36 +629,6 @@ mode_day_of_week <- get_mode(bike_trips_cleaned$day_of_week)
 cat("Mode of day_of_week: ", mode_day_of_week, "\n")
 
 
-# Visualization
-# Prepare data for plotting
-
-day_of_week_counts <- bike_trips_cleaned %>%
-  count(day_of_week) %>%
-  mutate(day_of_week = factor(day_of_week, levels = 1:7, labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")))
-
-# Create bar plot
-
-ggplot(day_of_week_counts, aes(x = day_of_week, y = n, fill = day_of_week == mode_day_of_week)) +
-  geom_bar(stat = "identity", show.legend = FALSE) + 
-  scale_fill_manual(values = c("grey", "blue")) +         # Highlight mode in blue, other days in grey
-  labs(
-    title = "Frequency of Bike Trips by Day of the Week",
-    x = "Day of the Week",
-    y = "Count of Trips"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.text.x = element_text(angle = 45, hjust = 1),   # Adjust x-axis text for readability
-    plot.title = element_text(hjust = 0.5)               # Center title
-  ) +
-  
-  # Manually format y-axis to show numbers with commas
-  
-  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) +
-  annotate("text", x = mode_day_of_week, y = max(day_of_week_counts$n) * 0.9, 
-           label = paste("Mode:", mode_day_of_week), color = "blue", size = 5, fontface = "bold")
-
-
 # Calculate the average ride_length by member_casual. 
 # Output: casual - 24.14, member - 12.56
 
@@ -672,23 +642,6 @@ avg_ride_length_by_member_casual <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_member_casual)
 
-#Visualization
-# Create a bar plot 
-
-ggplot(avg_ride_length_by_member_casual, aes(x = member_casual, y = avg_ride_length, fill = member_casual)) +
-  geom_bar(stat = "identity", show.legend = FALSE) + 
-  labs(
-    title = "Average Ride Length by Member Status",
-    x = "Member Status",
-    y = "Average Ride Length (minutes)"
-  ) +
-  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +       # Custom colors for casual and member
-  theme_minimal() +  # Clean and minimal theme
-  geom_text(aes(label = round(avg_ride_length, 2)), vjust = -0.5, size = 5) +  # Display values on top of bars
-  theme(
-    axis.text.x = element_text(angle = 0, hjust = 0.5),    # Center the x-axis text
-    plot.title = element_text(hjust = 0.5)                 # Center the title
-  )
 
 # Calculate the average ride_length by day_of_week and member_casual. 
 # Output: Average ride length grouped by both day of the week and membership status. 
@@ -703,24 +656,6 @@ avg_ride_length_by_day_and_member <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_day_and_member)
 
-# Visualization
-# Create a bar plot
-
-ggplot(avg_ride_length_by_day_and_member, aes(x = as.factor(day_of_week), y = avg_ride_length, fill = member_casual)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(
-    title = "Average Ride Length by Day of the Week and Membership Status",
-    x = "Day of the Week",
-    y = "Average Ride Length (minutes)"
-  ) +
-  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) +  # Convert day of week to text
-  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +         
-  theme_minimal() +
-  geom_text(aes(label = round(avg_ride_length, 2)), position = position_dodge(width = 0.8), vjust = -0.5, hjust = 0.5, size = 3.5) +  # Display values on top of bars
-  theme(
-    axis.text.x = element_text(angle = 0, hjust = 0.5),   # Center x-axis text
-    plot.title = element_text(hjust = 0.5)                # Center the title
-  )
 
 # Calculate the number of ride_id per day_of_week.
 # Output: Total ride count for each day of the week.
@@ -734,24 +669,6 @@ ride_count_by_day <- bike_trips_cleaned %>%
 # Print the result
 
 print(ride_count_by_day)
-
-# Visualization
-# Create the bar plot
-
-ggplot(ride_count_by_day, aes(x = as.factor(day_of_week), y = ride_count, fill = as.factor(day_of_week))) +
-  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) +
-  labs(
-    title = "Total Ride Count by Day of the Week",
-    x = "Day of the Week",
-    y = "Number of Rides"
-  ) +
-  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", 
-                              "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) + 
-  scale_fill_manual(values = c("1" = "blue", "2" = "red", "3" = "green", "4" = "purple", "5" = "orange", "6" = "yellow", "7" = "pink")) + 
-  theme_minimal() +
-  geom_text(aes(label = ride_count), 
-            position = position_dodge(width = 0.9), vjust = -0.3, size = 4) +
-  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) 
 
 
 # Calculate the number of ride_id and average ride_length by hour of the day.
@@ -772,34 +689,6 @@ ride_summary_by_hour <- bike_trips_cleaned %>%
 
 print(ride_summary_by_hour)
 
-# Visualization
-# Create a bar plot
-ggplot(ride_summary_by_hour, aes(x = hour_of_day)) +
-  
-  # Bar plot for ride count
-  geom_bar(aes(y = ride_count), stat = "identity", fill = "skyblue", alpha = 0.6) +
-  
-  # Line plot for average ride length
-  geom_line(aes(y = avg_ride_length), color = "red", size = 1.2, group = 1) +  
-  geom_point(aes(y = avg_ride_length), color = "red", size = 2) +  
-  
-  # Add labels for the y-axes
-  scale_y_continuous(
-    name = "Ride Count",
-    labels = function(x) format(x, big.mark = ",", scientific = FALSE),                                                           # Left axis formatted with commas
-    sec.axis = sec_axis(~ ., name = "Avg Ride Length (min)", labels = function(x) format(x, big.mark = ",", scientific = FALSE))  # Right axis formatted with commas
-  ) +
-  
-  labs(
-    title = "Ride Count and Average Ride Length by Hour of the Day",
-    x = "Hour of the Day",
-    y = "Ride Count"
-  ) +
-  theme_minimal() +
-  theme(
-    axis.title.y.right = element_text(color = "red"), 
-    axis.text.y.right = element_text(color = "red") 
-  )
 
 # Calculate the average ride_length by starting_station_name.
 # Output: Average ride length for each station. 
@@ -848,7 +737,133 @@ avg_ride_length_by_type <- bike_trips_cleaned %>%
 
 print(avg_ride_length_by_type)
 
-# Visualization
+```
+
+## Step 5: Share
+
+
+
+R CODE:
+```
+# Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
+# Prepare data for plotting
+
+day_of_week_counts <- bike_trips_cleaned %>%
+  count(day_of_week) %>%
+  mutate(day_of_week = factor(day_of_week, levels = 1:7, labels = c("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")))
+
+# Create bar plot
+
+ggplot(day_of_week_counts, aes(x = day_of_week, y = n, fill = day_of_week == mode_day_of_week)) +
+  geom_bar(stat = "identity", show.legend = FALSE) + 
+  scale_fill_manual(values = c("grey", "blue")) +         # Highlight mode in blue, other days in grey
+  labs(
+    title = "Frequency of Bike Trips by Day of the Week",
+    x = "Day of the Week",
+    y = "Count of Trips"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),   # Adjust x-axis text for readability
+    plot.title = element_text(hjust = 0.5)               # Center title
+  ) +
+  
+  # Manually format y-axis to show numbers with commas
+  
+  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) +
+  annotate("text", x = mode_day_of_week, y = max(day_of_week_counts$n) * 0.9, 
+           label = paste("Mode:", mode_day_of_week), color = "blue", size = 5, fontface = "bold")
+
+
+# Calculate the average ride_length by member_casual. 
+# Create a bar plot 
+
+ggplot(avg_ride_length_by_member_casual, aes(x = member_casual, y = avg_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", show.legend = FALSE) + 
+  labs(
+    title = "Average Ride Length by Member Status",
+    x = "Member Status",
+    y = "Average Ride Length (minutes)"
+  ) +
+  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +       # Custom colors for casual and member
+  theme_minimal() +  # Clean and minimal theme
+  geom_text(aes(label = round(avg_ride_length, 2)), vjust = -0.5, size = 5) +  # Display values on top of bars
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5),    # Center the x-axis text
+    plot.title = element_text(hjust = 0.5)                 # Center the title
+  )
+
+
+# Calculate the average ride_length by day_of_week and member_casual. 
+# Create a bar plot
+
+ggplot(avg_ride_length_by_day_and_member, aes(x = as.factor(day_of_week), y = avg_ride_length, fill = member_casual)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(
+    title = "Average Ride Length by Day of the Week and Membership Status",
+    x = "Day of the Week",
+    y = "Average Ride Length (minutes)"
+  ) +
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) +  # Convert day of week to text
+  scale_fill_manual(values = c("casual" = "lightblue", "member" = "lightgreen")) +         
+  theme_minimal() +
+  geom_text(aes(label = round(avg_ride_length, 2)), position = position_dodge(width = 0.8), vjust = -0.5, hjust = 0.5, size = 3.5) +  # Display values on top of bars
+  theme(
+    axis.text.x = element_text(angle = 0, hjust = 0.5),   # Center x-axis text
+    plot.title = element_text(hjust = 0.5)                # Center the title
+  )
+
+
+# Calculate the number of ride_id per day_of_week.
+# Create the bar plot
+
+ggplot(ride_count_by_day, aes(x = as.factor(day_of_week), y = ride_count, fill = as.factor(day_of_week))) +
+  geom_bar(stat = "identity", position = "dodge", show.legend = FALSE) +
+  labs(
+    title = "Total Ride Count by Day of the Week",
+    x = "Day of the Week",
+    y = "Number of Rides"
+  ) +
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", 
+                              "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) + 
+  scale_fill_manual(values = c("1" = "blue", "2" = "red", "3" = "green", "4" = "purple", "5" = "orange", "6" = "yellow", "7" = "pink")) + 
+  theme_minimal() +
+  geom_text(aes(label = ride_count), 
+            position = position_dodge(width = 0.9), vjust = -0.3, size = 4) +
+  scale_y_continuous(labels = function(x) format(x, big.mark = ",", scientific = FALSE)) 
+
+
+# Calculate the number of ride_id and average ride_length by hour of the day.
+# Create a bar plot
+ggplot(ride_summary_by_hour, aes(x = hour_of_day)) +
+  
+  # Bar plot for ride count
+  geom_bar(aes(y = ride_count), stat = "identity", fill = "skyblue", alpha = 0.6) +
+  
+  # Line plot for average ride length
+  geom_line(aes(y = avg_ride_length), color = "red", size = 1.2, group = 1) +  
+  geom_point(aes(y = avg_ride_length), color = "red", size = 2) +  
+  
+  # Add labels for the y-axes
+  scale_y_continuous(
+    name = "Ride Count",
+    labels = function(x) format(x, big.mark = ",", scientific = FALSE),                                                           # Left axis formatted with commas
+    sec.axis = sec_axis(~ ., name = "Avg Ride Length (min)", labels = function(x) format(x, big.mark = ",", scientific = FALSE))  # Right axis formatted with commas
+  ) +
+  
+  labs(
+    title = "Ride Count and Average Ride Length by Hour of the Day",
+    x = "Hour of the Day",
+    y = "Ride Count"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y.right = element_text(color = "red"), 
+    axis.text.y.right = element_text(color = "red") 
+  )
+
+
+# Calculate the average ride_length by rideable_type
 # Create a bar plot
 
 ggplot(avg_ride_length_by_type, aes(x = rideable_type, y = avg_ride_length)) +
@@ -875,9 +890,9 @@ ggplot(avg_ride_length_by_type, aes(x = rideable_type, y = avg_ride_length)) +
     plot.title = element_text(hjust = 0.5, size = 14, face = "bold")
   )
 
+
 ```
 
-## Step 5: Share
 
 Now that you have performed your analysis and gained some insights into your data, create
 visualizations to share your findings. Moreno has reminded you that they should be
