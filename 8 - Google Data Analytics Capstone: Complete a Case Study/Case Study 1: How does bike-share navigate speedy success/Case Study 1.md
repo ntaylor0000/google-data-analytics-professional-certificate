@@ -757,11 +757,12 @@ By utilizing Tableau’s interactive capabilities, the dashboard will not only h
 
 The goal is to ensure that the findings are both engaging and easy to digest, ensuring everyone in the room can grasp the implications of the data and use it to inform future strategy for Cyclistic. This dashboard will serve as a powerful tool for guiding decisions that align with the company’s goals of increasing ridership and optimizing the user experience.
 
+> NOTE:: Methods used in Excel and R for visualizing the dataset are also included, demonstrating the analytical capabilities of these tools.
+
+TABLEAU:
 
 
-
-Tableau:
-
+EXCEL APPROACH: 
 
 R CODE:
 ```
