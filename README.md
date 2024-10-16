@@ -188,7 +188,7 @@ By the end of this course, learners will:
 
 ## Certificate:
 
-![cert](Coursera_Certificate.jpg)
+![cert](google-data-analytics-professional-certificate.png)
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.r-project.org/" target="_blank" rel="noreferrer"> <img src="https://www.r-project.org/Rlogo.png" alt="R" width="40" height="40"/> </a>
