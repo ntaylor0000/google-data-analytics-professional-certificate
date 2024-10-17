@@ -442,41 +442,22 @@ bike_trips_cleaned <- bike_trips_cleaned %>%
 
 **Data Analysis Summary:**
 
-The analysis of the bike trips data was conducted using a PostgreSQL database, focusing on various key metrics related to ride lengths and usage patterns. The steps undertaken in the analysis involved calculating aggregate statistics such as the mean, median, and mode of ride lengths, as well as other insightful aggregations related to membership types, days of the week, ride start times, stations, and bike types.
+The analysis of the bike trips data involved utilizing both PostgreSQL and R to derive key metrics related to ride lengths and usage patterns. The analysis encompassed calculating aggregate statistics, including the mean, median, and mode of ride lengths, alongside insightful aggregations based on membership types, days of the week, ride start times, stations, and bike types.
 
-**Key Findings from Data Analysis:**
+Ride Length Statistics:
+- The average ride length was approximately 17 minutes, with a median of 10 minutes and a mode of 5 minutes. This indicates that most rides are relatively short, suggesting frequent, quick trips.
 
-1. Mean, Median, and Mode of Ride Length:
-    - The average ride length was approximately 16.68 minutes.
-    - The median ride length, which represented the middle point of the dataset, was 10 minutes.
-    - The mode of ride length, which indicates the most frequent ride duration, was 5 minutes. This suggests that the majority of rides are relatively short in duration.
-2. Mode of Day of the Week:
-    - The most common day of the week for bike trips was identified through the mode of the day_of_week column.
-    - The result showed that Wednesday (day 4) had the most trips, meaning it was the most popular day for riding bikes in the dataset.
-3. Average Ride Length by Membership Type:
-    - The dataset was grouped by member_casual to calculate the average ride length based on membership type.
-    - The average ride length for casual riders was calculated at 24.14 minutes, while for members it was 12.56 minutes. This indicates that casual riders tend to ride significantly longer than members on average.
-4. Average Ride Length by Day of the Week and Membership Type:
-    - The average ride length was analyzed further by grouping the data by both day_of_week and member_casual.
-    - This helped identify patterns in ride lengths across different days and membership statuses. 
-5. Ride Count by Day of the Week:
-    - The total number of rides per day of the week was calculated.
-    - This information helps understand the daily distribution of bike trips, which can be useful for operational decisions, such as resource allocation and station management.
-6. Ride Count and Average Ride Length by Hour of the Day:
-    - A detailed breakdown was done by hour of the day to calculate both the total ride count and average ride length.
-    - This analysis revealed peak usage hours for bike rides and the associated average ride lengths, providing insights into ride demand patterns throughout the day.
-7. Average Ride Length by Starting Station:
-    - The average ride length was calculated by starting station name.
-    - This helps identify which stations have longer or shorter average rides, which could indicate station-specific factors such as location, destination proximity, or user preferences.
-8. Most Common Start and End Station Pairs:
-    - The most frequent station-to-station routes were identified by grouping the data by both start_station_name and end_station_name.
-    - This provided insight into the most popular travel routes and can be useful for understanding biking behavior and optimizing station placement.
-9. Average Ride Length by Bike Type:
-    - The analysis also included a breakdown of the average ride length by rideable_type, showing how different bike types were utilized.
-    - This helps to identify trends in the usage of various bike types, which could be useful for fleet management and operational improvements.
+Membership Type Insights:
+- Casual riders averaged 24.14 minutes per ride, significantly longer than annual members, who averaged 12.56 minutes. This discrepancy highlights different usage patterns, with casual riders likely engaging in leisure activities, while members typically utilize the service for commuting.
 
-**EXCEL APPROACH:**
+Ride Patterns by Day:
+- The most common day for bike trips was Wednesday, with a notable trend of casual riders being most active on weekends, especially in the afternoons. In contrast, member riders exhibited consistent usage throughout the week, peaking during weekday commuting hours (7-9 AM and 5-7 PM).
 
+Seasonal Trends:
+- There was a significant increase in ridership during the summer months, particularly for casual riders, who outpaced members in usage during July. Both rider types showed a marked decline in activity during winter, with February being the least active month.
+
+Geographical Usage Patterns:
+- Casual riders tended to start and end rides near tourist destinations, such as Navy Pier and Millennium Park, while member trips were concentrated around commercial areas, underscoring their commuting needs.
 
 **SQL QUERIES:**
 
@@ -722,26 +703,27 @@ view(rideable_by_member)
 
 **Data Visualization and Findings Summary:**
 
-In this phase, the focus shifts to presenting the key findings from our analysis through polished, accessible, and insightful visualizations. The goal is to clearly communicate how annual members and casual riders use Cyclistic bikes differently and provide actionable insights for decision-making.
+This section presents key findings on the differences in usage between annual members and casual riders of Cyclistic bikes, aimed at assisting the executive team in data-driven decision-making.
 
-Tableau will serve as the primary tool for sharing these insights, allowing us to build an interactive, visually appealing dashboard that effectively conveys the data. The dashboard will emphasize clarity, conciseness, and actionability to help the executive team understand user behavior patterns. This understanding is crucial for making more targeted decisions related to marketing, bike availability, and user engagement.
-Key visualizations will include:
+The analysis confirmed that annual members and casual riders use the bikes differently. Casual riders generally take longer rides on weekends and during tourist seasons, while annual members favor shorter rides primarily for commuting on weekdays. These insights directly address the original question regarding user behavior.
 
-1.	A comparison of average ride length between annual members and casual riders.
-2.	A breakdown of ride usage by day of the week and time of day.
-3.	Insights into the most frequent start and end station pairs and bike types used.
-4.	A clear view of how ride behaviors differ between membership status and time-specific trends.
-   
-By utilizing Tableau’s interactive capabilities, the dashboard will not only highlight key trends but also allow stakeholders to drill down into the details, making the data accessible and actionable for the entire executive team.
+The primary audience for this analysis is the executive team at Cyclistic. To effectively communicate these insights, a series of polished visualizations were created using Tableau, enhanced by R for additional data analysis. The visualizations include:
+1.	Average Ride Length Comparison: A bar chart showcasing differences in average ride lengths between annual members and casual riders.
+2.	Ride Usage by Day and Time: A visualization depicting ride frequency and average duration by day of the week.
+3.	Bike Type Distribution: A stacked bar chart illustrating the types of bikes used by each membership status.
 
-The goal is to ensure that the findings are both engaging and easy to digest, ensuring everyone in the room can grasp the implications of the data and use it to inform future strategy for Cyclistic. This dashboard will serve as a powerful tool for guiding decisions that align with the company’s goals of increasing ridership and optimizing the user experience.
+Design principles focus on clarity and accessibility, utilizing contrasting colors, clear labels, and concise headlines to highlight key insights. The interactive Tableau dashboard allows stakeholders to explore data dynamically, enhancing understanding.
 
-> NOTE: Methods used in Excel and R for visualizing the dataset are also included, demonstrating the analytical capabilities of these tools.
+Key recommendations based on the findings include:
+- Targeting Casual Riders: Implement seasonal promotions and marketing campaigns during peak tourist periods.
+- Enhancing Member Engagement: Introduce rewards programs and corporate partnerships.
+- Optimizing the Bike Fleet: Focus on increasing popular bike types while reducing less utilized ones.
+- Mobile App Development: Enhance the user experience through a streamlined app.
+- Promoting Year-Round Usage: Market electric bikes as a viable winter cycling option.
+
+
 
 TABLEAU: (LINK TO PUBLIC TABLEAU DASHBOARD)
-
-
-EXCEL APPROACH: 
 
 
 R CODE:
