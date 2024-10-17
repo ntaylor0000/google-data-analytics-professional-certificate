@@ -47,15 +47,21 @@ These insights will help design targeted marketing strategies to convert casual 
 
 **Data Sources:**
 
-This analysis uses Cyclistic’s historical trip data, covering the past 12 months of bike rides. The data was provided by Motivate International Inc. and is publicly available and licensed for use in this case study. While Cyclistic is fictional, the data is structured to allow analysis of bike usage without any real-world privacy concerns. The data has been anonymized and does not include any personally identifiable information (PII).
+For this analysis, we utilize Cyclistic’s historical trip data spanning a 12-month period, provided by Motivate International Inc. under a public license. Although Cyclistic is a fictional company, the dataset closely mirrors real-world bike-share data, providing a reliable foundation for analysis. Crucially, the dataset is anonymized, ensuring compliance with privacy standards by excluding any personally identifiable information (PII), such as names or payment details.
 
 **Data Collection:**
 
-The trip data is sourced from Cyclistic’s bike-sharing system, which tracks all rides taken activity within the service area. The dataset includes details such as ride start and end times, bike type, user type (casual rider or annual member), and the station locations. This data is stored in a series of (.csv) files, each representing one month of ride activity from October 2023 to September 2024. 
+The dataset consists of 12 separate .csv files, each representing one month of ride data from October 2023 to September 2024. Each file includes details about the bike trips such as:
+- Ride start and end times
+- Bike types used (traditional or assistive)
+- Starting and ending stations (with names, IDs, and geolocation data)
+- The rider type (casual or member)
+  
+This monthly structure allows us to conduct time-based analyses, such as tracking seasonal trends or observing how bike usage varies by month, which will be critical in understanding user behavior over time.
 
 **Data Description:**
 
-The dataset is split into twelve (.csv) files, one for each month from October 2023 to September 2024. Each file includes several key variables related to individual rides:
+The table below outlines the main variables included in the dataset:
 
 | No. | Name | Description |
 |-----|------|-------------|
@@ -73,19 +79,48 @@ The dataset is split into twelve (.csv) files, one for each month from October 2
 | 12  | end_lng | Longitude of the ending location. |
 | 13  | member_casual | Indicates whether the rider is a casual user or an annual member. |
 
-This data provides a comprehensive look at user behavior and bike-sharing patterns, allowing us to answer key business questions regarding how different types of riders use Cyclistic’s bikes.
+These variables provide all the necessary information for analyzing how users engage with Cyclistic’s bike-share program.
 
 **Addressing Privacy and Accessibility:**
 
-The data is publicly available and fully compliant with privacy standards. It does not contain any personally identifiable information (such as credit card numbers or addresses), ensuring the data is safe to use for analysis. The data is available in (.csv) format, which facilitates easy import and analysis using various tools such as R, SQL, and Tableau.
+Since the data is publicly available and fully anonymized, privacy and security concerns are well managed. The exclusion of PII, such as names, credit card numbers, or home addresses, ensures compliance with privacy standards. Additionally, the data is accessible in .csv format, which is versatile and can easily be imported into tools like R, SQL, and Tableau for analysis.
 
-**How the Data Helps Answer Our Questions:**
+**Data Integrity:**
 
-This dataset is critical for answering the business question of how annual members and casual riders use Cyclistic bikes differently. By analyzing variables like ride start and end times, bike types, and station usage, we can identify patterns in bike usage. For example, we can compare the frequency and duration of rides between casual riders and annual members, explore which stations are used most frequently by each group, and analyze trends in seasonal or time-of-day usage.
+Ensuring data integrity is essential for producing reliable insights. The following steps will be taken to verify and maintain the quality of the dataset:
+- **Duplicate Data:** A check for duplicate entries will ensure that each ride is logged only once. Any duplicates found will be removed to prevent skewed results.
+- **Missing Data:** Missing or incomplete entries, such as rides without end times or missing station names, will be identified. These records will either be cleaned or excluded from the analysis, depending on the extent and impact of the missing data.
+- **Outliers:** Extreme values, such as unusually long or short trip durations, will be reviewed to determine if they represent legitimate data points or errors. Any unjustifiable outliers may be excluded to avoid distorting the analysis.
+- **Data Types:** Each variable will be validated to ensure the correct data types are used. For instance, timestamps for start and end times will be checked for proper formatting, while latitude and longitude values will be confirmed as numeric data.
+  
+These steps will ensure that the dataset is clean, consistent, and reliable, enabling accurate insights and valid business conclusions.
+
+**Data Credibility (ROCCC Framework):**
+
+To assess the credibility of the data, we apply the ROCCC framework, focusing on:
+- Reliable: The data is collected directly from Cyclistic’s tracking systems, ensuring accurate ride logs.
+- Original: This is first-party data collected by Cyclistic itself, enhancing its authenticity.
+- Comprehensive: The dataset covers all necessary variables for understanding user behavior, from trip start times to bike types.
+- Current: The data spans the most recent 12 months, making it timely and relevant for strategic decisions.
+- Cited: The data is licensed by Motivate International Inc.
+
+**How the Data Answers the Business Question:**
+
+The historical trip data is critical in answering the question: How do casual riders and annual members use Cyclistic bikes differently?
+
+By analyzing variables like ride duration, start and end times, and station locations, we can uncover key behavioral differences between casual riders and annual members. For example:
+- **Trip Duration:** Casual riders may take shorter or longer trips compared to annual members, which can provide insight into the purpose of their rides (e.g., leisure vs. commuting).
+- **Time of Day/Week:** We can analyze usage patterns to see whether casual riders prefer weekends and holidays, while annual members might favor weekdays for commuting.
+- **Station Popularity:** Comparing the starting and ending stations between the two groups may reveal preferences for certain areas, suggesting whether casual riders are more likely to use bikes for exploring the city, while annual members might use them for commuting.
 
 **Potential Data Issues:**
 
-There are no significant issues with the dataset in terms of privacy or security, as it has been anonymized. However, potential challenges include the limitations on linking individual riders to specific demographic information (like location or purchase history), which could add more context to the analysis. Additionally, there may be occasional missing or incorrect entries in the dataset that will need to be cleaned before proceeding with detailed analysis.
+While the dataset is comprehensive and anonymized, several limitations should be considered:
+- **Limited Demographic Data:** The absence of demographic details such as age or gender restricts the ability to segment users based on these characteristics, which could provide additional context for rider behavior.
+- **Occasional Missing Values:** As is common in large datasets, there may be instances of missing or incorrect data. These records will need to be addressed during the data cleaning process to ensure accuracy.
+- **No Personal Linkage:** The lack of personal identifiers, such as credit card information or home addresses, prevents direct linkage of casual riders to specific locations or historical purchases. This limits the ability to analyze geographic proximity to docking stations or identify patterns in repeat usage.
+
+Despite these limitations, the dataset remains robust and offers sufficient depth to generate valuable insights into the behavioral differences between casual and annual riders.
 
 ## Step 3: Process
 
