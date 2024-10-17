@@ -703,25 +703,22 @@ view(rideable_by_member)
 
 **Data Visualization and Findings Summary:**
 
-This section presents key findings on the differences in usage between annual members and casual riders of Cyclistic bikes, aimed at assisting the executive team in data-driven decision-making.
+and casual riders of Cyclistic bikes, with the goal of assisting the executive team in making data-driven decisions.
 
-The analysis confirmed that annual members and casual riders use the bikes differently. Casual riders generally take longer rides on weekends and during tourist seasons, while annual members favor shorter rides primarily for commuting on weekdays. These insights directly address the original question regarding user behavior.
+The analysis confirmed distinct usage behaviors: casual riders tend to take longer rides during weekends and tourist seasons, whereas annual members favor shorter rides primarily for commuting on weekdays. These insights effectively address the original question concerning user behavior.
 
-The primary audience for this analysis is the executive team at Cyclistic. To effectively communicate these insights, a series of polished visualizations were created using Tableau, enhanced by R for additional data analysis. The visualizations include:
-1.	Average Ride Length Comparison: A bar chart showcasing differences in average ride lengths between annual members and casual riders.
-2.	Ride Usage by Day and Time: A visualization depicting ride frequency and average duration by day of the week.
-3.	Bike Type Distribution: A stacked bar chart illustrating the types of bikes used by each membership status.
+The primary audience for this analysis is the executive team at Cyclistic. To communicate these insights effectively, a series of polished visualizations were created using Tableau, complemented by additional data analysis conducted in R. Design principles emphasize clarity and accessibility, utilizing contrasting colors, clear labels, and concise headlines to highlight key insights. The interactive Tableau dashboard allows stakeholders to explore data dynamically, enhancing understanding.
 
-Design principles focus on clarity and accessibility, utilizing contrasting colors, clear labels, and concise headlines to highlight key insights. The interactive Tableau dashboard allows stakeholders to explore data dynamically, enhancing understanding.
+Key Recommendations:
+1.	Targeting Casual Riders: Implement seasonal promotions and marketing campaigns during peak tourist periods.
+2.	Flexible Membership Options: Introduce flexible membership plans that cater to different user needs, such as weekend-only memberships for casual riders or short-term passes for infrequent users.
+3.	Enhancing Member Engagement: Establish rewards programs and corporate partnerships to encourage frequent usage among annual members.
+4.	Promotional Events and Community Engagement: Organize community events or group rides to foster a sense of community among users, encouraging increased participation.
+5.	Incentives for Off-Peak Usage: Develop incentive programs to encourage bike usage during off-peak hours, such as discounted rates for rides taken during less popular times.
 
-Key recommendations based on the findings include:
-- Targeting Casual Riders: Implement seasonal promotions and marketing campaigns during peak tourist periods.
-- Enhancing Member Engagement: Introduce rewards programs and corporate partnerships.
-- Optimizing the Bike Fleet: Focus on increasing popular bike types while reducing less utilized ones.
-- Mobile App Development: Enhance the user experience through a streamlined app.
-- Promoting Year-Round Usage: Market electric bikes as a viable winter cycling option.
-
-
+Key Questions Still Remaining:
+- Bike Inventory: Is there sufficient bike inventory to meet current demand? Is there an appropriate distribution of various bike types based on their demand levels?
+- Mobile App: Is there a mobile app that can assist with advertising, ease of payment, community building, and user engagement?
 
 TABLEAU: (LINK TO PUBLIC TABLEAU DASHBOARD)
 
