@@ -785,24 +785,14 @@ ggplot(data = rideable_by_member, mapping = aes(x=member_casual, y=percentage, f
 
 ## Step 6: Act
 
+In conclusion, the analysis of Cyclistic bike usage patterns reveals significant differences between annual members and casual riders, providing valuable insights for strategic decision-making. The findings indicate that casual riders typically engage in longer rides during weekends and peak tourist seasons, while annual members tend to utilize the bikes for shorter, more frequent rides primarily during weekdays. This understanding not only clarifies user behavior but also helps identify potential opportunities for targeted marketing and membership strategies.
 
-Now that you have finished creating your visualizations, act on your findings. Prepare the
-deliverables Morena asked you to create, including the three top recommendations based on
-your analysis. Use the following Case Study Roadmap as a guide:
-Case Study Roadmap - Act
-Guiding questions
-● What is your final conclusion based on your analysis?
-● How could your team and business apply your insights?
-● What next steps would you or your stakeholders take based on your findings?
-● Is there additional data you could use to expand on your findings?
-Key tasks
-● Create your portfolio.
-● Add your case study.
-● Practice presenting your case study to a friend or family member.
-Deliverable ● Your top three recommendations based on your analysis
-Follow these steps:
-1. If you do not have one already, create an online portfolio.
-2. Consider how you want to feature your case study in your portfolio.
-3. Upload or link your case study findings to your portfolio.
-4. Write a brief paragraph describing the case study, your process, and your discoveries.
-5. Add the paragraph to introduce your case study in your portfolio.
+**Application of Insights:** The insights gained from this analysis can be instrumental for the executive team in enhancing marketing strategies, optimizing membership offerings, and improving user engagement. By leveraging these insights, Cyclistic can more effectively target casual riders through seasonal promotions and flexible membership options, ultimately leading to increased ridership and revenue.
+
+**Next Steps:** Based on the findings, the following top three recommendations have been identified for immediate action:
+1.	**Target Casual Riders:** Implement seasonal promotions and tailored marketing campaigns to attract casual riders during peak tourist periods, capitalizing on their longer ride durations.
+2.	**Flexible Membership Options:** Develop flexible membership plans, such as weekend-only memberships for casual riders, to cater to diverse user needs and encourage increased participation.
+3.	**Enhancing Member Engagement:** Establish rewards programs and partnerships with local businesses to incentivize frequent usage among annual members, thereby fostering loyalty and community involvement.
+
+Additionally, stakeholders should consider exploring further data sources, such as user feedback and demographic information, to deepen the understanding of user preferences and enhance future analyses.
+
