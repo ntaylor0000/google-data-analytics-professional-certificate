@@ -777,12 +777,11 @@ ggplot(data = rideable_by_member, mapping = aes(x=member_casual, y=percentage, f
 ```
 **R VISUALIZATIONS:**
 
-![mode_day_of_week]()
-![avg_ride_by_member]()
-![avg_ride_by_day_and_member]()
-![rides_per_day]()
-![rides_per_hour]()
-![avg_ride_by_bike]()
+![](Visualizations/user_count_casual_vs_member.png)
+![](Visualizations/ride_trip_duration_casual_vs_member.png)
+![](Visualizations/rides_weekday_membership.png)
+![](Visualizations/avg_duration_weekday_membership.png)
+![](Visualizations/bike_types_by_member_status.png)
 
 
 ## Step 6: Act
