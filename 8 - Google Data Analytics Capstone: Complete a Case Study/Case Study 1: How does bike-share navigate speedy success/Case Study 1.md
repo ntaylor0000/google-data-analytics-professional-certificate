@@ -484,6 +484,20 @@ SELECT
 FROM 
     public.bike_trips;
 
+-- Count of rides among member and casual users: 
+-- Output: casual -  1,486,827 - 35.59%, member - 2,690,938 - 64.41%
+
+SELECT 
+    member_casual, 
+    COUNT(ride_id) AS ride_count,
+    ROUND((COUNT(ride_id) * 100.0 / (SELECT COUNT(*) FROM public.bike_trips)), 2) AS percentage_of_total
+FROM 
+    public.bike_trips
+GROUP BY 
+    member_casual
+ORDER BY 
+    member_casual;
+
 -- Calculate the average ride_length by member_casual. 
 -- Output: casual - 24.14, member - 12.56
 
@@ -511,18 +525,19 @@ GROUP BY
 ORDER BY 
     day_of_week, member_casual;
 
--- Calculate the number of ride_id per day_of_week.
--- Output: Total ride count for each day of the week.
+-- Calculate the number of ride_id by day_of_week and member_casual.
+-- Output: Total ride count grouped by both day of the week and membership status.
 
 SELECT 
-    day_of_week,
+    day_of_week, 
+    member_casual, 
     COUNT(ride_id) AS ride_count
 FROM 
     public.bike_trips
 GROUP BY 
-    day_of_week
+    day_of_week, member_casual
 ORDER BY 
-    day_of_week;
+    day_of_week, member_casual;
 
 -- Calculate the number of ride_id and average ride_length by hour of the day.
 -- Output: Ride count and average ride length for each hour.
@@ -576,6 +591,20 @@ FROM
 GROUP BY 
     rideable_type;
 
+-- Compare rideable_type by member_casual.
+-- Output: Count and Percentage of rides by bike type and member type.
+
+SELECT 
+    rideable_type, 
+    member_casual, 
+    COUNT(ride_id) AS ride_count
+FROM 
+    public.bike_trips
+GROUP BY 
+    rideable_type, member_casual
+ORDER BY 
+    rideable_type, member_casual;
+
 ```
 
 **R CODE:**
@@ -620,8 +649,6 @@ view(ride_distribution)
 
 # Calculate the average ride_length by member_casual. 
 # Output: casual - 24.14, member - 12.56
-
-# Calculate the average ride_length by member_casual
 
 avg_ride_length_by_member_casual <- bike_trips_cleaned %>%
   group_by(member_casual) %>%
