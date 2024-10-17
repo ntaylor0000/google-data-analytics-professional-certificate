@@ -124,29 +124,29 @@ Despite these limitations, the dataset remains robust and offers sufficient dept
 
 ## Step 3: Process
 
-**Process Overview:**
+**Overview:**
 
-In this phase, Cyclistic bike-share data is processed and cleaned following the steps outlined in the Project Charter. The goal is to ensure the data is ready for analysis, involving tasks such as cleaning, merging, and transforming. The main steps in the data processing phase include:
-  1.	**Data Cleaning:** This involves resolving formatting issues, addressing null or missing values, removing duplicate records, and fixing any other inconsistencies that could affect data quality.
-  2.	**Merging and Transforming:** Combining the 12 separate data files into a single dataset and transforming it into a format that is easy to analyze.
-The Project Charter outlines three approaches for data processing and analysis: Excel, SQL, and R. While Excel is useful, it is less optimal for large datasets due to file size limitations. In real-world situations, SQL or R would be more appropriate for handling large-scale data. For this portfolio project, all three methods are demonstrated to showcase a variety of technical skills.
+In this phase, the Cyclistic bike-share data is processed and cleaned in accordance with the guidelines outlined in the Project Charter. The objective is to ensure that the data is ready for analysis, encompassing tasks such as cleaning, merging, and transforming. The primary steps in the data processing phase include:
+1.	**Data Cleaning:** This entails resolving formatting issues, addressing null or missing values, removing duplicate records, and rectifying any other inconsistencies that could compromise data quality.
+2.	**Merging and Transforming:** The 12 data files will be combined into a single dataset and transformed into a format conducive to analysis.
+   
+The Project Charter specifies three methodologies for data processing and analysis: Excel, SQL, and R. While Excel is a valuable tool, it is less optimal for large datasets due to its file size constraints. In practical applications, SQL or R would be more suitable for managing extensive data. For this portfolio project, all three methods are demonstrated to showcase a range of technical skills.
 
 **Data Overview:**
 
-The raw data consists of 12 files containing trip data collected from the Cyclistic bike-share program over the past 12 months. After an initial review and cleaning process, these files were merged into a single dataset, resulting in 5,854,585 rows and 13 columns of character and numeric data.
+The raw data consists of 12 files containing trip data collected from the Cyclistic bike-share program over the past 12 months. 
 
 ### Review and Processing Steps:
 
 **Step 1: File Setup and Data Merging**
 
   -	Unzip the files.
-  -	Store the twelve .csv files in a dedicated folder to manage the raw data.
+  -	Store the twelve .csv files in a designated folder for efficient management of the raw data.
   -	Review the 12 original files and merge them into a single consolidated dataset.
 
 **Step 2: Data Cleaning**
 
-**The following quality checks were performed to ensure the integrity of the data:**
-
+The following quality checks were performed to ensure the integrity of the data:
   1.	**Column Name Consistency:** Ensured that column names across all 12 files adhered to consistent naming conventions. Any discrepancies were standardized to maintain uniformity.
   2.	**Data Type Consistency:** Verified that the correct and consistent data types were applied across all relevant columns.
   3.	**Duplicate Records:** Identified and removed duplicate entries where trips were repeated within the dataset.
@@ -156,61 +156,46 @@ The raw data consists of 12 files containing trip data collected from the Cyclis
 **Step 3: Data Transformation**
 
 To prepare the dataset for analysis, several transformations were applied:
-
 1.	**Creating a ‘Ride Length’ Column:**
-    -	**Description:**
-    
-        A new column was created to calculate the length of each ride by subtracting the started_at timestamp from the ended_at timestamp. This calculation yields the total duration of the ride in minutes.
- 
-    -	**Formula:**
-    
-        ride_length = ended_at - started_at
-   	
+    -	**Description:** A new column was created to calculate the length of each ride by subtracting the started_at timestamp from the ended_at timestamp. This calculation yields the total duration of the ride in minutes.
+    -	**Formula:** ride_length = ended_at - started_at
     -	**Tool-Specific Notes:**
-    
-        - **Excel:** =D2-C2 (Where C2 is the ride start time and D2 is the ride end time).
-        - **SQL:** TIMESTAMPDIFF(MINUTE, started_at, ended_at) (Calculates ride duration in minutes).
-        - **R:** difftime(ended_at, started_at, units = "mins") (Calculates ride duration in minutes).
+        - **Excel:** =I2-F2 (Where F2 is the ride start time and I2 is the ride end time).
+        - **SQL:** ride_length = EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 
+        - **R:** ride_length = as.numeric(difftime(ended_at, started_at, units = "mins"))
 
 2.	**Creating a ‘Day of Week’ Column:**
-    -	**Description:**
-
-        A new column was created to capture the day of the week for each ride, enabling the analysis of patterns based on weekday versus weekend usage.
-
-  	- **Tool-Specific Notes:**
-
-        - **Excel:** =WEEKDAY(C2, 1) (Returns a number from 1 (Sunday) to 7 (Saturday)).
-        - **SQL:** DAYOFWEEK(started_at) (Returns the day of the week as a number).
-        - **R:** wday(started_at, label = TRUE) (Returns the day of the week as a label, e.g., “Mon”, “Tue”, etc.).
+    -	**Description:** A new column was created to capture the day of the week for each ride, enabling the analysis of patterns based on weekday versus weekend usage.
+    - **Tool-Specific Notes:**
+        - **Excel:** =WEEKDAY(C2, 1)
+        - **SQL:** day_of_week = EXTRACT(DOW FROM started_at) + 1 
+        - **R:** day_of_week = as.integer(format(started_at, "%w")) + 1
 
 ### Tool-Specific Approaches
 
 **Excel Approach**
 
-While Excel is a widely-used tool for data analysis, it is not well-suited for handling very large datasets due to its memory limitations. Excel can accommodate up to 1,048,575 rows per worksheet, which may restrict its use for large-scale analysis. For this project, the following steps were performed using Excel:
+While Excel is widely utilized for data analysis, it is not well-suited for handling very large datasets due to memory limitations. Excel can accommodate up to 1,048,575 rows per worksheet, which may restrict its use for large-scale analysis. The following steps were performed using Excel:
 
 Step 1: File Setup and Data Merging:
 
-The 12 .csv files were merged into one workbook using Power Query. New columns were created to separate the started_at and ended_at timestamps into started_at_date, started_at_time, ended_at_date, and ended_at_time for better manipulation. However, an error was encountered due to Excel's row limit, which is insufficient for the dataset size. The data exceeded the 1,048,575-row limit per sheet, rendering this method impractical for the full dataset.
+The 12 .csv files were merged into one workbook using Power Query. Due to the dataset size exceeding Excel's limit of 1,048,575 rows per sheet, this method proved impractical for full analysis.
 
 ![](Visualizations/power_query.png "power_query.png")
 
 Step 2: Data Cleaning:
 
-The “Remove Duplicates” function was applied to identify and remove any duplicate records. No duplicates were detected within the subset of data that Excel could process.
+The “Remove Duplicates” function identified and removed duplicates within the manageable dataset subset.
       
 Step 3: Data Transformation: 
   
 Formulas were applied to calculate key metrics:
-
-  - Ride length: =I2 - F2 (Where F2 is the ride start time and I2 is the ride end time).
+  - Ride length: =I2-F2 (Where F2 is the ride start time and I2 is the ride end time).
   - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
 
 ![](Visualizations/excel_transformation.png "excel_transformation.png")
 
-> Note: Due to the large size of the dataset (5,854,585 rows), Excel was unable to fully handle the data. While Excel can be useful for small to medium-sized datasets, SQL and R are better suited for managing large datasets of this scale.
-
-> Note: If Excel is the only available tool for this analysis, it is possible to work with each of the 12 files individually and then aggregate the data into a single sheet for analysis. While this approach is feasible, it would be significantly more time-consuming and less efficient compared to using a database or scripting language like SQL or R. Nonetheless, it remains a viable option if other tools are unavailable.
+> Note: The large size of the dataset exceeded Excel's capacity for handling data. Although Excel is effective for small to medium-sized datasets, SQL and R are more suitable for managing datasets of this scale.
 
 **SQL Approach**
 
@@ -225,7 +210,6 @@ The 12 .csv files were imported into the public.bike_trips table using PostgreSQ
 Step 2: Data Cleaning: 
 
 Data cleaning is crucial to ensure the dataset is accurate and suitable for analysis. Several steps were implemented to clean the data:
-
   - Removing duplicates: Duplicate records were identified and removed based on the ride_id using PostgreSQL’s ROW_NUMBER() function. This ensured that each ride had only one unique entry.
   - Removing rows with NULL values: Rows with NULL values in critical columns (e.g., started_at, ended_at, start_station_name, end_station_name) were removed to prevent incomplete or inaccurate data from skewing the analysis.
   - Removing outliers: Outliers based on ride_length were identified and removed. Specifically, records where the ride duration was less than 1 minute or greater than 24 hours were filtered out.
@@ -239,7 +223,6 @@ To prepare the dataset for analysis, several transformations were applied to cre
 SQL QUERIES: 
 
 ```
-
 /*
 PREPARE DATA
 */
@@ -341,32 +324,31 @@ ADD day_of_week INT;
 
 UPDATE public.bike_trips
 SET day_of_week = EXTRACT(DOW FROM started_at) + 1;
-
 ```
 
 **R Approach**
 
-R is a powerful tool for statistical computing and data manipulation, particularly well-suited for handling large datasets like this one. The steps below outline the data processing workflow in R.
+R is an advanced statistical programming language that excels in data analysis, visualization, and statistical modeling. The following steps were performed using R to process the dataset and prepare it for analysis:
 
 Step 1: File Setup and Data Merging:
 
-The 12 .csv files were imported into R and merged into a single unified data frame using functions from the tidyverse package. 
-  - Install necessary packages: Installed dyplyr, lubridate, ggplot2, and tidyverse packages.
-  - Importing the .csv files: The readr::read_csv() function from the tidyverse package was used to read the CSV files into R.
-  - Merging the datasets: To combine the multiple data frames into one, the dplyr::bind_rows() function was used. This function efficiently appends multiple data frames into a single data frame, maintaining row consistency across files. 
+Using the readr and dplyr packages, the twelve .csv files were imported into R and merged into a single dataframe. 
+- The directory containing the .csv files is specified, and the list.files() function is used to list all .csv files in that directory. The pattern = "*.csv" argument ensures that only CSV files are included.
+- The lapply() function applies the read_csv() function from the readr package to each file in the list, reading the data into R.
+- The bind_rows() function from dplyr combines the individual data frames returned by lapply() into a single unified data frame, bike_trips.
 
 Step 2: Data Cleaning:
 
 To ensure the dataset was clean and reliable for analysis, several data cleaning steps were performed using dplyr and base R functions:
-  - Removing duplicates: Duplicate records were identified by checking for duplicate ride_id values. The dplyr::distinct() function was used to keep only unique rows, ensuring each ride had a single entry.
-  - Removing rows with NULL values: Rows with missing values in critical columns (such as started_at, ended_at, start_station_name, or end_station_name) were filtered out to prevent incomplete records from affecting the analysis. This was done using the dplyr::filter() function.
-  - Removing outliers: Outliers in ride duration were identified and filtered out. Rides with a duration of less than 1 minute or greater than 24 hours were considered outliers and excluded using conditions in the filter() function.
+- Removing duplicates: Duplicate entries were removed using the distinct() function.
+- Removing rows with NULL values: Rows with missing values in critical columns were removed using filter() function.
+- Removing outliers: Outliers in ride duration were identified and filtered out. Rides with a duration of less than 1 minute or greater than 24 hours were considered outliers and excluded using conditions in the filter() function.
 
 Step 3: Data Transformation: 
 
 Several key transformations were performed to prepare the data for analysis:
-  - Creating a new column for ride duration: A new column, ride_length, was created to calculate the duration of each ride in minutes. The difftime() function was used to compute the difference between the ended_at and started_at timestamps.
-  - Extracting the day of the week: A new column, day_of_week, was created to extract the day of the week from the started_at timestamp. The day was represented as an integer, where 1 = Sunday and 7 = Saturday, using the weekdays() function and additional manipulation.
+- Creating a new column for ride duration: A new column, ride_length, is created to store the duration of each ride in minutes. The difftime() function calculates the difference between the ended_at and started_at timestamps, converting the result to numeric format.
+- Extracting the day of the week: Another new column, day_of_week, is created to extract the day of the week from the started_at timestamp. The day is represented as an integer where 1 = Sunday and 7 = Saturday. The format() function is used to extract the day of the week, and the result is adjusted to fit the desired scale.
 
 R CODE:
 
@@ -455,8 +437,6 @@ bike_trips_cleaned <- bike_trips_cleaned %>%
   mutate(day_of_week = as.integer(format(started_at, "%w")) + 1)
 
 ```
-
-
 
 ## Step 4: Analyze
 
