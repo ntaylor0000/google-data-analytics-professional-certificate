@@ -346,6 +346,7 @@ library(dplyr)
 library(lubridate)
 library(ggplot2)
 library(readr)
+library(scales)
 library(tidyverse)
 
 # Set the directory where .csv files are stored
@@ -583,6 +584,117 @@ GROUP BY
 # Analyze Data
 #
 
+# Calculate the mean, median, and mode of the ride_length column in minutes. 
+# Output: Mean - 16.68, Median - 10, Mode - 5.
+
+get_mode <- function(x) {                        # Function to calculate the Mode
+  uniq_x <- unique(x)                            # Get unique values
+  uniq_x[which.max(tabulate(match(x, uniq_x)))]  # Return the most frequent value
+}
+
+mean_ride_length <- mean(bike_trips_cleaned$ride_length, na.rm = TRUE)     # Calculate the Mean
+median_ride_length <- median(bike_trips_cleaned$ride_length, na.rm = TRUE) # Calculate the Median
+mode_ride_length <- get_mode(bike_trips_cleaned$ride_length)               # Calculate the Mode
+
+cat("Mean ride length: ", mean_ride_length, "\n")
+cat("Median ride length: ", median_ride_length, "\n")
+cat("Mode ride length: ", mode_ride_length, "\n")
+
+# Calculate the mode of the day_of_week column. (NOTE: 1 = Sunday and 7 = Saturday).
+# Output: Mode - 4 (Wednesday)
+
+mode_day_of_week <- get_mode(bike_trips_cleaned$day_of_week)              # Calculate the Mode
+
+cat("Mode of day_of_week: ", mode_day_of_week, "\n")
+
+# Count of rides among member and casual users: 
+# Output: casual -  1,486,827 - 35.59%, member - 2,690,938 - 64.41%
+
+ride_distribution <- bike_trips_cleaned %>%
+  group_by(member_casual) %>%
+  summarize(n=n()) %>%
+  mutate(percentage = n*100/sum(n))
+
+view(ride_distribution)
+
+# Calculate the average ride_length by member_casual. 
+# Output: casual - 24.14, member - 12.56
+
+# Calculate the average ride_length by member_casual
+
+avg_ride_length_by_member_casual <- bike_trips_cleaned %>%
+  group_by(member_casual) %>%
+  summarise(avg_ride_length = mean(ride_length, na.rm = TRUE))
+
+view(avg_ride_length_by_member_casual)
+
+# Calculate the average ride_length by day_of_week and member_casual. 
+# Output: Average ride length grouped by both day of the week and membership status. 
+
+avg_ride_length_by_day_and_member <- bike_trips_cleaned %>%
+  group_by(day_of_week, member_casual) %>%
+  summarise(avg_ride_length = mean(ride_length, na.rm = TRUE))
+
+view(avg_ride_length_by_day_and_member)
+
+# Calculate the number of ride_id by day_of_week and member_casual.
+# Output: Total ride count grouped by both day of the week and membership status.
+
+ride_count_by_day_and_member <- bike_trips_cleaned %>%
+  group_by(day_of_week, member_casual) %>%
+  summarise(ride_count = n())
+
+view(ride_count_by_day_and_member)
+
+# Calculate the number of ride_id and average ride_length by hour of the day.
+# Output: Ride count and average ride length for each hour.
+
+ride_summary_by_hour <- bike_trips_cleaned %>%
+  mutate(hour_of_day = hour(started_at)) %>%
+  group_by(hour_of_day) %>%
+  summarise(ride_count = n(), avg_ride_length = mean(ride_length, na.rm = TRUE)) %>%
+  arrange(hour_of_day)
+
+view(ride_summary_by_hour)
+
+# Calculate the average ride_length by starting_station_name.
+# Output: Average ride length for each station. 
+
+avg_ride_length_by_station <- bike_trips_cleaned %>%
+  group_by(start_station_name) %>%
+  summarise(avg_ride_length = mean(ride_length, na.rm = TRUE)) %>%
+  arrange(desc(avg_ride_length))  
+
+view(avg_ride_length_by_station)
+
+# Determine the most common start and end station pairs. 
+# Output: The most frequently used station-to-station routes.
+
+common_station_pairs <- bike_trips_cleaned %>%
+  group_by(start_station_name, end_station_name) %>%
+  summarise(ride_count = n()) %>%
+  arrange(desc(ride_count))
+
+view(common_station_pairs)
+
+# Calculate the average ride_length by rideable_type.
+# Output: Average ride length for different bike types.
+
+avg_ride_length_by_type <- bike_trips_cleaned %>%
+  group_by(rideable_type) %>%
+  summarise(avg_ride_length = mean(ride_length, na.rm = TRUE))
+
+view(avg_ride_length_by_type)
+
+# Compare rideable_type by member_casual.
+# Output: Count and Percentage of rides by bike type and member type.
+
+rideable_by_member <- bike_trips_cleaned %>%
+  group_by(member_casual, rideable_type) %>%
+  summarize(n=n()) %>%
+  mutate(percentage = n*100/sum(n))
+
+view(rideable_by_member)
 
 ```
 
@@ -618,6 +730,49 @@ R CODE:
 # Share Data
 #
 
+# Visualize: Count of rides among member and casual users
+
+ggplot(data = executive_summ, mapping = aes(x = member_casual, y = n, fill = member_casual)) +
+  geom_bar(stat = "identity") +  
+  labs(title = "User Count: Casual vs Member", x = "Membership Status", y = "Count of Rides") +
+  scale_y_continuous(labels = scales::comma) +                                                
+  geom_text(aes(label = paste0(n, " (", round(percentage, 2), "%)")), vjust = -0.3, size = 4, color = "black") +
+  theme_minimal()
+
+# Visualize: average ride_length by member_casual
+
+ggplot(data = avg_ride_length_by_member_casual, mapping = aes(x=member_casual, y = avg_ride_length, fill=member_casual)) +
+  geom_col() + 
+  labs(title="Ride Trip Duration: Casual vs Member", x = "Membership Status", y = "Avg Ride Duration (Min)") +
+  geom_text(aes(label = paste0(round(avg_ride_length, 2), " min")), vjust = -0.3, size = 4, color = "black") +
+  theme_minimal()
+
+# Visualize: Avg ride duration by day of the week member type.
+
+ggplot(data = avg_ride_length_by_day_and_member, mapping = aes(x = as.factor(day_of_week), y=avg_ride_length, fill = member_casual)) + 
+  geom_col(position = "dodge2") + 
+  labs(title = "Average Ride Duration by Day of the Week and Membership Status", x = "Day of the Week", y = "Avg Ride Duration (Min)") +
+  geom_text(aes(label = round(avg_ride_length, 1)), position = position_dodge2(width = 0.8), vjust = -0.5, size = 4, color = "black") +
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) + 
+  theme_minimal()
+
+# Visualize: Number of rides by day of the week and membership status. 
+
+ggplot(data = ride_count_by_day_and_member, mapping = aes(x = as.factor(day_of_week), y=ride_count, fill = member_casual)) + 
+  geom_col(position = "dodge2") + 
+  labs(title = "Number of Rides by Day of the Week and Membership Status", x = "Day of the Week", y = "Count of Rides") +
+  geom_text(aes(label = round(ride_count, 1)), position = position_dodge2(width = 0.8), vjust = -0.5, size = 4, color = "black") +
+  scale_y_continuous(labels = scales::comma) +                                                
+  scale_x_discrete(labels = c("1" = "Sunday", "2" = "Monday", "3" = "Tuesday", "4" = "Wednesday", "5" = "Thursday", "6" = "Friday", "7" = "Saturday")) + 
+  theme_minimal()
+
+# Visualize: rideable_type by member_casual
+
+ggplot(data = rideable_by_member, mapping = aes(x=member_casual, y=percentage, fill=rideable_type)) +
+  geom_col() +
+  labs(title = "Bike Types by Member Status", x = "Membership Status", y = "Percentage of Rides") +
+  geom_text(aes(label = paste0(round(percentage, 2), "%")), position = position_stack(vjust = 0.5), size = 4, color = "black") + 
+  theme_minimal()
 
 ```
 **R VISUALIZATIONS:**
