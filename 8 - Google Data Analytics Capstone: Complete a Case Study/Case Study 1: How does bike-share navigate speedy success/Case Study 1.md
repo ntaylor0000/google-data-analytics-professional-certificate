@@ -160,7 +160,7 @@ To prepare the dataset for analysis, several transformations were applied:
     -	**Description:** A new column was created to calculate the length of each ride by subtracting the started_at timestamp from the ended_at timestamp. This calculation yields the total duration of the ride in minutes.
     -	**Formula:** ride_length = ended_at - started_at
     -	**Tool-Specific Notes:**
-        - **Excel:** =I2-F2 (Where F2 is the ride start time and I2 is the ride end time).
+        - **Excel:** =TEXT(E2-C2, "h:mm:ss") (Where C2 is the ride start time and E2 is the ride end time).
         - **SQL:** ride_length = EXTRACT(EPOCH FROM (ended_at - started_at)) / 60 
         - **R:** ride_length = as.numeric(difftime(ended_at, started_at, units = "mins"))
 
@@ -190,7 +190,7 @@ The “Remove Duplicates” function identified and removed duplicates within th
 Step 3: Data Transformation: 
   
 Formulas were applied to calculate key metrics:
-  - Ride length: =I2-F2 (Where F2 is the ride start time and I2 is the ride end time).
+  - Ride length: =TEXT(E2-C2, "h:mm:ss") (Where C2 is the ride start time and E2 is the ride end time).
   - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
 
 ![](Visualizations/excel_transformation.png "excel_transformation.png")
