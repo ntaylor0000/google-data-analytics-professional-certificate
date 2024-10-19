@@ -35,3 +35,4 @@
 
 **Resume:**
 
+[PDF](https://github.com/ntaylor0000/ntaylor0000/blob/86f96ef3b2ec324c06637a9fa34c7057d2602d03/Nicholas%20Taylor%20Resume.pdf)
