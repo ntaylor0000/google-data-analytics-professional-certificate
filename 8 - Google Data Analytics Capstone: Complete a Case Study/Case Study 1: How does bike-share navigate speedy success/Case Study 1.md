@@ -749,8 +749,11 @@ Key Questions Still Remaining:
 - Bike Inventory: Is there sufficient bike inventory to meet current demand? Is there an appropriate distribution of various bike types based on their demand levels?
 - Mobile App: Is there a mobile app that can assist with advertising, ease of payment, community building, and user engagement?
 
-TABLEAU: (LINK TO PUBLIC TABLEAU DASHBOARD)
+TABLEAU: ([LINK TO TABLEAU DASHBOARD](https://public.tableau.com/views/Case_Study_1_Cyclistic_17292828017800/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link))
 
+![](Visualizations/dashboard_primary.png)
+
+![](Visualizations/dashboard_focus.png)
 
 R CODE:
 ```
