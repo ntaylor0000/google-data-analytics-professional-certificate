@@ -12,6 +12,10 @@
 
     A collection of visualizations relevant to the case study, including screenshots that illustrate key insights derived from the data analysis. These visualizations were created to enhance understanding and support data-driven decision-making.
 
+- **Code/**
+
+    Contains the SQL queries and R code used in this project, organized by the respective stages of the analysis:
+
 
 
 ## ABOUT ME
