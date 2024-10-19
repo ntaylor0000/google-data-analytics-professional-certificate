@@ -31,5 +31,3 @@
 
 **Resume:**
 
-
-https://github.com/ntaylor0000/google-data-analytics-professional-certificate/blob/690a13960bfcd42a38e6f258874a6c47f890b4f5/8%20-%20Google%20Data%20Analytics%20Capstone%3A%20Complete%20a%20Case%20Study/Case%20Study%201%3A%20How%20does%20bike-share%20navigate%20speedy%20success/Code/prepare_process.sql#L1-L101
