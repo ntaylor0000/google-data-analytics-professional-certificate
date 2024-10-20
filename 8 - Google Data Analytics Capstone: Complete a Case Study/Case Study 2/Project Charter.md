@@ -63,7 +63,9 @@ Use the following Case Study Roadmap as a guide. Note: Completing this case stud
 
 ### Prepare
 
-Use Cyclistic’s historical trip data to analyze and identify trends. [Download the previous 12 months of Cyclistic trip data here.](https://divvy-tripdata.s3.amazonaws.com/index.html) (Note: The datasets have a different name because Cyclistic is a fictional company. For the purposes of this case study, the datasets are appropriate and will enable you to answer the business questions. The data has been made available by Motivate International Inc. under this [license](https://divvybikes.com/data-license-agreement).) This is public data that you can use to explore how different customer types are using Cyclistic bikes. But note that data-privacy issues prohibit you from using riders’ personally identifiable information. This means that you won’t be able to connect pass purchases to credit card numbers to determine if casual riders live in the Cyclistic service area or if they have purchased multiple single passes.
+Sršen encourages you to use public data that explores smart device users’ daily habits. She points you to a specific data set:
+
+● [FitBit Fitness Tracker Data](https://www.kaggle.com/datasets/arashnic/fitbit) (CC0: Public Domain, dataset made available through [Mobius](https://www.kaggle.com/arashnic)): This Kaggle data set contains personal fitness tracker from thirty fitbit users. Thirty eligible Fitbit users consented to the submission of personal tracker data, including minute-level output for physical activity, heart rate, and sleep monitoring. It includes information about daily activity, steps, and heart rate that can be used to explore users’ habits. Sršen tells you that this data set might have some limitations, and encourages you to consider adding another data to help address those limitations as you begin to work more with this data.
 
 Now, prepare your data for analysis using the following Case Study Roadmap as a guide:
 
@@ -71,8 +73,8 @@ Now, prepare your data for analysis using the following Case Study Roadmap as a 
 |  :--------------------------  |
 |  Guiding questions  |
 |  &emsp;  ● Where is your data located?  |
-|  &emsp;  ● How is the data organized?  |
-|  &emsp;  ● Are there issues with bias or credibility in this data? [Does your data ROCCC?](https://www.coursera.org/learn/data-preparation/lecture/lHirM/what-is-bad-data)  |
+|  &emsp;  ● How is the data organized? Is it in long or wide format? |
+|  &emsp;  ● Are there issues with bias or credibility in this data? [Does your data ROCCC?](https://www.coursera.org/lecture/data-preparation/what-is-bad-data-lHirM)  |
 |  &emsp;  ● How are you addressing licensing, privacy, security, and accessibility?  |
 |  &emsp;  ● How did you verify the data’s integrity?  |
 |  &emsp;  ● How does it help you answer your question?  |
@@ -106,19 +108,20 @@ Then, process your data for analysis using the following Case Study Roadmap as a
 |  &emsp;  ● Documentation of any cleaning or manipulation of data  |
 
 **Follow these steps:**
-  1. [Download the previous 12 months of trip data.](https://divvy-tripdata.s3.amazonaws.com/index.html)
-     Note: If you are planning on using Posit’s RStudio, use the [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090) and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855) datasets. Choosing other data might lead to errors because the data exceeds the memory available in the free plan.
+  1. [Download the dataset.](https://www.kaggle.com/datasets/arashnic/fitbit)
   2. Unzip the files.
-  3. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions.
-  4. Create subfolders for the .csv file and the .xls or Sheets file so that you have a copy of the original data. Move the downloaded files to the appropriate subfolder.
-  5. Follow these instructions for either Excel (a) or Google Sheets (b):
-    a. Launch Excel, open each file, and choose to Save As an Excel Workbook file. Put it in the subfolder you created for .xls files.
-    b. Open each .csv file in Google Sheets and save it to the appropriate subfolder.
-  6. Open your spreadsheet and create a column called ride_length. Calculate the length of each ride by subtracting the column started_at from the column ended_at (for example, =D2-C2) and format as HH:MM:SS using Format > Cells > Time > 37:30:55.
-  7. Create a column called day_of_week, and calculate the day of the week that each ride started using the WEEKDAY command (for example, =WEEKDAY(C2,1)) in each file. Format as General or as a number with no decimals, noting that 1 = Sunday and 7 = Saturday.
-  8. Proceed to the analyze step.
+  3. Create a folder on your desktop or Drive to house the files. Use appropriate file-naming conventions. If you need a refresher on file-naming conventions, you can revisit the [“All about file naming”](https://www.coursera.org/learn/data-preparation/lecture/OXHvS/all-about-file-naming) video or the [“Organization guidelines”](https://www.coursera.org/learn/data-preparation/supplement/fLKJI/organization-guidelines) reading.
+  4. Upload the data to a tool of your choice. For a refresher on some different ways to do this, feel free to reference any of the following resources on how to get started in the following tools (proceed to next page):
 
-If you like, continue working with the data to better familiarize yourself, and perhaps even identify new approaches to answering the business questions.
+|Spreadsheets|SQL|R|
+|----|---|----|
+|[Importing data from spreadsheets:](https://www.coursera.org/lecture/data-preparation/optional-importing-data-from-spreadsheets-and-databases-KCphN) This video from Course 3 will guide you through the steps you will follow to import data into your spreadsheet. This is useful if you want to perform your cleaning and analysis with spreadsheets. | [Uploading a CSV file in BigQuery:](https://scribehow.com/shared/Uploading_a_CSV_file_to_BigQuery__3qDWEO9rS6iORNQN_rBFSw) These step-by-step instructions will guide you through the process of uploading your CSV file into BigQuery so that you can start working with your data in SQL. | [Data import basics:](https://www.coursera.org/learn/data-analysis-r/supplement/qfrIM/data-import-basics) This reading from Course 7 will review importing data into R so that you can begin cleaning and analyzing it. If you are planning to use R for your case study, this is a useful starting point.
+|[Data cleaning features in spreadsheets:](https://www.coursera.org/lecture/process-data/data-cleaning-features-in-spreadsheets-Ez3u5) This video from Course 4 outlines basic data cleaning features in spreadsheets; this is a great refresher if you need a review.|[Cleaning string variables using SQL:](https://www.coursera.org/lecture/process-data/cleaning-string-variables-using-sql-xVA4Z) This video from Course 4 covers some key cleaning techniques for string data in SQL.|[Cleaning up with the basics:](https://www.coursera.org/lecture/data-analysis-r/cleaning-up-with-the-basics-3FBCt) This video from Course 7 will guide you through some basic R cleaning functions that you will need to process your data for analysis.|
+|[Even more data-cleaning techniques:](https://www.coursera.org/lecture/process-data/even-more-data-cleaning-techniques-Ei2IH) This video from Course 4 covers even more techniques you can use to clean your data and prepare it for analysis.|[Advanced data-cleaning functions part 1 and part 2:](https://www.coursera.org/learn/process-data/lecture/eU2wr/advanced-data-cleaning-functions-part-1) These videos cover more advanced cleaning functions that are a great refresher as you begin to work more closely.|[Transforming data:](https://www.coursera.org/learn/data-analysis-r/lecture/d108v/transforming-data) This video from Course 7 covers transforming data in R so that it is organized and formatted for easy analysis.|
+
+  5. Proceed to the analyze step.
+
+If you like, continue working with the data to better familiarize yourself and perhaps even identify new approaches to answering the business questions.
 
 ### Analyze
 
@@ -140,48 +143,32 @@ Now that your data is stored appropriately and has been prepared for analysis, s
 |  Deliverable  |
 |  &emsp;  ● A summary of your analysis  |
 
-**Follow these steps for using spreadsheets**
-Open your spreadsheet application, then complete the following steps:
-  1. Where relevant, make columns consistent and combine them into a single worksheet.
-  2. Clean and transform your data to prepare for analysis.
-  3. Conduct descriptive analysis.
-  4. Run a few calculations in one file to get a better sense of the data layout. Options:
-    ● Calculate the mean of ride_length
-    ● Calculate the max ride_length
-    ● [Calculate the mode](https://support.google.com/docs/answer/3094029?hl=en) of day_of_week
-  5. Create a pivot table to quickly calculate and visualize the data. Options:
-    ● Calculate the average ride_length for members and casual riders. Try rows = member_casual; Values = Average of ride_length.
-    ● Calculate the average ride_length for users by day_of_week. Try columns = day_of_week; Rows = member_casual; Values = Average of ride_length.
-    ● Calculate the number of rides for users by day_of_week by adding Count of trip_id to Values.
-  6. Open another file and perform the same descriptive analysis steps. Explore different seasons to make some initial observations.
-  7. Once you have spent some time working with the individual spreadsheets, merge them into a full-year view. Do this with the tool you have chosen to use to perform your final analysis, either a spreadsheet, a database and SQL, or R Studio.
-  8. Export a summary file for further analysis.
-
 **Follow these steps for using SQL**
-Open your SQL tool of choice, then complete the following steps:
+
+Here is a sample script that can help you do the following:
+To use the sample script, [click this link](https://docs.google.com/document/d/1gWsf3gW4oKDbOD2MwFGZqzz_HAsOR4T9EQ-b1i40s58/template/preview?pli=1) and select “Use Template.”
   1. Import your data.
   2. Explore your data, perhaps looking at the total number of rows, distinct values, maximum, minimum, or mean values.
-  3. Where relevant, use JOIN statements to combine your relevant data into one table.
+  3. Where relevant, use JOIN statements to combine your relevant data into different tables based upon the needs of your analyses.
   4. Create summary statistics.
   5. Investigate interesting trends and save that information to a table.
 
 **Follow these steps for using R** 
-Open your preferred version of R, click [this link](https://docs.google.com/document/d/1TzCqk59_J23D5zNCvwAPSgK-5osp-wVnifsc-VOpCaI/template/preview), and select “Use template.” Then, copy and paste the text from the template into an R script.
-  1. Import your data from [Divvy 2019 Q1](https://docs.google.com/spreadsheets/d/1uCTsHlZLm4L7-ueaSLwDg0ut3BP_V4mKDo2IMpaXrk4/template/preview?resourcekey=0-dQAUjAu2UUCsLEQQt20PDA#gid=1797029090) and [Divvy 2020 Q1](https://docs.google.com/spreadsheets/d/179QVLO_yu5BJEKFVZShsKag74ZaUYIF6FevLYzs3hRc/template/preview#gid=640449855)
-.
-  2. Make columns consistent and merge them into a single dataframe.
-  3. Clean up and add data to prepare for analysis.
-  4. Conduct descriptive analysis.
-  5. Export a summary file for further analysis.
 
+Open your preferred version of R, click [this link](https://docs.google.com/document/d/1gmPCr0zqjOtVK_y_BKsaUItBJHakw9ghB4x7dZYVvvo/template/preview), and select “Use template.” Then, copy and paste the text from the template into an R script.
+  1. Begin importing your data.
+  2. Explore your data, gathering some summary statistics.
+  3. Clean and transform your data to prepare for analysis.
+  4. Create some initial exploratory visualizations.
+     
 ### Share
 
-Now that you have performed your analysis and gained some insights into your data, create visualizations to share your findings. Moreno has reminded you that they should be sophisticated and polished in order to effectively communicate to the executive team. Use the following Case Study Roadmap as a guide:
+Once you have completed your analysis, create your data visualizations. The visualizations should clearly communicate your high-level insights and recommendations. Use the following Case Study Roadmap as a guide:
 
 |  Case Study Roadmap - Share  |
 |  :--------------------------  |
 |  Guiding questions  |
-|  &emsp;  ● Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?  |
+|  &emsp;  ● Were you able to answer the business questions?  |
 |  &emsp;  ● What story does your data tell?  |
 |  &emsp;  ● How do your findings relate to your original question?  |
 |  &emsp;  ● Who is your audience? What is the best way to communicate with them?  |
@@ -221,7 +208,7 @@ Now that you have finished creating your visualizations, act on your findings. P
 |  &emsp;  ● Your top three recommendations based on your analysis  |
 
 **Follow these steps:**
-  1. If you do not have one already, create an online portfolio.
+  1. If you do not have one already, create an online portfolio. (Use [Build a Portfolio with Google Sites.](https://applieddigitalskills.withgoogle.com/c/middle-and-high-school/en/build-a-portfolio-with-google-sites/build-a-portfolio-with-google-sites/introduction-to-build-a-portfolio-with-google-sites.html))
   2. Consider how you want to feature your case study in your portfolio.
   3. Upload or link your case study findings to your portfolio.
   4. Write a brief paragraph describing the case study, your process, and your discoveries.
@@ -229,4 +216,4 @@ Now that you have finished creating your visualizations, act on your findings. P
 
 ### Wrap-up
 
-Congratulations on finishing the Cyclistic bike-share case study! If you like, complete another case study to continue growing your portfolio. Or, use the steps from the Ask, Prepare, Process, Analyze, Share, and Act Case Study Roadmap to create a new project that’s all your own. Best of luck on your job search!
+Congratulations on finishing the Bellabeat marketing analysis case study! If you like, complete one of the other case studies to continue growing your portfolio. Or, use the steps from the ask, prepare, process, analyze, share, and act Case Study Roadmap to create a new project all your own. Best of luck on your job search!
