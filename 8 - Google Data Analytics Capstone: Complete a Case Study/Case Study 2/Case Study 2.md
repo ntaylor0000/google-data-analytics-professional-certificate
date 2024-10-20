@@ -22,3 +22,45 @@ The analysis is designed to demonstrate various data analytics skills and techni
 
 **Stakeholders:**
 
+## Step 2: Prepare
+
+Data Sources:
+Data Collection:
+Data Description:
+Addressing Privacy and Accessibility:
+Data Integrity:
+Data Credibility (ROCCC Framework):
+How the Data Answers the Business Question:
+Potential Data Issues:
+
+## Step 3: Process
+
+Overview:
+Review and Processing Steps:
+Step 1: File Setup and Data Merging
+Step 2: Data Cleaning
+Step 3: Data Transformation
+Tool-Specific Approaches
+Excel Approach
+SQL Approach
+SQL QUERIES: 
+R Approach
+R CODE:
+
+## Step 4: Analyze
+
+Data Analysis Summary:
+SQL QUERIES:
+R CODE:
+
+## Step 5: Share
+
+Data Visualization and Findings Summary:
+Key Recommendations:
+Key Questions Still Remaining:
+Tableau Dashboard (LINK TO PUBLIC DASHBOARD):
+R CODE:
+R VISUALIZATIONS:
+
+## Step 6: Act
+
