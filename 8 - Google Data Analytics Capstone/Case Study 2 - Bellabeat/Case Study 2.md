@@ -129,43 +129,96 @@ Despite these limitations, the dataset remains robust and offers sufficient dept
 
 ## Step 3: Process
 
-- Overview:
-- Review and Processing Steps:
-- Step 1: File Setup and Data Merging
-- Step 2: Data Cleaning
-- Step 3: Data Transformation
+**Overview:**
 
-- Tool-Specific Approaches
-- Excel Approach
-- SQL Approach
-- SQL QUERIES:
-  ``` sql
-  ```
-- R Approach
-- R CODE:
-  ``` r
-  ```
+### Review and Processing Steps:
+
+**Step 1: File Setup and Data Merging**
+
+**Step 2: Data Cleaning**
+
+**Step 3: Data Transformation**
+
+### Tool-Specific Approaches
+
+**Excel Approach**
+
+**SQL Approach**
+
+SQL QUERIES:
+``` sql
+/*
+PREPARE DATA
+*/
+
+
+
+/*
+Process Data
+*/
+
+```
+
+**R Approach**
+
+R CODE:
+``` r
+#
+#  PREPARE DATA
+#
+
+
+
+#
+# Process Data
+#
+
+```
 
 ## Step 4: Analyze
 
-- Data Analysis Summary:
-- SQL QUERIES:
-  ``` sql
-  ```
-- R CODE:
-  ``` r
-  ```
+**Data Analysis Summary:**
+
+**SQL QUERIES:**
+``` sql
+/*
+Analyze Data
+*/
+
+```
+
+**R CODE:**
+``` r
+#
+# Analyze Data
+#
+
+```
 
 ## Step 5: Share
 
-- Data Visualization and Findings Summary:
-- Key Recommendations:
-- Key Questions Still Remaining:
-- Tableau Dashboard (LINK TO PUBLIC DASHBOARD):
-- R CODE:
-  ``` r
-  ```
-- R VISUALIZATIONS:
+**Data Visualization and Findings Summary:**
+
+Key Recommendations:
+
+Key Questions Still Remaining:
+
+TABLEAU: (LINK TO PUBLIC DASHBOARD):
+
+R CODE:
+``` r
+#
+# Share Data
+#
+
+```
+
+**R VISUALIZATIONS:**
 
 ## Step 6: Act
+
+**Application of Insights:**
+
+**Next Steps:**
+
 
