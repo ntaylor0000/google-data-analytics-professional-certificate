@@ -131,17 +131,67 @@ Despite these limitations, the dataset remains robust and offers sufficient dept
 
 **Overview:**
 
+In this phase, the Bellabeat FitBit fitness tracker data is processed and cleaned in accordance with the guidelines outlined in the Project Charter. The objective is to ensure that the data is ready for analysis, encompassing tasks such as cleaning, merging, and transforming. The primary steps in the data processing phase include:
+
+1.	**Data Cleaning:** This entails resolving formatting issues, addressing null or missing values, removing duplicate records, and rectifying any other inconsistencies that could compromise data quality.
+2.	**Merging and Transforming:** The files based on their time scale, (day, hour, minute, second) will be combined into a merged datasets and transformed into a format conducive to analysis.
+
+The Project Charter specifies three methodologies for data processing and analysis: Excel, SQL, and R. While Excel is a valuable tool, it is less optimal for large datasets due to its file size constraints. In practical applications, SQL or R would be more suitable for managing extensive data. For this portfolio project, all three methods are demonstrated to showcase a range of technical skills.
+
+**Data Overview:**
+
+The dataset utilized in this analysis consists of 29 files containing various health and wellness datapoints collected over a two-month period. 
+
 ### Review and Processing Steps:
 
 **Step 1: File Setup and Data Merging**
 
+  -	  Unzip the files.
+  -	  Store the .csv files in a designated folder for efficient management of the raw data.
+  -	  Review the original files and merge them into a merged datasets based on time scale. (day, hour, minute, second)
+
 **Step 2: Data Cleaning**
 
+The following quality checks were performed to ensure the integrity of the data:
+  1.	**Column Name Consistency:** Ensured that column names across all files adhered to consistent naming conventions. Any discrepancies were standardized to maintain uniformity.
+  2.	**Data Type Consistency:** Verified that the correct and consistent data types were applied across all relevant columns.
+  3.	**Duplicate Records:** Identified and removed duplicate entries within the dataset.
+  4.	**Missing or Null Values:** Detected missing or null values in key columns and removed rows with critical missing information.
+  5.	**Inconsistent Data:** Checked for data inconsistencies and made corrections where feasible.
+
 **Step 3: Data Transformation**
+
+To prepare the dataset for analysis, the following transformation was applied:
+1.	**Creating a ‘Day of Week’ Column:**
+    -  **Description:** A new column was created to capture the day of the week for each entry, enabling the analysis of patterns based on weekday versus weekend usage.
+    -  **Tool-Specific Notes:**
+        -  **Excel:** =WEEKDAY(C2, 1)
+        -  **SQL:** day_of_week = EXTRACT(DOW FROM ActivityDate) + 1 
+        -  **R:** day_of_week = as.integer(format(ActivityDate, "%w")) + 1
 
 ### Tool-Specific Approaches
 
 **Excel Approach**
+
+While Excel is widely utilized for data analysis, it is not well-suited for handling very large datasets due to memory limitations. Excel can accommodate up to 1,048,575 rows per worksheet, which may restrict its use for large-scale analysis. The following steps were performed using Excel:
+
+Step 1: File Setup and Data Merging:
+
+Power Query was omitted due to data consistency issues across files, which limited its utility in this analysis. The two dailyActivity_merged.csv files were combined for each month, while other daily merged files were excluded due to minimal relevance. The hourly merged files will be used for more detailed analysis. Given that the dataset exceeds Excel’s row limit of 1,048,575, full analysis using this method was impractical.
+  - Utilized INDEX and MATCH functions to consolidate data into a single workbook efficiently.
+
+Step 2: Data Cleaning: 
+
+The “Remove Duplicates” function identified and removed duplicates within the manageable dataset subset.
+
+Step 3: Data Transformation: 
+
+Formulas were applied to calculate key metrics:
+  - Day of week: =WEEKDAY(C2, 1) (Returns the day of the week based on the start time).
+
+![](Visualizations/excel_transformation.png "excel_transformation.png")
+
+> Note: The large size of the dataset exceeded Excel's capacity for handling data. Although Excel is effective for small to medium-sized datasets, SQL and R are more suitable for managing datasets of this scale.
 
 **SQL Approach**
 
