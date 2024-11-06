@@ -426,6 +426,20 @@ daily_activity_cleaned <- daily_activity_cleaned %>%
 
 **Data Analysis Summary:**
 
+The analysis of the Bellabeat fitness tracking data involved utilizing both PostgreSQL and R to derive key metrics related to activity levels, sleep patterns, and correlations between physical activity and sleep quality. The analysis encompassed calculating aggregate statistics, including the mean, median, and mode of daily steps, activity levels, and sleep duration, alongside insightful aggregations based on time of day, days of the week, and activity patterns.
+
+Activity Patterns: 
+- Users averaged 7,608 steps per day, slightly below the 10,000 steps recommended for optimal health. Most active periods were from 11:00 AM to 8:00 PM, while the least active times were in the early morning hours.
+
+Sleep Quality: 
+- The average daily sleep duration was approximately 7 hours, aligning with standard health recommendations. However, a subset of users exhibited either insufficient or excessive sleep.
+
+Caloric Expenditure: 
+- A positive correlation existed between physical activity levels and calories burned, indicating that increased activity levels consistently led to higher calorie expenditure.
+
+Inactivity Rates: 
+- The majority of users were sedentary for extended periods, suggesting potential for increased engagement in light to moderate physical activities.
+
 **SQL QUERIES:**
 ``` sql
 /*
