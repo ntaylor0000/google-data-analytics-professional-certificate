@@ -312,6 +312,27 @@ SET day_of_week = EXTRACT(DOW FROM ActivityDate) + 1;
 
 **R Approach**
 
+R is an advanced statistical programming language that excels in data analysis, visualization, and statistical modeling. The following steps were performed using R to process the dataset and prepare it for analysis:
+
+Step 1: File Setup and Data Merging:
+
+Using the readr and dplyr packages, the .csv files were imported into R and merged into a single dataframe. 
+  - The directory containing the .csv files is specified, and the list.files() function is used to list all .csv files in that directory. The pattern = "*.csv" argument ensures that only .csv files are included.
+  - The lapply() function applies the read_csv() function from the readr package to each file in the list, reading the data into R.
+  - The bind_rows() function from dplyr combines the individual data frames returned by lapply() into a single unified data frame, daily_activity.
+
+Step 2: Data Cleaning:
+
+To ensure the dataset was clean and reliable for analysis, several data cleaning steps were performed using dplyr and base R functions:
+  - Removing duplicates: Duplicate entries were removed using the distinct() function.
+  - Removing rows with NULL values: Rows with missing values in critical columns were removed using filter() function.
+  - Removing outliers: Outliers in Calories were identified and filtered out. Rows with Calories where Calories were listed as 0 were considered outliers and were removed using conditions in the filter() function.
+
+Step 3: Data Transformation: 
+
+Transformations were performed to prepare the data for analysis:
+  - Extracting the day of the week: Another new column, day_of_week, is created to extract the day of the week from the ActivityDate timestamp. The day is represented as an integer where 1 = Sunday and 7 = Saturday. The format() function is used to extract the day of the week, and the result is adjusted to fit the desired scale.
+
 R CODE:
 ``` r
 #
