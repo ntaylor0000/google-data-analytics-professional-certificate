@@ -335,17 +335,9 @@ Transformations were performed to prepare the data for analysis:
 
 R CODE:
 ``` r
-                                    
-
-                                    ##BELLABEAT
-
-
-
-
 #
 #  PREPARE DATA
 #
-
 
 ## Install necessary packages and libraries
 
@@ -414,7 +406,6 @@ daily_activity_cleaned <- daily_activity_cleaned %>%
 
 daily_activity_cleaned <- daily_activity_cleaned %>%
   filter(Calories > 0)
-
 
 
 #
