@@ -195,17 +195,118 @@ Formulas were applied to calculate key metrics:
 
 **SQL Approach**
 
+While SQL is a powerful and efficient tool for managing large datasets, it is well-suited for structured data analysis on databases. The following steps were performed using PostgreSQL to ensure the dataset was ready for in-depth analysis:
+
+Step 1: File Setup and Data Merging:
+
+The .csv files were imported into the public.daily_activity  table using PostgreSQL's COPY command. 
+  - Create table to store dataset: A new table named daily_activity was created in PostgreSQL to hold the dataset. The table structure was defined with appropriate data types for each column, ensuring compatibility with the data in the .csv files.
+  - Importing the .csv files: PostgreSQL’s COPY command was used to import the .csv files directly into the daily_activity table. 
+
+Step 2: Data Cleaning: 
+
+Data cleaning is crucial to ensure the dataset is accurate and suitable for analysis. Several steps were implemented to clean the data:
+  - Removing duplicates: Duplicate records were identified and removed based on the Id and ActivityDate using PostgreSQL’s ROW_NUMBER() function.
+  - Removing rows with NULL values: Rows with NULL values in critical columns (e.g., ActivityDate, TotalSteps, and Calories) were removed.
+  - Removing outliers: Records where the Calories burned was 0 or less were filtered out.
+
+Step 3: Data Transformation:
+
+To prepare the dataset for analysis, transformations were applied to create new columns and extract relevant features:
+  - Extracting the day of the week: A new column, day_of_week, was added to extract the day of the week from the ActivityDate timestamp. The days of the week were represented as integers, where 1 = Sunday and 7 = Saturday.
+
 SQL QUERIES:
 ``` sql
 /*
 PREPARE DATA
 */
 
+-- Create primary table to store FitBit Fitness Tracker Data. 
+
+CREATE TABLE IF NOT EXISTS public.daily_activity (
+	Id VARCHAR(50),						-- Unique identifier for each user. 
+	ActivityDate TIMESTAMP,				-- Date of the recorded data.  
+	TotalSteps INT,						-- Total number of steps taken.|
+	TotalDistance FLOAT,				-- Total distance moved. 
+	TrackerDistance FLOAT,				-- Total distance recorded by the tracker. 
+	LoggedActivitiesDistance FLOAT,	-- Manually logged distance moved. 
+	VeryActiveDistance FLOAT,			-- Distance traveled at a high activity level. 
+	ModeratelyActiveDistance FLOAT,	-- Distance traveled at a moderate activity level. 
+	LightActiveDistance FLOAT,			-- Distance traveled at a light activity level. 
+ 	SedentaryActiveDistance FLOAT,		-- Distance recorded during sedentary activity. 
+	VeryActiveMinutes INT,				-- Minutes spent in very active exercise. 
+	FairlyActiveMinutes INT,			-- Minutes spent in fairly active exercise. 
+	LightlyActiveMinutes INT,			-- Minutes spent in lightly active exercise. 
+	SedentaryMinutes INT,   			-- Minutes spent in sedentary activity. 
+	Calories INT						-- Total number of calories burned. 
+);
+
+-- Import data from the .csv files into the `public.daily_activity` table
+
+COPY public.daily_activity (Id,ActivityDate,TotalSteps,TotalDistance,TrackerDistance,LoggedActivitiesDistance,VeryActiveDistance,ModeratelyActiveDistance,LightActiveDistance,SedentaryActiveDistance,VeryActiveMinutes,FairlyActiveMinutes,LightlyActiveMinutes,SedentaryMinutes,Calories)
+FROM '\Fitabase Data 3.12.16-4.11.16\dailyActivity_merged.csv' 
+DELIMITER ',' CSV header;
+COPY public.daily_activity (Id,ActivityDate,TotalSteps,TotalDistance,TrackerDistance,LoggedActivitiesDistance,VeryActiveDistance,ModeratelyActiveDistance,LightActiveDistance,SedentaryActiveDistance,VeryActiveMinutes,FairlyActiveMinutes,LightlyActiveMinutes,SedentaryMinutes,Calories)
+FROM '\Fitabase Data 4.12.16-5.12.16\dailyActivity_merged.csv' 
+DELIMITER ',' CSV header;
+
+
+-- Calculate total row count, count of unique records based on Id and ActivityDate, and count of duplicates.
+-- Output: total_row_count 1397, distinct_count 1373, duplicate_count 24
+
+SELECT 
+    COUNT(*) AS total_count,
+    COUNT(DISTINCT (Id || ActivityDate::text)) AS distinct_count,  -- Composite key using Id and ActivityDate
+    COUNT(*) - COUNT(DISTINCT (Id || ActivityDate::text)) AS duplicate_count
+FROM public.daily_activity;
+
+-- Identify and delete duplicate records based on Id and ActivityDate, retaining only the record with the highest calorie value.
+-- Output: 24 rows were deleted
+
+WITH ranked_daily_activity AS (
+    SELECT ctid,  -- The unique identifier for each row in PostgreSQL
+           Id,
+           ActivityDate,
+           Calories,
+           ROW_NUMBER() OVER (PARTITION BY Id, ActivityDate ORDER BY Calories DESC) AS rn
+    FROM public.daily_activity
+)
+
+DELETE FROM public.daily_activity
+WHERE ctid IN (
+    SELECT ctid
+    FROM ranked_daily_activity
+    WHERE rn > 1
+);
+
+-- Identify and delete rows with NULL values in critical columns (ActivityDate, TotalSteps, and Calories).
+-- Output: 0 rows were deleted.
+
+DELETE FROM public.daily_activity
+WHERE ActivityDate IS NULL
+   OR TotalSteps IS NULL
+   OR Calories IS NULL;
+   
+-- Identify and delete records with Calories <= 0 as outliers. 
+-- Output: 6 rows were deleted.
+
+DELETE FROM public.daily_activity
+WHERE Calories <= 0;
 
 
 /*
 Process Data
 */
+
+-- Create new column day_of_week to extract the day of the week from the ActivityDate column.
+
+ALTER TABLE public.daily_activity
+ADD day_of_week INT;
+
+-- Update the day_of_week column by extracting the day of the week from ActivityDate. (NOTE: 1 = Sunday and 7 = Saturday).
+
+UPDATE public.daily_activity
+SET day_of_week = EXTRACT(DOW FROM ActivityDate) + 1;
 
 ```
 
