@@ -224,21 +224,21 @@ PREPARE DATA
 -- Create primary table to store FitBit Fitness Tracker Data. 
 
 CREATE TABLE IF NOT EXISTS public.daily_activity (
-	Id VARCHAR(50),						-- Unique identifier for each user. 
+	Id VARCHAR(50),					-- Unique identifier for each user. 
 	ActivityDate TIMESTAMP,				-- Date of the recorded data.  
-	TotalSteps INT,						-- Total number of steps taken.|
+	TotalSteps INT,					-- Total number of steps taken.|
 	TotalDistance FLOAT,				-- Total distance moved. 
 	TrackerDistance FLOAT,				-- Total distance recorded by the tracker. 
-	LoggedActivitiesDistance FLOAT,	-- Manually logged distance moved. 
+	LoggedActivitiesDistance FLOAT,			-- Manually logged distance moved. 
 	VeryActiveDistance FLOAT,			-- Distance traveled at a high activity level. 
-	ModeratelyActiveDistance FLOAT,	-- Distance traveled at a moderate activity level. 
+	ModeratelyActiveDistance FLOAT,			-- Distance traveled at a moderate activity level. 
 	LightActiveDistance FLOAT,			-- Distance traveled at a light activity level. 
- 	SedentaryActiveDistance FLOAT,		-- Distance recorded during sedentary activity. 
+ 	SedentaryActiveDistance FLOAT,			-- Distance recorded during sedentary activity. 
 	VeryActiveMinutes INT,				-- Minutes spent in very active exercise. 
 	FairlyActiveMinutes INT,			-- Minutes spent in fairly active exercise. 
 	LightlyActiveMinutes INT,			-- Minutes spent in lightly active exercise. 
 	SedentaryMinutes INT,   			-- Minutes spent in sedentary activity. 
-	Calories INT						-- Total number of calories burned. 
+	Calories INT					-- Total number of calories burned. 
 );
 
 -- Import data from the .csv files into the `public.daily_activity` table
