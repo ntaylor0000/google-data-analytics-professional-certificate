@@ -205,7 +205,7 @@ Step 1: File Setup and Data Merging:
 
 The 12 .csv files were imported into the public.bike_trips table using PostgreSQL's COPY command. 
   - Create table to store dataset: A new table named bike_trips was created in PostgreSQL to hold the dataset. The table structure was defined with appropriate data types for each column, ensuring compatibility with the data in the .csv files.
-  - Importing the .csv files: PostgreSQL’s COPY command was used to import the CSV files directly into the bike_rides table. 
+  - Importing the .csv files: PostgreSQL’s COPY command was used to import the .csv files directly into the bike_rides table. 
 
 Step 2: Data Cleaning: 
 
