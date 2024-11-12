@@ -501,19 +501,36 @@ FROM
 
 
 
-/*
-Process Data
-*/
 
 -- Create new column day_of_week to extract the day of the week from the ActivityDate column.
 
 ALTER TABLE public.daily_activity
 ADD day_of_week INT;
 
+ALTER TABLE public.hourly_activity
+ADD day_of_week INT;
+
+ALTER TABLE public.minute_activity
+ADD day_of_week INT;
+
+ALTER TABLE public.second_activity
+ADD day_of_week INT;
+
 -- Update the day_of_week column by extracting the day of the week from ActivityDate. (NOTE: 1 = Sunday and 7 = Saturday).
 
 UPDATE public.daily_activity
 SET day_of_week = EXTRACT(DOW FROM ActivityDate) + 1;
+
+UPDATE public.hourly_activity
+SET day_of_week = EXTRACT(DOW FROM ActivityHour) + 1;
+
+UPDATE public.minute_activity
+SET day_of_week = EXTRACT(DOW FROM ActivityMinute) + 1;
+
+UPDATE public.second_activity
+SET day_of_week = EXTRACT(DOW FROM Time) + 1;
+
+
 
 ```
 
