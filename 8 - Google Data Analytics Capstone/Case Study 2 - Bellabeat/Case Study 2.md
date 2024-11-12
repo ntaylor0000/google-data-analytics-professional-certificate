@@ -502,6 +502,19 @@ FROM
 
 
 
+
+
+
+
+
+
+
+
+
+/*
+Process Data
+*/
+
 -- Create new column day_of_week to extract the day of the week from the ActivityDate column.
 
 ALTER TABLE public.daily_activity
