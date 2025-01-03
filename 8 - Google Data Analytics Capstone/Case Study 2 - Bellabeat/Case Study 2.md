@@ -669,25 +669,194 @@ daily_activity_cleaned <- daily_activity_cleaned %>%
 
 **Data Analysis Summary:**
 
-The analysis of the Bellabeat fitness tracking data involved utilizing both PostgreSQL and R to derive key metrics related to activity levels, sleep patterns, and correlations between physical activity and sleep quality. The analysis encompassed calculating aggregate statistics, including the mean, median, and mode of daily steps, activity levels, and sleep duration, alongside insightful aggregations based on time of day, days of the week, and activity patterns.
+The analysis of the Bellabeat fitness tracking data utilized both PostgreSQL and R to extract key insights into user activity levels, sleep patterns, and the relationship between physical activity and sleep quality. The analysis encompassed calculating aggregate statistics, including the mean, median, and mode of daily steps, activity levels, and sleep duration, alongside insightful aggregations based on time of day, days of the week, and activity patterns.
 
 Activity Patterns: 
-- Users averaged 7,608 steps per day, slightly below the 10,000 steps recommended for optimal health. Most active periods were from 11:00 AM to 8:00 PM, while the least active times were in the early morning hours.
+- Users averaged 7,407 steps per day, falling below the 10,000 steps recommended for optimal health. Peak activity occurred between 9:00 AM and 8:00 PM, with minimal activity occurring in the early morning hours.
 
 Sleep Quality: 
-- The average daily sleep duration was approximately 7 hours, aligning with standard health recommendations. However, a subset of users exhibited either insufficient or excessive sleep.
+- The average daily sleep duration was approximately 7 hours, aligning with health recommendations. However, a subset of users exhibited either insufficient (<6 hours) or excessive sleep (>9 hours). The average time to fall asleep was roughly 40 minutes. 
 
 Caloric Expenditure: 
-- A positive correlation existed between physical activity levels and calories burned, indicating that increased activity levels consistently led to higher calorie expenditure.
+- A positive correlation existed between physical activity levels and calories burned, indicating that increased activity levels consistently led to higher calorie expenditure with users averaging 2,304 calories burned in a day. 
 
 Inactivity Rates: 
-- The majority of users were sedentary for extended periods, suggesting potential for increased engagement in light to moderate physical activities.
+- The majority of users were sedentary for an average of 81% of their daily time, indicating opportunities to promote increased engagement in light to moderate physical activities.
 
 **SQL QUERIES:**
 ``` sql
 /*
 Analyze Data
 */
+
+-- Calculate Mean, Median, and Mode of Daily Steps
+-- Mean: 7409.76, Median: 7155, Mode: 0 
+
+SELECT 
+    AVG(totalsteps) AS mean_total_steps,
+    PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY totalsteps) AS median_total_steps,
+    MODE() WITHIN GROUP (ORDER BY totalsteps) AS mode_total_steps
+FROM 
+    public.daily_activity;
+
+-- Calculate frequency of use
+-- Min: 8, Max: 62
+
+SELECT 
+    id,
+    COUNT(id) AS total_id
+FROM 
+    public.daily_activity
+GROUP BY 
+    id;
+
+-- Classify users based on frequency of use
+-- light_user: 2 (6%), moderate_user: 28 (80%), active_user: 5 (14%)
+
+SELECT 
+    id,
+    COUNT(id) AS total_uses,
+    CASE
+        WHEN COUNT(id) BETWEEN 45 AND 62 THEN 'active_user'
+        WHEN COUNT(id) BETWEEN 27 AND 44 THEN 'moderate_user'
+        WHEN COUNT(id) BETWEEN 0 AND 26 THEN 'light_user'
+    END AS user_classification
+FROM 
+    public.daily_activity
+GROUP BY 
+    id
+
+-- Average minutes of activity by user
+-- Users were primarily sedentary with lightly_active as the primary source of activity. 
+
+SELECT 
+    id,
+    ROUND(AVG(veryactiveMinutes),2) AS avg_very_active_minutes,
+    ROUND(AVG(fairlyactiveMinutes),2) AS avg_fairly_active_minutes,
+    ROUND(AVG(lightlyactiveMinutes),2) AS avg_lightly_active_minutes,
+    ROUND(AVG(sedentaryminutes),2) AS avg_sedentary_minutes
+FROM 
+    public.daily_activity
+GROUP BY 
+    id
+ORDER BY 
+    2,3,4,5 DESC;
+
+-- Classify users based on avg daily steps
+-- sedentary: 11, low_active: 7, somewhat_active: 10, active: 5, highly_active: 2
+
+SELECT 
+    id,
+    ROUND(AVG(totalsteps),2) AS avg_totalsteps,
+    CASE
+        WHEN ROUND(AVG(totalsteps),2) < 5000 THEN 'sedentary'
+        WHEN ROUND(AVG(totalsteps),2) BETWEEN 5000 and 7499 THEN 'low_active'
+        WHEN ROUND(AVG(totalsteps),2) BETWEEN 7500 and 9999 THEN 'somewhat_active'
+        WHEN ROUND(AVG(totalsteps),2) BETWEEN 10000 and 12499 THEN 'active'
+        WHEN ROUND(AVG(totalsteps),2) > 12499 THEN ‘highly_active'
+    END AS total_steps_classification
+FROM 
+    public.daily_activity
+GROUP BY 
+    id
+ORDER BY 
+    avg_totalsteps;
+
+-- Average Steps by Day of the Week
+-- AVG: 7,407 steps per day
+
+SELECT 
+    day_of_week, 
+    AVG(totalsteps) AS avg_steps
+FROM 
+    public.daily_activity
+GROUP BY 
+    day_of_week;
+
+-- Average Calories Burned by Day of the Week
+-- AVG: 2,304 calories per day
+
+SELECT 
+    day_of_week, 
+    AVG(calories) AS avg_calories_burned
+FROM 
+    public.daily_activity
+GROUP BY 
+    day_of_week;
+
+-- Average Calories Burned by Hour of Day
+-- AVG: 96 calories per hour. Most active between 9AM and 8PM.
+
+SELECT 
+    EXTRACT(HOUR FROM activityhour) AS hour_of_day, 
+    AVG(calories) AS avg_calories_burned
+FROM 
+    public.hourly_activity
+GROUP BY 
+    hour_of_day
+ORDER BY 
+    hour_of_day;
+
+-- Steps and Calories Burned Correlation
+
+SELECT 
+    id,
+    CORR(totalsteps, calories) AS steps_calories_correlation
+FROM 
+    public.daily_activity
+GROUP BY 
+    id;
+
+-- Weekly Activity Analysis
+
+SELECT 
+    day_of_week,
+    AVG(totalsteps) AS avg_steps,
+    AVG(calories) AS avg_calories
+FROM 
+    public.daily_activity
+GROUP BY 
+    day_of_week
+ORDER BY 
+    avg_steps DESC;
+
+-- Sedentary Time vs. Total Active Time Per User
+-- AVG sedentary_ratio: 81%
+
+SELECT 
+    id,
+    SUM(sedentaryminutes) AS total_sedentary_time,
+    SUM(veryactiveminutes + fairlyactiveminutes + lightlyactiveminutes) AS total_active_time,
+    SUM(sedentaryminutes)*1.00 / NULLIF(SUM(sedentaryminutes) + SUM(veryactiveminutes + fairlyactiveminutes + lightlyactiveminutes), 0) AS sedentary_ratio
+FROM 
+    public.daily_activity
+GROUP BY 
+    id;
+
+-- Average time awake in bed
+-- Min: 0 minutes, Max: 371 minutes, AVG: 40 minutes
+
+SELECT 
+    sd.id,
+    AVG(da.totalsteps) AS avg_totalsteps,
+    da.day_of_week,
+    ROUND(AVG(sd.totaltimeinbed),2) AS avg_time_in_bed,
+    ROUND(AVG(sd.totalminutesasleep),2) AS avg_time_asleep,
+    ROUND(AVG(sd.totaltimeinbed - sd.totalminutesasleep),2) AS avg_time_awake
+FROM 
+    sleepday_merged AS sd
+INNER JOIN 
+    daily_activity AS da
+ON 
+    da.id = sd.id
+AND 
+    da.day_of_week = sd.day_of_week
+GROUP BY 
+    sd.id, 
+    da.day_of_week
+ORDER BY 
+    6 DESC
+
 
 ```
 
