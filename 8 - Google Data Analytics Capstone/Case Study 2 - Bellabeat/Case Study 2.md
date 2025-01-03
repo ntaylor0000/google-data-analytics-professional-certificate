@@ -505,18 +505,11 @@ FROM
     FULL JOIN staging_minuteSleep_merged2 AS sl2
         ON COALESCE(c.Id, c2.Id, i.Id, i2.Id, s.Id, s2.Id, m.Id, m2.Id, sl.Id) = sl2.Id AND COALESCE(c.ActivityMinute, c2.ActivityMinute, i.ActivityMinute, i2.ActivityMinute, s.ActivityMinute, s2.ActivityMinute, m.ActivityMinute, m2.ActivityMinute, sl.ActivityMinute) = sl2.ActivityMinute;
 
+-- Import data from the .csv files into the `public.sleepday_merged` table
 
-
-
-
-
-
-
-
-
-
-
-
+COPY public.sleepday_merged (Id,SleepDay,TotalSleepRecords,TotalMinutesAsleep,TotalTimeInBed)
+FROM '\Fitabase Data 4.12.16-5.12.16\sleepday_merged.csv' 
+DELIMITER ',' CSV header;
 
 
 /*
@@ -537,6 +530,9 @@ ADD day_of_week INT;
 ALTER TABLE public.second_activity
 ADD day_of_week INT;
 
+ALTER TABLE public.sleepday_merged
+ADD day_of_week INT;
+
 -- Update the day_of_week column by extracting the day of the week from ActivityDate. (NOTE: 1 = Sunday and 7 = Saturday).
 
 UPDATE public.daily_activity
@@ -551,6 +547,8 @@ SET day_of_week = EXTRACT(DOW FROM ActivityMinute) + 1;
 UPDATE public.second_activity
 SET day_of_week = EXTRACT(DOW FROM Time) + 1;
 
+UPDATE public.sleepday_merged
+SET day_of_week = EXTRACT(DOW FROM sleepday) + 1;
 
 
 ```
