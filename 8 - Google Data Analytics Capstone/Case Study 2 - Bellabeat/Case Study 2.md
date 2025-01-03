@@ -225,147 +225,155 @@ PREPARE DATA
 
 CREATE TABLE IF NOT EXISTS public.daily_activity (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityDate TIMESTAMP,				-- Date of the recorded data.  
+	ActivityDate TIMESTAMP,					-- Date of the recorded data.  
 	TotalSteps INT,						-- Total number of steps taken.|
-	TotalDistance FLOAT,				-- Total distance moved. 
-	TrackerDistance FLOAT,				-- Total distance recorded by the tracker. 
-	LoggedActivitiesDistance FLOAT,	-- Manually logged distance moved. 
-	VeryActiveDistance FLOAT,			-- Distance traveled at a high activity level. 
-	ModeratelyActiveDistance FLOAT,	-- Distance traveled at a moderate activity level. 
-	LightActiveDistance FLOAT,			-- Distance traveled at a light activity level. 
- 	SedentaryActiveDistance FLOAT,		-- Distance recorded during sedentary activity. 
-	VeryActiveMinutes INT,				-- Minutes spent in very active exercise. 
-	FairlyActiveMinutes INT,			-- Minutes spent in fairly active exercise. 
-	LightlyActiveMinutes INT,			-- Minutes spent in lightly active exercise. 
-	SedentaryMinutes INT,   			-- Minutes spent in sedentary activity. 
+	TotalDistance FLOAT,					-- Total distance moved. 
+	TrackerDistance FLOAT,					-- Total distance recorded by the tracker. 
+	LoggedActivitiesDistance FLOAT,				-- Manually logged distance moved. 
+	VeryActiveDistance FLOAT,				-- Distance traveled at a high activity level. 
+	ModeratelyActiveDistance FLOAT,				-- Distance traveled at a moderate activity level. 
+	LightActiveDistance FLOAT,				-- Distance traveled at a light activity level. 
+ 	SedentaryActiveDistance FLOAT,				-- Distance recorded during sedentary activity. 
+	VeryActiveMinutes INT,					-- Minutes spent in very active exercise. 
+	FairlyActiveMinutes INT,				-- Minutes spent in fairly active exercise. 
+	LightlyActiveMinutes INT,				-- Minutes spent in lightly active exercise. 
+	SedentaryMinutes INT,   				-- Minutes spent in sedentary activity. 
 	Calories INT						-- Total number of calories burned. 
 );
 
 CREATE TABLE IF NOT EXISTS public.hourly_activity (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	TotalIntensity INT,					-- Total Intensity per hour.
-	AverageIntensity FLOAT,				-- Average Intensity per hour.
+	AverageIntensity FLOAT,					-- Average Intensity per hour.
 	StepTotal INT,						-- Total Steps per hour.
 	Calories FLOAT						-- Total Calories per hour. 
 );
 
 CREATE TABLE IF NOT EXISTS public.minute_activity (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	Steps INT,							-- Total Steps per minaute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	Steps INT,						-- Total Steps per minaute.
 	Calories FLOAT,						-- Total Calories per minute.
-	METs INT,							-- Metabolic equivalents (METs) per minute.
+	METs INT,						-- Metabolic equivalents (METs) per minute.
 	Intensity INT,						-- Intensity per minute.
-	value INT,							-- Sleep value per minute.
+	value INT,						-- Sleep value per minute.
 	logId VARCHAR(50)					-- Sleep log ID number.
 );
 
 CREATE TABLE IF NOT EXISTS public.second_activity (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
 	Time TIMESTAMP,						-- Date and Time of the recorded data.  
-	Value INT							-- Heart rate per second. 
+	Value INT						-- Heart rate per second. 
+);
+
+CREATE TABLE IF NOT EXISTS public.sleepday_merged (
+	Id VARCHAR(50),						-- Unique identifier for each user. 
+	SleepDay TIMESTAMP,					-- Date and Time of the recorded data.  
+    	TotalSleepRecords INT,					-- Total number of sleep cycles recorded.
+    	TotalMinutesAsleep INT,					-- Total minutes the user was asleep.
+    	TotalTimeInBed INT					-- Total minutes the user spent in bed.
 );
 
 -- Create temporary tables to allow for .csv files with differing column names to be imported for later inserting into appropriate tables.
 
 CREATE TEMP TABLE staging_hourlyCalories_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	Calories FLOAT						-- Total Calories per hour. 
 );
 
 CREATE TEMP TABLE staging_hourlyCalories_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	Calories FLOAT						-- Total Calories per hour. 
 );
 
 CREATE TEMP TABLE staging_hourlyIntensities_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	TotalIntensity INT,					-- Total Intensity per hour.
-	AverageIntensity FLOAT				-- Average Intensity per hour.
+	AverageIntensity FLOAT					-- Average Intensity per hour.
 );
 
 CREATE TEMP TABLE staging_hourlyIntensities_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	TotalIntensity INT,					-- Total Intensity per hour.
-	AverageIntensity FLOAT				-- Average Intensity per hour.
+	AverageIntensity FLOAT					-- Average Intensity per hour.
 );
 
 CREATE TEMP TABLE staging_hourlySteps_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	StepTotal INT						-- Total Steps per hour.
 );
 
 CREATE TEMP TABLE staging_hourlySteps_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityHour TIMESTAMP,				-- Date and Time of the recorded data.  
+	ActivityHour TIMESTAMP,					-- Date and Time of the recorded data.  
 	StepTotal INT						-- Total Steps per hour.
 );
 
 CREATE TEMP TABLE staging_minuteCaloriesNarrow_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
 	Calories FLOAT						-- Total Calories per minute.
 );
 
 CREATE TEMP TABLE staging_minuteCaloriesNarrow_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
 	Calories FLOAT						-- Total Calories per minute.
 );
 
 CREATE TEMP TABLE staging_minuteIntensitiesNarrow_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
 	Intensity INT						-- Intensity per minute.
 );
 
 CREATE TEMP TABLE staging_minuteIntensitiesNarrow_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
 	Intensity INT						-- Intensity per minute.
 );
 
 CREATE TEMP TABLE staging_minuteStepsNarrow_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	Steps INT							-- Total Steps per minaute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	Steps INT						-- Total Steps per minaute.
 );
 
 CREATE TEMP TABLE staging_minuteStepsNarrow_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	Steps INT							-- Total Steps per minaute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	Steps INT						-- Total Steps per minaute.
 );
 
 CREATE TEMP TABLE staging_minuteMETsNarrow_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	METs INT							-- Metabolic equivalents (METs) per minute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	METs INT						-- Metabolic equivalents (METs) per minute.
 );
 
 CREATE TEMP TABLE staging_minuteMETsNarrow_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	METs INT							-- Metabolic equivalents (METs) per minute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	METs INT						-- Metabolic equivalents (METs) per minute.
 );
 
 CREATE TEMP TABLE staging_minuteSleep_merged (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
-	ActivityMinute TIMESTAMP,			-- Date and Time of the recorded data.  
-	value INT,							-- Sleep value per minute.
+	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
+	value INT,						-- Sleep value per minute.
 	logId VARCHAR(50)					-- Sleep log ID number.
 );
 
 CREATE TEMP TABLE staging_minuteSleep_merged2 (
 	Id VARCHAR(50),						-- Unique identifier for each user. 
 	ActivityMinute TIMESTAMP,				-- Date and Time of the recorded data.  
-	value INT,							-- Sleep value per minute.
+	value INT,						-- Sleep value per minute.
 	logId VARCHAR(50)					-- Sleep log ID number.
 );
 
