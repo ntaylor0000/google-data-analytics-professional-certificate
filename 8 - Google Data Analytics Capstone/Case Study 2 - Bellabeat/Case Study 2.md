@@ -753,7 +753,7 @@ SELECT
         WHEN ROUND(AVG(totalsteps),2) BETWEEN 5000 and 7499 THEN 'low_active'
         WHEN ROUND(AVG(totalsteps),2) BETWEEN 7500 and 9999 THEN 'somewhat_active'
         WHEN ROUND(AVG(totalsteps),2) BETWEEN 10000 and 12499 THEN 'active'
-        WHEN ROUND(AVG(totalsteps),2) > 12499 THEN ‘highly_active'
+        WHEN ROUND(AVG(totalsteps),2) > 12499 THEN 'highly_active'
     END AS total_steps_classification
 FROM 
     public.daily_activity
