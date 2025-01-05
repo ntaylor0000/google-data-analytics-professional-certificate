@@ -1029,10 +1029,21 @@ view(avg_time_awake_in_bed)
 **Data Visualization and Findings Summary:**
 
 Key Recommendations:
+1. 
+2. 
+3. 
+4. 
+5. 
 
 Key Questions Still Remaining:
+- 
+- 
 
-TABLEAU: (LINK TO PUBLIC DASHBOARD):
+TABLEAU: ([LINK TO TABLEAU DASHBOARD](https://public.tableau.com/views/))
+
+![](Visualizations/.png)
+
+![](Visualizations/.png)
 
 R CODE:
 ``` r
@@ -1040,9 +1051,17 @@ R CODE:
 # Share Data
 #
 
+
+
 ```
 
 **R VISUALIZATIONS:**
+
+![](Visualizations/.png)
+![](Visualizations/.png)
+![](Visualizations/.png)
+![](Visualizations/.png)
+![](Visualizations/.png)
 
 
 ## Step 6: Act
