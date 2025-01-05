@@ -1028,16 +1028,21 @@ view(avg_time_awake_in_bed)
 
 **Data Visualization and Findings Summary:**
 
+This section presents key findings regarding Bellabeat smart device usage, offering insights into user behavior and engagement patterns to support the executive team in driving data-informed strategies.
+
+The analysis revealed consistent trends in activity tracking and sleep monitoring, with users engaging more frequently in the evenings and weekends. High engagement was observed among users who tracked both activity and sleep metrics, indicating a correlation between multi-feature usage and overall engagement. These findings align with the project’s goals of understanding user patterns to improve satisfaction and retention.
+
+The primary audience for this analysis is Bellabeat’s executive team. Insights were visualized using Tableau to create user-friendly dashboards, with a focus on clarity, precision, and accessibility. Design elements such as contrasting color schemes, clear labels, and intuitive layouts were incorporated to emphasize key metrics and patterns. The interactive dashboards allow executives to dynamically explore data, enabling informed decision-making.
+
 Key Recommendations:
-1. 
-2. 
-3. 
-4. 
-5. 
+1.  Enhance Personalization: Implement personalized wellness recommendations within the Bellabeat app, such as daily activity reminders, sleep quality reports, and tailored wellness tips based on user behavior.
+2. Marketing Campaigns Focused on Outcomes: Design marketing initiatives that showcase real-world benefits of Bellabeat devices, such as improved sleep quality, enhanced activity levels, or reduced stress.
+3. User Education Initiatives: Introduce engaging in-app tutorials and content to guide users in maximizing the benefits of underutilized features like stress tracking and menstrual cycle monitoring.
+4. Feedback Loop Implementation: Develop user-friendly feedback mechanisms to gather insights directly from users on feature preferences and usability challenges.
 
 Key Questions Still Remaining:
-- 
-- 
+- User Retention: What specific factors drive long-term user retention, and how can these be incorporated into product updates?
+- Behavioral Patterns: How does engagement change over time for new users versus long-term users?
 
 TABLEAU: ([LINK TO TABLEAU DASHBOARD](https://public.tableau.com/views/))
 
@@ -1046,6 +1051,7 @@ TABLEAU: ([LINK TO TABLEAU DASHBOARD](https://public.tableau.com/views/))
 ![](Visualizations/.png)
 
 R CODE:
+
 ``` r
 #
 # Share Data
