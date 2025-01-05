@@ -730,11 +730,12 @@ view(rideable_by_member)
 
 **Data Visualization and Findings Summary:**
 
-and casual riders of Cyclistic bikes, with the goal of assisting the executive team in making data-driven decisions.
+This section presents key findings regarding the differences in usage patterns between annual members and casual riders of Cyclistic bikes, with the goal of assisting the executive team in making data-driven decisions.
 
 The analysis confirmed distinct usage behaviors: casual riders tend to take longer rides during weekends and tourist seasons, whereas annual members favor shorter rides primarily for commuting on weekdays. These insights effectively address the original question concerning user behavior.
 
 The primary audience for this analysis is the executive team at Cyclistic. To communicate these insights effectively, a series of polished visualizations were created using Tableau, complemented by additional data analysis conducted in R. Design principles emphasize clarity and accessibility, utilizing contrasting colors, clear labels, and concise headlines to highlight key insights. The interactive Tableau dashboard allows stakeholders to explore data dynamically, enhancing understanding.
+
 
 Key Recommendations:
 1.	Targeting Casual Riders: Implement seasonal promotions and marketing campaigns during peak tourist periods.
