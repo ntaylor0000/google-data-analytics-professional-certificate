@@ -1044,11 +1044,11 @@ Key Questions Still Remaining:
 - User Retention: What specific factors drive long-term user retention, and how can these be incorporated into product updates?
 - Behavioral Patterns: How does engagement change over time for new users versus long-term users?
 
-TABLEAU: ([LINK TO TABLEAU DASHBOARD](https://public.tableau.com/views/))
+TABLEAU: ([LINK TO TABLEAU DASHBOARD]([https://public.tableau.com/views/](https://public.tableau.com/app/profile/nt5513/viz/Case_Study_2_Bellabeat_17360751072360/Dashboard2#2)))
 
-![](Visualizations/.png)
+![](Visualizations/Dashboard_Primary.png)
 
-![](Visualizations/.png)
+![](Visualizations/Dashboard_Sleep.png)
 
 R CODE:
 
